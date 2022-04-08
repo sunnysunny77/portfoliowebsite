@@ -182,12 +182,12 @@ footer::before {
     background-color: #f8f8ff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin: 447px auto auto auto;
+    margin: 460px auto auto auto;
   }
 }
 @media screen and (min-width: 64em) {
   #fixed-img h2 {
-    margin: calc(100vh - 170px) auto auto auto;
+    margin: calc(100vh - 172px) auto auto auto;
   }
 }
 

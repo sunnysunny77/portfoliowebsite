@@ -19,10 +19,10 @@
       background-color: $white;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      @include setbox(null, null, null, 447px auto auto auto);
+      @include setbox(null, null, null, 460px auto auto auto);
     }
     @include large_and_up {
-      @include setbox(null, null, null, calc(100vh - 170px) auto auto auto);
+      @include setbox(null, null, null, calc(100vh - 172px) auto auto auto);
     }
   }
 }

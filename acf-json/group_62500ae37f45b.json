@@ -38,10 +38,10 @@
             "preview_size": "medium",
             "library": "all",
             "min_width": 1920,
-            "min_height": 958,
+            "min_height": 964,
             "min_size": "",
             "max_width": 1920,
-            "max_height": 958,
+            "max_height": 964,
             "max_size": "",
             "mime_types": ""
         }
@@ -79,5 +79,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649414120
+    "modified": 1649418238
 }
