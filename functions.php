@@ -17,7 +17,7 @@ if (!function_exists('foundation_setup')) {
 
         add_theme_support('widget-customizer');
 
-        add_theme_support('custom-logo', array('height' => 100, 'width' => 100,  'unlink-homepage-logo' => true,  'header-text' => array('site-title', 'site-description')));
+        add_theme_support('custom-logo', array('height' => 100, 'width' => 235,  'unlink-homepage-logo' => true,  'header-text' => array('site-title', 'site-description')));
 
         add_theme_support('title-tag');
 
@@ -62,20 +62,13 @@ function foundation_scripts()
         wp_enqueue_style('about-css', get_template_directory_uri() . '/assets/css/about.css');
     } else if (is_page('contact')) {
         wp_enqueue_style('contact-css', get_template_directory_uri() . '/assets/css/contact.css');
-    /*  wp_enqueue_script('form-js', get_template_directory_uri() . '/js/form.js', array( 'jquery' ), '', true);
+        wp_enqueue_script('form-js', get_template_directory_uri() . '/js/form.js', array( 'jquery' ), '', true);
         wp_localize_script('form-js', 'frontend_ajax_object',
         array( 
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
-            'data_var_1' => '',
-        )*/
+        ));
     } else if (is_page('gallery')) {
         wp_enqueue_style('gallery-css', get_template_directory_uri() . '/assets/css/gallery.css');
-    } else if (is_home()) {
-        wp_enqueue_style('blog-css', get_template_directory_uri() . '/assets/css/blog.css');
-    } else if (is_single()) {
-        wp_enqueue_style('single-css', get_template_directory_uri() . '/assets/css/single.css');
-    } else if (is_archive()) {
-        wp_enqueue_style('archive-css', get_template_directory_uri() . '/assets/css/archive.css');
     } else if (is_search()) {
         wp_enqueue_style('search-css', get_template_directory_uri() . '/assets/css/search.css');
     } else if (is_404()) {
@@ -99,41 +92,6 @@ function foundation_custom_sidebars()
 }
 add_action('widgets_init', 'foundation_custom_sidebars');
 
-function foundation_post_limits($query)
-{
-    if (!is_admin() && $query->is_main_query()) {
-
-        if (is_home()) {
-            $query->set('posts_per_page', '3');
-        }
-    }
-}
-add_action('pre_get_posts', 'foundation_post_limits');
-
-function foundation_session()
-{
-    if (!session_id()) {
-        session_start();
-    }
-}
-add_action('init', 'foundation_session');
-
-/*
-function foundation_remove_frameborder($return, $data)
-{
-    if (is_object($data)) {
-        $return = str_ireplace(
-            array(
-                'frameborder="0"'
-            ),
-            '',
-            $return
-        );
-    }
-    return $return;
-}
-add_filter('oembed_dataparse', 'foundation_remove_frameborder', 10, 3);
-*/
 
 add_filter('pre_option_upload_path', function ($upload_path) {
     return  get_template_directory() . '/files';
@@ -150,40 +108,38 @@ function foundation_enable_vcard_upload( $mime_types ){
 }
 add_filter('upload_mimes', 'foundation_enable_vcard_upload' );
 
-/*
-function foundation_replace_content($text_content)
-{
-    if (is_single() || is_home()) {
-        $text = array(
-            '<p>' => '<p class="callout">',
-        );
 
-        $text_content = str_ireplace(array_keys($text), $text, $text_content);
-    }
-
-    return $text_content;
-}
-add_filter('the_content', 'foundation_replace_content');
-
-function foundation_submit_form()
+function foundation_submit_form_1()
 {
  
-   require_once(get_template_directory() . '/'); 
-    
-    =
-
-    <form class="grid-x align-center" method="post" id="submit_form">   
-        <input type="hidden" name="action" value="submit_form" >  
-    </form>
-    
+    require_once(get_template_directory() . '/inc/form-1.php'); 
    
-  
     exit();
 }
-add_action('wp_ajax_submit_form', "foundation_submit_form");
-add_action('wp_ajax_nopriv_submit_form', 'foundation_submit_form');
+add_action('wp_ajax_submit_form_1', "foundation_submit_form_1");
+add_action('wp_ajax_nopriv_submit_form_1', 'foundation_submit_form_1');
+
+function foundation_submit_form_2()
+{
+ 
+    require_once(get_template_directory() . '/inc/form-2.php'); 
+   
+    exit();
+}
+add_action('wp_ajax_submit_form_2', "foundation_submit_form_2");
+add_action('wp_ajax_nopriv_submit_form_2', 'foundation_submit_form_2');
 
 
+function foundation_submit_form_3()
+{
+ 
+    require_once(get_template_directory() . '/inc/form-3.php'); 
+   
+    exit();
+}
+add_action('wp_ajax_submit_form_3', "foundation_submit_form_3");
+add_action('wp_ajax_nopriv_submit_form_3', 'foundation_submit_form_3');
+/*
 function foundation_cptui_register_my_cpts()
 {
 
@@ -261,25 +217,15 @@ function foundation_on_theme_activation()
        // foundation_post_meta($id, '', '');
     }
 
-    if (!get_option('page_for_posts')) {
-        $page = array(
-            'post_title'     => 'Posts',
-            'post_type'      => 'page',
-            'post_name'      => 'Posts',
-            'post_status'    => 'publish',
-        );
-        $id = wp_insert_post($page);
-        update_option('page_for_posts', $id);
-    }
 
     if (!get_page_template_slug(256)) {
         $page = array(
             'import_id'         =>  256,
-            'post_title'     => 'Video',
+            'post_title'     => 'About',
             'post_type'      => 'page',
-            'post_name'      => 'Video',
+            'post_name'      => 'About',
             'post_status'    => 'publish',
-            'page_template' => 'page-video.php',
+            'page_template' => 'page-about.php',
         );
         $id = wp_insert_post($page);
         // foundation_post_meta($id, '', '');

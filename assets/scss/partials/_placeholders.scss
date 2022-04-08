@@ -1,3 +1,19 @@
+%link {
+    color: $color5;
+    &:hover, &:focus {
+        color: $color2;
+    }
+}
+
+%button {
+    @include box(1rem 0 0 0,null);
+    color: $color1;
+    background-color: rgba($color4,0.5);
+    &:hover, &:focus {
+        background-color: rgba($color5,0.5);
+    }
+}
+
 %active {
     text-shadow: 1px 0 0 black;
 }

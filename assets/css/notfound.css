@@ -1,4 +1,126 @@
 /* not found */
-/* template styles */
+/* template */
+body {
+  max-width: 1920px;
+  margin: auto;
+  position: relative;
+}
+body::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -999;
+  background-blend-mode: screen;
+  opacity: 0.35;
+  background-color: rgba(225, 202, 111, 0.125);
+  background-image: url(../images/template/body-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+@media screen and (min-width: 64em) {
+  body::before {
+    background-image: url(../images/template/body.jpg);
+  }
+}
+
+h1 {
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 1rem auto;
+  color: #493e32;
+  font-style: oblique;
+  text-shadow: 0 0 2.5px #2b241d;
+}
+@media screen and (min-width: 40em) {
+  h2 {
+    margin: 50px auto;
+  }
+}
+
+h3,
+h4,
+h5 {
+  color: #493e32;
+}
+
+@media screen and (min-width: 40em) {
+  main > * {
+    margin-bottom: 50px;
+  }
+}
+main i {
+  color: #2b241d;
+}
+
+.top-bar {
+  background-image: url(../images/template/paper.png);
+  background-color: #e1ca6f;
+  background-blend-mode: screen;
+}
+.top-bar .top-bar-right ul {
+  background: transparent;
+}
+.top-bar .top-bar-right ul li a {
+  color: #2b241d;
+  padding: 0.5rem;
+}
+.top-bar .top-bar-right ul li a:hover, .top-bar .top-bar-right ul li a:focus {
+  color: #f8f8ff;
+}
+.top-bar .top-bar-left #logo {
+  background-image: url(../images/template/logo.svg);
+  display: inline-block;
+  height: 100px;
+  width: 235px;
+  background-repeat: no-repeat;
+}
+
+.title-bar {
+  background-image: url(../images/template/paper.png);
+  background-blend-mode: screen;
+  background-color: #e1ca6f;
+}
+.title-bar .title-bar-title,
+.title-bar .menu-icon {
+  color: #f8f8ff;
+}
+
+footer {
+  background-image: url(../images/template/paper.png);
+  background-blend-mode: screen;
+  padding-top: 15px;
+  background-color: #e1ca6f;
+  color: #2b241d;
+  position: relative;
+  z-index: 1;
+}
+footer .menu li a {
+  color: #2b241d;
+  padding: 0.5rem;
+}
+footer .menu li a:hover, footer .menu li a:focus {
+  color: #f8f8ff;
+}
+footer::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-image: url(../images/template/washi.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 /*# sourceMappingURL=notfound.css.map */
