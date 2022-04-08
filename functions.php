@@ -42,18 +42,18 @@ function foundation_scripts()
 
     wp_enqueue_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', '', '', false);
 
-    wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/vendor/foundation.min.js', array( 'jquery' ), '', true);
+    wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/vendor/foundation.min.js', array('jquery'), '', true);
 
     wp_enqueue_style('foundation-css', get_template_directory_uri() . '/assets/css/foundation.min.css');
 
     wp_enqueue_style('icons', get_template_directory_uri() . '/assets/css/icons/foundation-icons.css');
 
-    wp_enqueue_script('what-input', get_template_directory_uri() . '/js/vendor/what-input.js', array( 'jquery' ), '', true);
+    wp_enqueue_script('what-input', get_template_directory_uri() . '/js/vendor/what-input.js', array('jquery'), '', true);
 
-    wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), '', true);
+    wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true);
 
     //AJAX
-    wp_enqueue_script('jquery-form','', array( 'jquery' ), '', true);
+    wp_enqueue_script('jquery-form', '', array('jquery'), '', true);
 
     //theme styles
     if (is_front_page()) {
@@ -62,11 +62,14 @@ function foundation_scripts()
         wp_enqueue_style('about-css', get_template_directory_uri() . '/assets/css/about.css');
     } else if (is_page('contact')) {
         wp_enqueue_style('contact-css', get_template_directory_uri() . '/assets/css/contact.css');
-        wp_enqueue_script('form-js', get_template_directory_uri() . '/js/form.js', array( 'jquery' ), '', true);
-        wp_localize_script('form-js', 'frontend_ajax_object',
-        array( 
-            'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        ));
+        wp_enqueue_script('form-js', get_template_directory_uri() . '/js/form.js', array('jquery'), '', true);
+        wp_localize_script(
+            'form-js',
+            'frontend_ajax_object',
+            array(
+                'ajaxurl' => admin_url('admin-ajax.php'),
+            )
+        );
     } else if (is_page('gallery')) {
         wp_enqueue_style('gallery-css', get_template_directory_uri() . '/assets/css/gallery.css');
     } else if (is_search()) {
@@ -101,19 +104,20 @@ add_filter('pre_option_upload_url_path', function ($upload_url_path) {
     return get_template_directory_uri() . '/files';
 });
 
-function foundation_enable_vcard_upload( $mime_types ){
+function foundation_enable_vcard_upload($mime_types)
+{
     $mime_types['vcf'] = 'text/vcard';
     $mime_types['vcard'] = 'text/vcard';
     return $mime_types;
 }
-add_filter('upload_mimes', 'foundation_enable_vcard_upload' );
+add_filter('upload_mimes', 'foundation_enable_vcard_upload');
 
 
 function foundation_submit_form_1()
 {
- 
-    require_once(get_template_directory() . '/inc/form-1.php'); 
-   
+
+    require_once(get_template_directory() . '/inc/form-1.php');
+
     exit();
 }
 add_action('wp_ajax_submit_form_1', "foundation_submit_form_1");
@@ -121,9 +125,9 @@ add_action('wp_ajax_nopriv_submit_form_1', 'foundation_submit_form_1');
 
 function foundation_submit_form_2()
 {
- 
-    require_once(get_template_directory() . '/inc/form-2.php'); 
-   
+
+    require_once(get_template_directory() . '/inc/form-2.php');
+
     exit();
 }
 add_action('wp_ajax_submit_form_2', "foundation_submit_form_2");
@@ -132,9 +136,9 @@ add_action('wp_ajax_nopriv_submit_form_2', 'foundation_submit_form_2');
 
 function foundation_submit_form_3()
 {
- 
-    require_once(get_template_directory() . '/inc/form-3.php'); 
-   
+
+    require_once(get_template_directory() . '/inc/form-3.php');
+
     exit();
 }
 add_action('wp_ajax_submit_form_3', "foundation_submit_form_3");
@@ -214,7 +218,35 @@ function foundation_on_theme_activation()
         $id = wp_insert_post($page);
         update_option('page_on_front', $id);
         update_option('show_on_front', 'page');
-       // foundation_post_meta($id, '', '');
+        foundation_post_meta($id, 'heading', 'Portfolio website');
+        foundation_post_meta($id, '_heading', 'heading');
+        foundation_post_meta($id, 'carousel_1', '');
+        foundation_post_meta($id, '_carousel_1', 'carousel_1');
+        foundation_post_meta($id, 'carousel_2', '');
+        foundation_post_meta($id, '_carousel_2', 'carousel_2');
+        foundation_post_meta($id, 'media_heading', 'Lorem ipsum dolor');
+        foundation_post_meta($id, '_media_heading', 'media_heading');
+        foundation_post_meta($id, 'media_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at justo sapien. Proin tincidunt purus nec orci finibus laoreet. Curabitur facilisis est a posuere sodales.');
+        foundation_post_meta($id, '_media_paragraph', 'media_paragraph');
+        foundation_post_meta($id, 'media_heading_1', 'Lorem ipsum');
+        foundation_post_meta($id, '_media_heading_1', 'media_heading_1');
+        foundation_post_meta($id, 'media_paragraph_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.');
+        foundation_post_meta($id, '_media_paragraph_1', 'media_paragraph_1');
+        foundation_post_meta($id, 'media_heading_2', 'Lorem ipsum');
+        foundation_post_meta($id, '_media_heading_2', 'media_heading_2');
+        foundation_post_meta($id, 'media_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.');
+        foundation_post_meta($id, '_media_paragraph_2', 'media_paragraph_2');
+        foundation_post_meta($id, 'media', '');
+        foundation_post_meta($id, '_media', 'media');
+        foundation_post_meta($id, 'section_heading_1', 'Lorem ipsum dolor sit');
+        foundation_post_meta($id, '_section_heading_1', 'section_heading_1');
+        foundation_post_meta($id, 'section_paragrap_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+        foundation_post_meta($id, '_section_paragrap_1', 'section_paragrap_1');
+        foundation_post_meta($id, 'section_heading_2', 'Lorem ipsum dolor sit');
+        foundation_post_meta($id, '_section_heading_2', 'section_heading_2');
+        foundation_post_meta($id, 'section_paragrap_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+        foundation_post_meta($id, '_section_paragrap_2', 'section_paragrap_2');
+        
     }
 
 
@@ -267,7 +299,7 @@ function foundation_on_theme_activation()
             'page_template' => 'page-gallery.php',
         );
         $id = wp_insert_post($page);
-          // foundation_post_meta($id, '', '');
+        // foundation_post_meta($id, '', '');
     }
 
     update_option('uploads_use_yearmonth_folders', 0);

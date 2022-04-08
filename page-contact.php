@@ -1,5 +1,4 @@
-<?php /* Template Name: contact */ 
-get_header(); ?>
+<?php get_header(); ?>
 
 <main id="main" class="grid-container grid-y">
 

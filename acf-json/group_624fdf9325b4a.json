@@ -1,0 +1,321 @@
+{
+    "key": "group_624fdf9325b4a",
+    "title": "Home",
+    "fields": [
+        {
+            "key": "field_624fdfc09dc38",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "Page heading",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe60886a95",
+            "label": "Carousel 1",
+            "name": "carousel_1",
+            "type": "image",
+            "instructions": "Carousel image 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 994,
+            "min_height": 580,
+            "min_size": "",
+            "max_width": 994,
+            "max_height": 580,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624fe6a186a97",
+            "label": "Carousel 2",
+            "name": "carousel_2",
+            "type": "image",
+            "instructions": "Carousel image 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 994,
+            "min_height": 580,
+            "min_size": "",
+            "max_width": 994,
+            "max_height": 580,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624fe0829dc39",
+            "label": "Media heading",
+            "name": "media_heading",
+            "type": "text",
+            "instructions": "Media heading h3",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe0a59dc3a",
+            "label": "Media paragraph",
+            "name": "media_paragraph",
+            "type": "text",
+            "instructions": "Media h3 paragraph",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe0f89dc3b",
+            "label": "Media heading 1",
+            "name": "media_heading_1",
+            "type": "text",
+            "instructions": "Media heading h4 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe1449dc3c",
+            "label": "Media paragraph 1",
+            "name": "media_paragraph_1",
+            "type": "text",
+            "instructions": "Media paragraph h4 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe1919dc3d",
+            "label": "Media heading 2",
+            "name": "media_heading_2",
+            "type": "text",
+            "instructions": "Media heading h4 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe1ae9dc3e",
+            "label": "Media paragraph 2",
+            "name": "media_paragraph_2",
+            "type": "text",
+            "instructions": "Media paragraph h4 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe81fdc997",
+            "label": "media",
+            "name": "media",
+            "type": "image",
+            "instructions": "Center media image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 515,
+            "min_height": 387,
+            "min_size": "",
+            "max_width": 515,
+            "max_height": 387,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624fea1fadd05",
+            "label": "Section heading 1",
+            "name": "section_heading_1",
+            "type": "text",
+            "instructions": "Section heading h4 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fea63add06",
+            "label": "Section paragraph 1",
+            "name": "section_paragraph_1",
+            "type": "text",
+            "instructions": "Section paragraph h4 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624feaa7add07",
+            "label": "Section heading 2",
+            "name": "section_heading_2",
+            "type": "text",
+            "instructions": "Section heading h4 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624feaff5a1fe",
+            "label": "Section paragraph 2",
+            "name": "section_paragraph_2",
+            "type": "text",
+            "instructions": "Section paragraph h4 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "254"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1649404692
+}
