@@ -6,26 +6,23 @@
 }
 
 #fixed-img {
-  background-image: url("../images/gallery/fixed-m.png");
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: auto;
+  background-position: center center;
+  background-size: cover;
   @include large_and_up {
-    background-image: url("../images/gallery/fixed.png");
-    background-size: cover;
     background-attachment: fixed;
   }
   h2 {
-    background-image: url(../images/template/paper.png);
+    background-image: url(../../images/template/paper.png);
     @include setbox(fit-content, fit-content, 0 1rem, 1rem auto 250px auto);
     @include medium_and_up {
       background-color: $white;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      @include setbox(null, null, null, 333px auto auto auto);
+      @include setbox(null, null, null, 447px auto auto auto);
     }
     @include large_and_up {
-      @include setbox(null, null, null, calc(100vh - 178px) auto auto auto);
+      @include setbox(null, null, null, calc(100vh - 170px) auto auto auto);
     }
   }
 }
@@ -40,7 +37,7 @@
   li {
     a {
       background-color: lightShift($color3);
-      background-image: url(../images/template/paper.png);
+      background-image: url(../../images/template/paper.png);
       background-blend-mode: screen;
       outline: none;
       @include setbox(100%, null, 0.2rem 0.5rem, 0);
@@ -90,7 +87,7 @@
         }
         bottom: 0;
         left: 0;
-        background-image: url(../images/gallery/side-1.png);
+        background-image: url(../../images/gallery/side-1.png);
         border-right: 1px solid $white;
       }
     }
@@ -98,7 +95,7 @@
 }
 
 .sticky-ul {
-  background-image: url(../images/gallery/side.png);
+  background-image: url(../../images/gallery/side.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top right;

@@ -161,20 +161,17 @@ footer::before {
 
 /* gallery */
 #fixed-img {
-  background-image: url("../images/gallery/fixed-m.png");
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: auto;
+  background-position: center center;
+  background-size: cover;
 }
 @media screen and (min-width: 64em) {
   #fixed-img {
-    background-image: url("../images/gallery/fixed.png");
-    background-size: cover;
     background-attachment: fixed;
   }
 }
 #fixed-img h2 {
-  background-image: url(../images/template/paper.png);
+  background-image: url(../../images/template/paper.png);
   width: fit-content;
   height: fit-content;
   padding: 0 1rem;
@@ -185,12 +182,12 @@ footer::before {
     background-color: #f8f8ff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    margin: 333px auto auto auto;
+    margin: 447px auto auto auto;
   }
 }
 @media screen and (min-width: 64em) {
   #fixed-img h2 {
-    margin: calc(100vh - 178px) auto auto auto;
+    margin: calc(100vh - 170px) auto auto auto;
   }
 }
 
@@ -206,7 +203,7 @@ footer::before {
 }
 #tabs li a {
   background-color: #eada99;
-  background-image: url(../images/template/paper.png);
+  background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
   outline: none;
   width: 100%;
@@ -262,7 +259,7 @@ footer::before {
     right: 75%;
     bottom: 0;
     left: 0;
-    background-image: url(../images/gallery/side-1.png);
+    background-image: url(../../images/gallery/side-1.png);
     border-right: 1px solid #f8f8ff;
   }
 }
@@ -273,7 +270,7 @@ footer::before {
 }
 
 .sticky-ul {
-  background-image: url(../images/gallery/side.png);
+  background-image: url(../../images/gallery/side.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top right;

@@ -342,7 +342,8 @@ function foundation_on_theme_activation()
             'page_template' => 'page-gallery.php',
         );
         $id = wp_insert_post($page);
-        // foundation_post_meta($id, '', '');
+        foundation_post_meta($id, 'heading', 'Portfolio of work');
+        foundation_post_meta($id, '_heading', 'heading');
     }
 
     update_option('uploads_use_yearmonth_folders', 0);
