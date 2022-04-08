@@ -15,7 +15,7 @@
                 <?php
                 $image = get_field('sticky_image_1');
                 if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <img class="thumbnail" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php } ?>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <?php
                 $image = get_field('sticky_image_2');
                 if (!empty($image)) { ?>
-                <img  src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <img class="thumbnail"  src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php } ?>
             </div>
         </div>
@@ -67,7 +67,7 @@
             <div class="card-section">
 
                 <h3>  <?php echo the_field('card_heading') ?></h3>
-                <p> <?php echo the_field('card_parahraph') ?> </p>
+                <p> <?php echo the_field('card_paragraph') ?> </p>
 
             </div>
 
