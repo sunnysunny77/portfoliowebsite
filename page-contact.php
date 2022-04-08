@@ -10,7 +10,7 @@ get_header(); ?>
         <br>
         <a href="tel:0412620989">0412620989</a>     
         <br>
-        <a download href="vcard.vcf">Download Contact</a>
+        <a download href="<?php echo site_url( '/wp-content/themes/portfoliowebsite/files/vcard.vcf' ); ?>">Download Contact</a>
         <br>
         Please try the forms below
     </p>
