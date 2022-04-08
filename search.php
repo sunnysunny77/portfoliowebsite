@@ -2,7 +2,7 @@
 
 <main id="main" class="grid-container grid-y">
 
-    <h1 class="cell text-right">Search: &nbsp; <?php the_search_query() ?></h1>
+    <h1 class="cell text-center medium-text-right">Search: &nbsp; <?php the_search_query() ?></h1>
 
     <i class="fi-magnifying-glass"></i>
 

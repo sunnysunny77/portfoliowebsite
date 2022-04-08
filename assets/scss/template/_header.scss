@@ -1,5 +1,5 @@
 .top-bar {
-    background-image: url(../images/template/paper.png);
+    background-image: url(../../images/template/paper.png);
     background-color: $color3;
     background-blend-mode: screen;
     .top-bar-right ul {
@@ -13,19 +13,10 @@
             }
         }
     }
-    .top-bar-left {
-        #logo {
-            background-image: url(../images/template/logo.svg);
-            display: inline-block;
-            height: 100px;
-            width: 235px;
-            background-repeat: no-repeat;
-        }
-    }
 }
 
 .title-bar {
-    background-image: url(../images/template/paper.png);
+    background-image: url(../../images/template/paper.png);
     background-blend-mode: screen;
     background-color: $color3;
     .title-bar-title,

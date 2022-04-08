@@ -15,9 +15,9 @@ body {
         background-blend-mode: screen;
         opacity: 0.35;
         background-color: rgba($color3, 0.125);
-        background-image: url(../images/template/body-mobile.jpg);
+        background-image: url(../../images/template/body-mobile.jpg);
         @include large_and_up {
-            background-image: url(../images/template/body.jpg);
+            background-image: url(../../images/template/body.jpg);
         }
         background-size: cover;
         background-repeat: no-repeat;
@@ -48,7 +48,7 @@ h5 {
 }
 
 main {
-    //min-height: 72.5vh;
+    min-height: 78.92vh;
     @include medium_and_up() {
         > * {
             margin-bottom: 50px;

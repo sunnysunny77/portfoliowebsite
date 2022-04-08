@@ -2,7 +2,7 @@
 
     <main id="main" class="grid-container grid-y">
 
-        <h1 class="cell text-right">Not found 404</h1>
+        <h1 class="cell text-center medium-text-right">Not found 404</h1>
         
         <i class="fi-x"></i>
         
