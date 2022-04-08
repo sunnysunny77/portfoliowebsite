@@ -241,7 +241,20 @@ function foundation_on_theme_activation()
             'page_template' => 'page-contact.php',
         );
         $id = wp_insert_post($page);
-        // foundation_post_meta($id, '', '');
+        foundation_post_meta($id, 'heading', 'Get in touch');
+        foundation_post_meta($id, '_heading', 'heading');
+        foundation_post_meta($id, 'email', 'example@example.com');
+        foundation_post_meta($id, '_email', 'email');
+        foundation_post_meta($id, 'phone', '0412620989');
+        foundation_post_meta($id, '_phone', 'phone');
+        foundation_post_meta($id, 'download', 'Download Contact');
+        foundation_post_meta($id, '_download', 'download');
+        foundation_post_meta($id, 'paragraph', 'Please try the forms below');
+        foundation_post_meta($id, '_paragraph', 'paragraph');
+        foundation_post_meta($id, 'quote', 'He Thumbs through the pages of his life, his soul bites out with ancestry force and his life surrounds his every move as his child constantly guiding him from over his shoulder.');
+        foundation_post_meta($id, '_quote', 'quote');
+        foundation_post_meta($id, 'cite', 'Jerry Verschoor');
+        foundation_post_meta($id, '_cite', 'cite');
     }
 
     if (!get_page_template_slug(258)) {

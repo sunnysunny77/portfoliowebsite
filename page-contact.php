@@ -3,16 +3,16 @@ get_header(); ?>
 
 <main id="main" class="grid-container grid-y">
 
-    <h2 class="cell text-center medium-text-right">Get in touch</h2>
+    <h2 class="cell text-center medium-text-right"><?php echo the_field('heading') ?></h2>
 
     <p class="text-center medium-text-right">
-        <a href="mailto:example@example.com">example@example.com</a>
+        <a href="mailto:<?php echo the_field('email') ?>"><?php echo the_field('email') ?></a>
         <br>
-        <a href="tel:0412620989">0412620989</a>     
+        <a href="tel:<?php echo the_field('phone') ?>"><?php echo the_field('phone') ?></a>     
         <br>
-        <a download href="<?php echo site_url( '/wp-content/themes/portfoliowebsite/files/vcard.vcf' ); ?>">Download Contact</a>
+        <a download href="<?php echo site_url( '/wp-content/themes/portfoliowebsite/files/vcard.vcf' ); ?>"><?php echo the_field('download') ?></a>
         <br>
-        Please try the forms below
+        <?php echo the_field('paragraph') ?>
     </p>
 
     <ul class="tabs grid-x align-center text-center" data-tabs id="tabs">
@@ -157,7 +157,7 @@ get_header(); ?>
 
     <div class="grid-x align-center text-right">
         <blockquote class="cell small-10 medium-6">
-            He Thumbs through the pages of his life, his soul bites out with ancestry force and his life surrounds his every move as his child constantly guiding him from over his shoulder.   <cite>Jerry Verschoor</cite>
+        <?php echo the_field('quote') ?><cite><?php echo the_field('cite') ?></cite>
         </blockquote>
     </div>
 
