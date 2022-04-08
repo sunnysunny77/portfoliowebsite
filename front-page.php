@@ -54,7 +54,7 @@
             <?php
             $image = get_field('media');
             if (!empty($image)) { ?>
-            <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php } ?>
 
     </div>

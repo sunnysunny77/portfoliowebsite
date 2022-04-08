@@ -1,0 +1,226 @@
+{
+    "key": "group_624ff999d7252",
+    "title": "About",
+    "fields": [
+        {
+            "key": "field_624ffc75e7a5e",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "instructions": "Page heading",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624ff9aa4bd26",
+            "label": "Sticky image 1",
+            "name": "sticky_image_1",
+            "type": "image",
+            "instructions": "Sticky scrolling image 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 370,
+            "min_height": 370,
+            "min_size": "",
+            "max_width": 370,
+            "max_height": 370,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624ffa044bd28",
+            "label": "Biography 1",
+            "name": "biography_1",
+            "type": "textarea",
+            "instructions": "Biography text 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_624ff9fc4bd27",
+            "label": "Sticky image 2",
+            "name": "sticky_image_2",
+            "type": "image",
+            "instructions": "Sticky scrolling image 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 370,
+            "min_height": 370,
+            "min_size": "",
+            "max_width": 370,
+            "max_height": 370,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624ffa644bd29",
+            "label": "Biography 2",
+            "name": "biography_2",
+            "type": "textarea",
+            "instructions": "Biography text 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_624ffc98e7a5f",
+            "label": "Card title",
+            "name": "card_title",
+            "type": "text",
+            "instructions": "Portrait title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624ffd4ae7a62",
+            "label": "Portrait",
+            "name": "portrait",
+            "type": "image",
+            "instructions": "Portrait image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 378,
+            "min_height": 504,
+            "min_size": "",
+            "max_width": 378,
+            "max_height": 504,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_624ffce6e7a60",
+            "label": "Card heading",
+            "name": "card_heading",
+            "type": "text",
+            "instructions": "Portrait heading h3",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624ffd10e7a61",
+            "label": "Card paragraph",
+            "name": "card_paragraph",
+            "type": "text",
+            "instructions": "Portrait paragraph",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "256"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1649409964
+}
