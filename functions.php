@@ -476,12 +476,12 @@ function foundation_on_theme_activation()
         foundation_post_meta($id, '_media', 'media');
         foundation_post_meta($id, 'section_heading_1', 'Lorem ipsum dolor sit');
         foundation_post_meta($id, '_section_heading_1', 'section_heading_1');
-        foundation_post_meta($id, 'section_paragrap_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        foundation_post_meta($id, '_section_paragrap_1', 'section_paragrap_1');
+        foundation_post_meta($id, 'section_paragraph_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+        foundation_post_meta($id, '_section_paragraph_1', 'section_paragraph_1');
         foundation_post_meta($id, 'section_heading_2', 'Lorem ipsum dolor sit');
         foundation_post_meta($id, '_section_heading_2', 'section_heading_2');
-        foundation_post_meta($id, 'section_paragrap_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        foundation_post_meta($id, '_section_paragrap_2', 'section_paragrap_2');    
+        foundation_post_meta($id, 'section_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+        foundation_post_meta($id, '_section_paragraph_2', 'section_paragraph_2');    
     }
 
     if (!get_page_template_slug(256)) {
