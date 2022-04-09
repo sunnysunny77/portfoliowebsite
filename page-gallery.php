@@ -73,14 +73,14 @@ $disclaimer = get_field('disclaimer');
                                 class="fi-eject"></i></a>
 
                         <?php
-                        $loop = new WP_Query(array('post_type' => 'Storyboarding', 'posts_per_page' => -1));
+                        $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
 
                         while ($loop->have_posts()) { $loop->the_post();
 
                         ?>
                         
                         <?php
-                        $image = get_field('storyboard');
+                        $image = get_field('storyboarding_films');
                         if (!empty($image)) : ?>
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
@@ -98,8 +98,22 @@ $disclaimer = get_field('disclaimer');
                         <a aria-label="Go to top" class="cell top-link
                             text-right" href="#tabs"><i
                                 class="fi-eject"></i></a>
-                        <img class="gallery"
-                            src="./images/gallery/art/d30.jpg" alt="">
+                        
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('concepts_films');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?>        
+
                     </section>
 
                     <section class="cell grid-x
@@ -112,9 +126,21 @@ $disclaimer = get_field('disclaimer');
                         <a aria-label="Go to top" class="cell top-link
                             text-right" href="#tabs"><i
                                 class="fi-eject"></i></a>
-                        <img class="gallery"
-                            src="https://via.placeholder.com/500x500"
-                            alt="">
+                        
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('independent_films');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?>        
 
                     </section>
 
@@ -144,9 +170,21 @@ $disclaimer = get_field('disclaimer');
                     <a aria-label="Go to top" class="cell top-link
                         text-right" href="#tabs"><i
                             class="fi-eject"></i></a>
-                    <img class="gallery"
-                        src="https://via.placeholder.com/500x500"
-                        alt="">
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) { $loop->the_post();
+
+                    ?>
+                    
+                    <?php
+                    $image = get_field('theatre');
+                    if (!empty($image)) : ?>
+                        <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
+
+                    <?php } ?> 
 
                 </section>
 
@@ -174,9 +212,21 @@ $disclaimer = get_field('disclaimer');
                     <a aria-label="Go to top" class="cell top-link
                         text-right" href="#tabs"><i
                             class="fi-eject"></i></a>
-                    <img class="gallery"
-                        src="https://via.placeholder.com/500x500"
-                        alt="">
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) { $loop->the_post();
+
+                    ?>
+                    
+                    <?php
+                    $image = get_field('designs');
+                    if (!empty($image)) : ?>
+                        <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
+
+                    <?php } ?> 
 
                 </section>
 
@@ -214,9 +264,21 @@ $disclaimer = get_field('disclaimer');
                         <a aria-label="Go to top" class="cell top-link
                             text-right" href="#tabs"><i
                                 class="fi-eject"></i></a>
-                        <img class="gallery"
-                            src="https://via.placeholder.com/500x500"
-                            alt="">
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('poems_poetry');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?> 
 
                     </section>
 
@@ -230,9 +292,21 @@ $disclaimer = get_field('disclaimer');
                         <a aria-label="Go to top" class="cell top-link
                             text-right" href="#tabs"><i
                                 class="fi-eject"></i></a>
-                        <img class="gallery"
-                            src="https://via.placeholder.com/500x500"
-                            alt="">
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('illustrated_poetry');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?> 
 
                     </section>
 
@@ -262,9 +336,21 @@ $disclaimer = get_field('disclaimer');
                     <a aria-label="Go to top" class="cell top-link
                         text-right" href="#tabs"><i
                             class="fi-eject"></i></a>
-                    <img class="gallery"
-                        src="https://via.placeholder.com/500x500"
-                        alt="">
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('sculptures');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?> 
 
                 </section>
 
@@ -292,9 +378,21 @@ $disclaimer = get_field('disclaimer');
                         top-link
                         text-right" href="#tabs"><i
                             class="fi-eject"></i></a>
-                    <img class="gallery"
-                        src="https://via.placeholder.com/500x500"
-                        alt="">
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) { $loop->the_post();
+
+                        ?>
+                        
+                        <?php
+                        $image = get_field('illustrations');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?> 
 
                 </section>
 

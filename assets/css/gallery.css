@@ -246,6 +246,7 @@ footer::before {
   padding: 0;
 }
 .tabs-content .tabs-panel.is-active {
+  min-height: 79vh;
   margin: 0;
   padding: 0;
 }
