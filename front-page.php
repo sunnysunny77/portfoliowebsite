@@ -40,7 +40,7 @@
         <div class="grid-x align-bottom">
 
         <p class="cell medium-text-right medium-order-2 small-7 medium-6"><?php echo the_field('media_paragraph_1') ?></p>
-        <h4 class="cell text-center medium-order-1 subheader align-self-middle medium-text-leftsmall-5 medium-6"><?php echo the_field('media_heading_1') ?></h4>
+        <h4 class="cell text-center medium-order-1 subheader align-self-middle medium-text-left small-5 medium-6"><?php echo the_field('media_heading_1') ?></h4>
         <p class="cell small-7 medium-6"><?php echo the_field('media_paragraph_2') ?></p>
         <h4 class="cell text-center subheader align-self-middle medium-text-right small-5 medium-6"><?php echo the_field('media_heading_2') ?></h4>
 
