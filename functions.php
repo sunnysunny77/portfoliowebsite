@@ -143,17 +143,17 @@ function foundation_submit_form_3()
 }
 add_action('wp_ajax_submit_form_3', "foundation_submit_form_3");
 add_action('wp_ajax_nopriv_submit_form_3', 'foundation_submit_form_3');
-/*
+
 function foundation_cptui_register_my_cpts()
 {
 
     $labels = [
-        "name" => __("", "custom-post-type-ui"),
-        "singular_name" => __("", "custom-post-type-ui"),
+        "name" => __("Storyboarding", "custom-post-type-ui"),
+        "singular_name" => __("Storyboard", "custom-post-type-ui"),
     ];
 
     $args = [
-        "label" => __("", "custom-post-type-ui"),
+        "label" => __("Storyboarding", "custom-post-type-ui"),
         "labels" => $labels,
         "description" => "",
         "public" => true,
@@ -171,18 +171,16 @@ function foundation_cptui_register_my_cpts()
         "map_meta_cap" => true,
         "hierarchical" => false,
         "can_export" => false,
-        "rewrite" => ["slug" => "", "with_front" => true],
+        "rewrite" => ["slug" => "Storyboarding", "with_front" => true],
         "query_var" => true,
         "supports" => ["title"],
         "show_in_graphql" => false,
     ];
 
-    register_post_type("products", $args);
+    register_post_type("Storyboarding", $args);
 }
 
 add_action('init', 'foundation_cptui_register_my_cpts');
-
-*/
 
 function foundation_on_theme_activation()
 {

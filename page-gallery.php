@@ -70,16 +70,20 @@
                             text-right" href="#tabs"><i
                                 class="fi-eject"></i></a>
 
-                        <img class="gallery"
-                            src="./images/gallery/art/d22.jpg" alt="">
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'Storyboarding', 'posts_per_page' => -1));
 
-                        <img class="gallery"
-                            src="https://via.placeholder.com/500x500"
-                            alt="">
+                        while ($loop->have_posts()) { $loop->the_post();
 
-                            <img class="gallery"
-                            src="https://via.placeholder.com/500x500"
-                            alt="">
+                        ?>
+                        
+                        <?php
+                        $image = get_field('storyboard');
+                        if (!empty($image)) : ?>
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                        <?php } ?>
 
                     </section>
 
