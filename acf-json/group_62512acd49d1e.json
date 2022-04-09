@@ -1,11 +1,11 @@
 {
-    "key": "group_6250f1c9e74a3",
-    "title": "storyboarding films",
+    "key": "group_62512acd49d1e",
+    "title": "illustrated_poetry",
     "fields": [
         {
-            "key": "field_6250f1d937f38",
-            "label": "storyboarding films",
-            "name": "storyboarding_films",
+            "key": "field_62512ad34a921",
+            "label": "illustrated_poetry",
+            "name": "illustrated_poetry",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +32,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "storyboarding_films"
+                "value": "illustrated_poetry"
             }
         ]
     ],
@@ -60,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649486098
+    "modified": 1649486661
 }

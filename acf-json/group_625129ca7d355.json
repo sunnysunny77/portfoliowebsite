@@ -1,11 +1,11 @@
 {
-    "key": "group_6250f1c9e74a3",
-    "title": "storyboarding films",
+    "key": "group_625129ca7d355",
+    "title": "theatre",
     "fields": [
         {
-            "key": "field_6250f1d937f38",
-            "label": "storyboarding films",
-            "name": "storyboarding_films",
+            "key": "field_625129dd0c714",
+            "label": "theatre",
+            "name": "theatre",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +32,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "storyboarding_films"
+                "value": "theatre"
             }
         ]
     ],
@@ -60,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649486098
+    "modified": 1649486717
 }

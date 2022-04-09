@@ -1,11 +1,11 @@
 {
-    "key": "group_6250f1c9e74a3",
-    "title": "storyboarding films",
+    "key": "group_62512a3830635",
+    "title": "designs",
     "fields": [
         {
-            "key": "field_6250f1d937f38",
-            "label": "storyboarding films",
-            "name": "storyboarding_films",
+            "key": "field_62512a3e479c5",
+            "label": "designs",
+            "name": "designs",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +32,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "storyboarding_films"
+                "value": "designs"
             }
         ]
     ],
@@ -60,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649486098
+    "modified": 1649486651
 }

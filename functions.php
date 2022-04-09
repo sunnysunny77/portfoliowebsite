@@ -24,12 +24,6 @@ if (!function_exists('foundation_setup')) {
         add_theme_support('html5', ['script', 'style', 'comment-form', 'search-form', 'gallery', 'caption']);
 
         add_theme_support('menus');
-
-        // add_theme_support('post-formats', array('aside', 'gallery', 'quote', 'image', 'video'));
-
-        // add_theme_support('automatic-feed-links');
-
-        // add_theme_support('post-thumbnails');
     }
 }
 add_action('after_setup_theme', 'foundation_setup');
@@ -95,7 +89,6 @@ function foundation_custom_sidebars()
 }
 add_action('widgets_init', 'foundation_custom_sidebars');
 
-
 add_filter('pre_option_upload_path', function ($upload_path) {
     return  get_template_directory() . '/files';
 });
@@ -120,7 +113,6 @@ function foundation_enable_vcard_upload($mime_types)
 }
 add_filter('upload_mimes', 'foundation_enable_vcard_upload');
 
-
 function foundation_submit_form_1()
 {
 
@@ -141,7 +133,6 @@ function foundation_submit_form_2()
 add_action('wp_ajax_submit_form_2', "foundation_submit_form_2");
 add_action('wp_ajax_nopriv_submit_form_2', 'foundation_submit_form_2');
 
-
 function foundation_submit_form_3()
 {
 
@@ -152,16 +143,16 @@ function foundation_submit_form_3()
 add_action('wp_ajax_submit_form_3', "foundation_submit_form_3");
 add_action('wp_ajax_nopriv_submit_form_3', 'foundation_submit_form_3');
 
-function foundation_cptui_register_my_cpts()
+function foundation_register_cptui()
 {
 
     $labels = [
-        "name" => __("Storyboarding", "custom-post-type-ui"),
-        "singular_name" => __("Storyboard", "custom-post-type-ui"),
+        "name" => __("storyboarding_films", "custom-post-type-ui"),
+        "singular_name" => __("storyboarding_film", "custom-post-type-ui"),
     ];
 
     $args = [
-        "label" => __("Storyboarding", "custom-post-type-ui"),
+        "label" => __("storyboarding_films", "custom-post-type-ui"),
         "labels" => $labels,
         "description" => "",
         "public" => true,
@@ -179,16 +170,271 @@ function foundation_cptui_register_my_cpts()
         "map_meta_cap" => true,
         "hierarchical" => false,
         "can_export" => false,
-        "rewrite" => ["slug" => "Storyboarding", "with_front" => true],
+        "rewrite" => ["slug" => "storyboarding_films", "with_front" => true],
         "query_var" => true,
         "supports" => ["title"],
         "show_in_graphql" => false,
     ];
 
-    register_post_type("Storyboarding", $args);
-}
+    register_post_type("storyboarding_films", $args);
 
-add_action('init', 'foundation_cptui_register_my_cpts');
+    $labels = [
+        "name" => __("concepts_films", "custom-post-type-ui"),
+        "singular_name" => __("concepts_film", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("concepts_films", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "concepts_films", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("concepts_films", $args);
+
+    $labels = [
+        "name" => __("independent_films", "custom-post-type-ui"),
+        "singular_name" => __("independent_film", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("independent_films", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "independent_films", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("independent_films", $args);
+
+    $labels = [
+        "name" => __("theatre", "custom-post-type-ui"),
+        "singular_name" => __("theatrical", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("theatre", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "theatre", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("theatre", $args);
+
+    $labels = [
+        "name" => __("designs", "custom-post-type-ui"),
+        "singular_name" => __("design", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("designs", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "designs", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("designs", $args);
+
+    $labels = [
+        "name" => __("poems", "custom-post-type-ui"),
+        "singular_name" => __("poem", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("poems", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "poems", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("poems", $args);
+
+    $labels = [
+        "name" => __("illustrated_poetry", "custom-post-type-ui"),
+        "singular_name" => __("illustrated_poem", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("illustrated_poetry", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "illustrated_poetry", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("illustrated_poetry", $args);
+
+    $labels = [
+        "name" => __("sculptures", "custom-post-type-ui"),
+        "singular_name" => __("sculpture", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("sculptures", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "sculptures", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("sculptures", $args);
+
+    $labels = [
+        "name" => __("illustrations", "custom-post-type-ui"),
+        "singular_name" => __("illustration", "custom-post-type-ui"),
+    ];
+
+    $args = [
+        "label" => __("illustrations", "custom-post-type-ui"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => ["slug" => "illustrations", "with_front" => true],
+        "query_var" => true,
+        "supports" => ["title"],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type("illustrations", $args);
+}
+add_action('init', 'foundation_register_cptui');
 
 function foundation_on_theme_activation()
 {
@@ -196,22 +442,6 @@ function foundation_on_theme_activation()
     {
         add_post_meta($id, $key, $val, true);
     }
-
-    /*
-       $ = [ '' => [ , ];
-
-    if (get_post_type_object("")) {
-        foreach ($ as $x => $) {
-            $page = array(
-                'post_type'      => '',
-                'post_status'    => 'publish',
-                'post_title' =>  $x,
-            );
-            $id = wp_insert_post($page);
-           foundation_post_meta($id, '', '');
-        }
-    }
-    */
 
     if (!get_option('page_on_front')) {
         $page = array(
@@ -251,10 +481,8 @@ function foundation_on_theme_activation()
         foundation_post_meta($id, 'section_heading_2', 'Lorem ipsum dolor sit');
         foundation_post_meta($id, '_section_heading_2', 'section_heading_2');
         foundation_post_meta($id, 'section_paragrap_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        foundation_post_meta($id, '_section_paragrap_2', 'section_paragrap_2');
-        
+        foundation_post_meta($id, '_section_paragrap_2', 'section_paragrap_2');    
     }
-
 
     if (!get_page_template_slug(256)) {
         $page = array(
@@ -353,7 +581,5 @@ function foundation_on_theme_activation()
         foundation_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
         foundation_post_meta($id, '_disclaimer', 'disclaimer');
     }
-
-    update_option('uploads_use_yearmonth_folders', 0);
 }
 add_action('after_switch_theme', 'foundation_on_theme_activation');
