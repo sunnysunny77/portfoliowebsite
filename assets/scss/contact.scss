@@ -17,7 +17,6 @@ main .tabs {
         background-blend-mode: screen;
         a {
             @include box(null, 1%);
-            
 
             h3 {
                 font-size: 16px;
@@ -35,7 +34,7 @@ main .tabs {
     background: $transparent;
     border: none;
     .is-active {
-    @include box(null, 1rem 0);
+        @include box(null, 1rem 0);
     }
     .button {
         @extend %button;
@@ -53,28 +52,28 @@ main .tabs {
         background-image: url(../../images/template/paper.png);
     }
     textarea {
-    appearance: auto;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /*  scrollbar color and scrollbar width and overflow-y overlay will not validate */
-    scrollbar-color: rgba($color6, 0.25) $color3;
-    scrollbar-width: thin;
-    /* -webkit-scrollbar will not validate  */
-    &::-webkit-scrollbar {
-        @include setbox(7px, null, null, null);
-    }
-    &::-webkit-scrollbar-thumb {
-        background: $color3;
-    }
-    &::-webkit-scrollbar-track {
-        background: rgba($color6, 0.25);
-    }
-    &::-webkit-scrollbar-thumb:hover,  &::-webkit-scrollbar-thumb:focus {
-        @extend ::-webkit-scrollbar-thumb;
+        appearance: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /*  scrollbar color and scrollbar width and overflow-y overlay will not validate */
+        scrollbar-color: rgba($color6, 0.25) $color3;
+        scrollbar-width: thin;
+        /* -webkit-scrollbar will not validate  */
+        &::-webkit-scrollbar {
+            @include setbox(7px, null, null, null);
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $color3;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgba($color6, 0.25);
+        }
+        &::-webkit-scrollbar-thumb:hover,
+        &::-webkit-scrollbar-thumb:focus {
+            @extend ::-webkit-scrollbar-thumb;
+        }
     }
 }
-}
-
 
 blockquote,
 cite {
