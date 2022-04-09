@@ -307,12 +307,12 @@ function foundation_register_cptui()
     register_post_type("designs", $args);
 
     $labels = [
-        "name" => __("poems", "custom-post-type-ui"),
-        "singular_name" => __("poem", "custom-post-type-ui"),
+        "name" => __("poems_poetry", "custom-post-type-ui"),
+        "singular_name" => __("poem_poetry:", "custom-post-type-ui"),
     ];
 
     $args = [
-        "label" => __("poems", "custom-post-type-ui"),
+        "label" => __("poems_poetry", "custom-post-type-ui"),
         "labels" => $labels,
         "description" => "",
         "public" => true,
@@ -330,17 +330,17 @@ function foundation_register_cptui()
         "map_meta_cap" => true,
         "hierarchical" => false,
         "can_export" => false,
-        "rewrite" => ["slug" => "poems", "with_front" => true],
+        "rewrite" => ["slug" => "poems_poetry", "with_front" => true],
         "query_var" => true,
         "supports" => ["title"],
         "show_in_graphql" => false,
     ];
 
-    register_post_type("poems", $args);
+    register_post_type("poems_poetry", $args);
 
     $labels = [
         "name" => __("illustrated_poetry", "custom-post-type-ui"),
-        "singular_name" => __("illustrated_poem", "custom-post-type-ui"),
+        "singular_name" => __("illustration_poetry", "custom-post-type-ui"),
     ];
 
     $args = [

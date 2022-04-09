@@ -1,11 +1,11 @@
 {
     "key": "group_62512a7bbe016",
-    "title": "poems",
+    "title": "poems_poetry",
     "fields": [
         {
             "key": "field_62512a820693a",
-            "label": "poems",
-            "name": "poems",
+            "label": "poems_poetry",
+            "name": "poems_poetry",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -32,7 +32,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "poems"
+                "value": "poems_poetry"
             }
         ]
     ],
@@ -60,5 +60,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649486700
+    "modified": 1649487305
 }
