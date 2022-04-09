@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+$disclaimer = get_field('disclaimer');
+
+?>
 
 <div id="fixed-img" style="background-image: url('<?php the_field('fixed_image'); ?>');" class="grid-y align-center" role="img" aria-label="this is how you make art">
 
@@ -54,9 +58,7 @@
                     </li>
                     <li><i class="fi-list"></i><a href="#independent">Independent
                             creations</a></li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <div class="cell small-12 medium-9 large-10 grid-x
@@ -131,9 +133,7 @@
                     align-top">
                     <li> <i class="cell text-left fi-thumbnails"></i></li>
                     <li>Theatre:</li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <section class="cell small-12 medium-9 large-10 grid-x
@@ -163,9 +163,7 @@
                     align-top">
                     <li> <i class="cell text-left fi-thumbnails"></i></li>
                     <li>Design:</li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <section class="cell small-12 medium-9 large-10 grid-x
@@ -203,10 +201,7 @@
                                     Poetry</a></li>
                         </ul>
                     </li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work
-                        is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <div class="cell small-12 medium-9 large-10 grid-x
@@ -256,9 +251,7 @@
                     align-top">
                     <li> <i class="cell text-left fi-thumbnails"></i></li>
                     <li>Sculptures:</li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <section class="cell small-12 medium-9 large-10 grid-x
@@ -288,10 +281,7 @@
                     align-top">
                     <li> <i class="cell text-left fi-thumbnails"></i></li>
                     <li>Illustrations:</li>
-                    <li class="cell small-8 medium-10  last"> * Photoshop images are hand drawn, all work
-                        is
-                        drawn and illustrated by hand
-                        digital or not.</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
                 <section class="cell small-12 medium-9 large-10 grid-x

@@ -350,6 +350,8 @@ function foundation_on_theme_activation()
         $id = wp_insert_post($page);
         foundation_post_meta($id, 'heading', 'Portfolio of work');
         foundation_post_meta($id, '_heading', 'heading');
+        foundation_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
+        foundation_post_meta($id, '_disclaimer', 'disclaimer');
     }
 
     update_option('uploads_use_yearmonth_folders', 0);
