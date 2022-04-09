@@ -272,7 +272,7 @@ footer::before {
 
 .sticky-ul {
   background-image: url(../../images/gallery/side.png);
-  background-size: contain;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: top right;
   color: #2b241d;
