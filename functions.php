@@ -106,6 +106,12 @@ add_filter('pre_option_upload_url_path', function ($upload_url_path) {
 
 add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
+function foundation_remove_admin_menus() {
+    remove_menu_page( 'edit.php' );
+    remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'foundation_remove_admin_menus' );
+
 function foundation_enable_vcard_upload($mime_types)
 {
     $mime_types['vcf'] = 'text/vcard';
