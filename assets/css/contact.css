@@ -204,6 +204,27 @@ main .tabs .tabs-title > a[aria-selected=true] {
   color: #2b241d;
 }
 
+#main form input {
+  background-image: url(../../images/template/paper.png);
+}
+#main form textarea {
+  appearance: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /*  scrollbar color and scrollbar width and overflow-y overlay will not validate */
+  scrollbar-color: rgba(138, 138, 138, 0.25) #e1ca6f;
+  scrollbar-width: thin;
+  /* -webkit-scrollbar will not validate  */
+}
+#main form textarea::-webkit-scrollbar {
+  width: 7px;
+}
+#main form textarea::-webkit-scrollbar-thumb, #main form textarea:hover::-webkit-scrollbar-thumb, #main form textarea:focus::-webkit-scrollbar-thumb {
+  background: #e1ca6f;
+}
+#main form textarea::-webkit-scrollbar-track {
+  background: rgba(138, 138, 138, 0.25);
+}
 blockquote,
 cite {
   color: #717171;

@@ -51,7 +51,7 @@
                     <input id="tel-1" class="cell small-6 medium-5" autocomplete="on" required name="phone" type="tel" pattern="[+]?[0-9]{3,15}" title="Accepts +###############">
                     <label class="cell">
                         Position description
-                        <textarea required name="text" rows="7" maxlength="1000"></textarea>
+                        <textarea required name="text" rows="5" maxlength="1000"></textarea>
                     </label>
                 </fieldset>
 
@@ -106,7 +106,7 @@
                     </label>
                     <label class="cell">
                         Purchase details
-                        <textarea required name="text" rows="7" maxlength="1000"></textarea>
+                        <textarea required name="text" rows="5" maxlength="1000"></textarea>
                     </label> 
                 </fieldset>
 
@@ -141,7 +141,7 @@
                     <input id="phone-3" class="cell small-6 medium-5" autocomplete="on" required name="phone" type="tel" pattern="[+]?[0-9]{3,15}" title="Accepts +###############">
                     <label class="cell">
                         Enquiry
-                    <textarea required name="text" rows="7" maxlength="1000"></textarea>
+                    <textarea required name="text" rows="5" maxlength="1000"></textarea>
                     </label> 
                 </fieldset>
 
