@@ -55,10 +55,8 @@ main .tabs {
         appearance: auto;
         overflow-y: scroll;
         overflow-x: hidden;
-        /*  scrollbar color and scrollbar width and overflow-y overlay will not validate */
-        scrollbar-color: rgba($color6, 0.25) $color3;
+        scrollbar-color: $color3 rgba($color6, 0.25);
         scrollbar-width: thin;
-        /* -webkit-scrollbar will not validate  */
         &::-webkit-scrollbar {
             @include setbox(7px, null, null, null);
         }

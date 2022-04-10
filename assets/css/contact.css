@@ -211,10 +211,8 @@ main .tabs .tabs-title > a[aria-selected=true] {
   appearance: auto;
   overflow-y: scroll;
   overflow-x: hidden;
-  /*  scrollbar color and scrollbar width and overflow-y overlay will not validate */
-  scrollbar-color: rgba(138, 138, 138, 0.25) #e1ca6f;
+  scrollbar-color: #e1ca6f rgba(138, 138, 138, 0.25);
   scrollbar-width: thin;
-  /* -webkit-scrollbar will not validate  */
 }
 #main form textarea::-webkit-scrollbar {
   width: 7px;
