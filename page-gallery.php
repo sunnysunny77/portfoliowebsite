@@ -157,7 +157,7 @@ $disclaimer = get_field('disclaimer');
                 <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
                     vertical menu
                     align-top">
-                    <li> <i class="cell text-left fi-thumbnails"></i></li>
+                    <li> <i class="fi-thumbnails"></i></li>
                     <li>Theatre:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
@@ -199,7 +199,7 @@ $disclaimer = get_field('disclaimer');
                 <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
                     vertical menu
                     align-top">
-                    <li> <i class="cell text-left fi-thumbnails"></i></li>
+                    <li> <i class="fi-thumbnails"></i></li>
                     <li>Design:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
@@ -323,7 +323,7 @@ $disclaimer = get_field('disclaimer');
                 <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
                     vertical menu
                     align-top">
-                    <li> <i class="cell text-left fi-thumbnails"></i></li>
+                    <li> <i class="fi-thumbnails"></i></li>
                     <li>Sculptures:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
@@ -365,7 +365,7 @@ $disclaimer = get_field('disclaimer');
                 <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
                     vertical menu
                     align-top">
-                    <li> <i class="cell text-left fi-thumbnails"></i></li>
+                    <li> <i class="fi-thumbnails"></i></li>
                     <li>Illustrations:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
