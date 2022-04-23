@@ -10,7 +10,7 @@
 
         <div class="cell text-center medium-order-2 small-12 medium-6"
             data-sticky-container>
-            <div class="sticky" data-sticky data-margin-top="12"
+            <div class="sticky" data-sticky 
                 data-anchor="stick-1">
                 <?php
                 $image = get_field('sticky_image_1');
@@ -32,7 +32,7 @@
 
         <div class="cell text-center small-12 medium-6"
             data-sticky-container>
-            <div class="sticky" data-sticky data-margin-top="12"
+            <div class="sticky" data-sticky 
                 data-anchor="stick-2">
                 <?php
                 $image = get_field('sticky_image_2');
