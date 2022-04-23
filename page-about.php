@@ -8,7 +8,7 @@
 
     <div class="grid-x">
 
-        <div class="cell text-center medium-order-2 small-12 medium-6"
+        <div class="cell text-center medium-order-2 small-12 medium-5 large-6"
             data-sticky-container>
             <div class="sticky" data-sticky 
                 data-anchor="stick-1">
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div id="stick-1" class="cell text-center medium-order-1 medium-text-left small-12 medium-6">
+        <div id="stick-1" class="cell text-center medium-order-1 medium-text-left small-12 medium-7 large-6">
 
             <?php echo the_field('biography_1') ?>
 
@@ -30,7 +30,7 @@
 
     <div class="grid-x">
 
-        <div class="cell text-center small-12 medium-6"
+        <div class="cell text-center small-12 medium-5 large-6"
             data-sticky-container>
             <div class="sticky" data-sticky 
                 data-anchor="stick-2">
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div id="stick-2" class="cell text-center medium-text-right small-12 medium-6">
+        <div id="stick-2" class="cell text-center medium-text-right small-12 medium-7 large-6">
 
             <?php echo the_field('biography_2') ?>
            
