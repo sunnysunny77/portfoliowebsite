@@ -52,7 +52,7 @@
 
     <section class="grid-x align-center">
 
-        <div class="cell small-12 medium-5 card">
+        <div class="cell small-12 medium-7 large-5 card">
 
             <div class="card-divider">
                 <?php echo the_field('card_title') ?>
