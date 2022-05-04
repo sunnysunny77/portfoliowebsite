@@ -85,7 +85,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?>
+                        <?php } wp_reset_query(); ?>
 
                     </section>
 
@@ -112,7 +112,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?>        
+                        <?php } wp_reset_query(); ?>        
 
                     </section>
 
@@ -140,7 +140,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?>        
+                        <?php } wp_reset_query(); ?>        
 
                     </section>
 
@@ -184,7 +184,7 @@ $disclaimer = get_field('disclaimer');
                         <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                     <?php endif; ?>
 
-                    <?php } ?> 
+                    <?php } wp_reset_query(); ?> 
 
                 </section>
 
@@ -226,7 +226,7 @@ $disclaimer = get_field('disclaimer');
                         <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                     <?php endif; ?>
 
-                    <?php } ?> 
+                    <?php } wp_reset_query(); ?> 
 
                 </section>
 
@@ -278,7 +278,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?> 
+                        <?php } wp_reset_query(); ?> 
 
                     </section>
 
@@ -306,7 +306,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?> 
+                        <?php } wp_reset_query(); ?> 
 
                     </section>
 
@@ -350,7 +350,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?> 
+                        <?php } wp_reset_query(); ?> 
 
                 </section>
 
@@ -392,7 +392,7 @@ $disclaimer = get_field('disclaimer');
                             <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                         <?php endif; ?>
 
-                        <?php } ?> 
+                        <?php } wp_reset_query(); ?> 
 
                 </section>
 
