@@ -47,7 +47,7 @@ body::before {
   left: 0;
   z-index: -999;
   background-blend-mode: screen;
-  opacity: 0.35;
+  opacity: 0.45;
   background-color: rgba(225, 202, 111, 0.125);
   background-image: url(../../images/template/body-mobile.jpg);
   background-size: cover;
