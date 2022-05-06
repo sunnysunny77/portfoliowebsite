@@ -14,7 +14,7 @@
         $to_email = "shlooby07@gmail.com";
         $subject = "New Employment Form Message";
         $contactus = "
-        You have a message from the Employment Form on your website:
+        You have a message from the Hire Form on your website:
         Name: ".$first_name." ".$last_name."
         Email: ".$email."
         Phone: ".$phone."
