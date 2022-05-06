@@ -32,7 +32,7 @@
             <form class="text-center" action="./php/form-1.php" id="form-1" method="post">
             
                 <fieldset class="grid-x text-left">
-                <legend id="response-1" class="cell">Employment Form</legend>
+                <legend id="response-1" class="cell">Hire Form</legend>
                     <label class="cell small-6 medium-4">
                         First name
                         <input autocomplete="on" required type="text" name="first-name" maxlength="20">
