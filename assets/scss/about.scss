@@ -5,6 +5,20 @@
     @extend %active;
 }
 
+.p-left,
+.p-right {
+    p {
+        @include medium_and_up {
+            @include setbox(null, null, 0 1rem 0 1rem, 0);
+        }
+    }
+    h3 {
+        @include medium_and_up {
+            @include setbox(null, null, 2rem 1rem 0 1rem, null);
+        }
+    }
+}
+
 .media-object {
     @include medium_and_up() {
         @include setbox(null, null, null, auto auto 50px auto);
@@ -29,20 +43,6 @@
                     @include setbox(null, null, 3%, null);
                 }
             }
-        }
-    }
-}
-
-.p-left,
-.p-right {
-    p {
-        @include medium_and_up {
-            @include setbox(null, null, 0 1rem 0 1rem, 0);
-        }
-    }
-    h4 {
-        @include medium_and_up {
-            @include setbox(null, null, 2rem 1rem 0 1rem, null);
         }
     }
 }
@@ -74,7 +74,7 @@
             @include setbox(77.859%, null, null, 1.5rem auto auto auto);
         }
     }
-    h3 {
+    h5 {
         font-size: 19.2px;
     }
 }

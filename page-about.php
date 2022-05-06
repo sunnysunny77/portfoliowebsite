@@ -8,7 +8,7 @@
 
     <section class="grid-x p-left">
 
-        <h4 class="cell medium-order-2 small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_1') ?></h4>
+        <h3 class="cell medium-order-2 small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_1') ?></h4>
 
         <p class="cell medium-order-1 medium-text-left small-12 medium-7"><?php echo the_field('section_paragraph_1') ?></p>
 
@@ -16,7 +16,7 @@
 
     <section class="grid-x p-right">
 
-        <h4 class="cell text-right small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_2') ?></h4>
+        <h3 class="cell text-right small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_2') ?></h4>
 
         <p class="cell text-right small-12 medium-7"><?php echo the_field('section_paragraph_2') ?></p>
 
@@ -113,7 +113,7 @@
 
             <div class="card-section">
 
-                <h3> <?php echo the_field('card_heading') ?></h3>
+                <h5> <?php echo the_field('card_heading') ?></h5>
                 <p> <?php echo the_field('card_paragraph') ?> </p>
 
             </div>
