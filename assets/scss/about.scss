@@ -15,7 +15,7 @@
     }
     h3 {
         @include medium_and_up {
-            @include setbox(null, null, 2rem 0 0 0, null);
+            @include setbox(null, null, 2rem 1rem 0 1rem, null);
         }
     }
 }
