@@ -458,6 +458,16 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, '_carousel_1', 'carousel_1');
         portfolio_website_post_meta($id, 'carousel_2', '');
         portfolio_website_post_meta($id, '_carousel_2', 'carousel_2');
+        portfolio_website_post_meta($id, 'carousel_3', '');
+        portfolio_website_post_meta($id, '_carousel_3', 'carousel_3');
+        portfolio_website_post_meta($id, 'carousel_4', '');
+        portfolio_website_post_meta($id, '_carousel_4', 'carousel_4');
+        portfolio_website_post_meta($id, 'carousel_5', '');
+        portfolio_website_post_meta($id, '_carousel_5', 'carousel_5');
+        portfolio_website_post_meta($id, 'carousel_6', '');
+        portfolio_website_post_meta($id, '_carousel_6', 'carousel_6');
+        portfolio_website_post_meta($id, 'carousel_7', '');
+        portfolio_website_post_meta($id, '_carousel_7', 'carousel_7');
         portfolio_website_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
         portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
     }

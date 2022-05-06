@@ -23,6 +23,41 @@ $disclaimer = get_field('disclaimer');
                     <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php } ?>
             </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_3');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_4');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_5');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_6');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_7');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
         </ul>
     </div>
 </div>
