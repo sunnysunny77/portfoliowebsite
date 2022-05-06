@@ -59,14 +59,14 @@
 
     <div class="grid-x">
 
-        <div class="cell text-center medium-order-2 small-12 medium-5 large-6" data-sticky-container>
-            <div class="sticky" data-sticky data-anchor="stick-1">
+        <div class="cell rel text-center medium-order-2 small-12 medium-5 large-6">
+
                 <?php
                 $image = get_field('sticky_image_1');
                 if (!empty($image)) { ?>
-                    <img class="thumbnail" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php } ?>
-            </div>
+      
         </div>
 
         <div id="stick-1" class="cell text-center medium-order-1 medium-text-left small-12 medium-7 large-6">
@@ -79,14 +79,14 @@
 
     <div class="grid-x">
 
-        <div class="cell text-center small-12 medium-5 large-6" data-sticky-container>
-            <div class="sticky" data-sticky data-anchor="stick-2">
+        <div class="cell rel text-center small-12 medium-5 large-6">
+        
                 <?php
                 $image = get_field('sticky_image_2');
                 if (!empty($image)) { ?>
-                    <img class="thumbnail" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 <?php } ?>
-            </div>
+    
         </div>
 
         <div id="stick-2" class="cell text-center medium-text-right small-12 medium-7 large-6">

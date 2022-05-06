@@ -5,21 +5,23 @@
     @extend %active;
 }
 
+
 .p-left,
 .p-right {
     p {
         @include medium_and_up {
-            @include setbox(null, null, 0 1rem 0 1rem, 0);
+            @include setbox(null, null, 0, 0);
         }
     }
     h3 {
         @include medium_and_up {
-            @include setbox(null, null, 2rem 1rem 0 1rem, null);
+            @include setbox(null, null, 2rem 0 0 0, null);
         }
     }
 }
 
 .media-object {
+	@include setbox(null, null, null, auto);
     @include medium_and_up() {
         @include setbox(null, null, null, auto auto 50px auto);
         box-shadow: 0 -1px rgba($color1, 0.1), 0 1px rgba($color1, 0.1);
@@ -32,13 +34,13 @@
         &:nth-child(2) {
             @include setbox(null, null, 0, null);
             @include medium_and_up() {
-                @include setbox(null, null, 1rem, 1rem);
+                @include setbox(null, null, 0 0 0 2rem , 1rem);
             }
         }
         &:nth-child(1) {
             @include setbox(null, null, 0 2% 1rem 2%, null);
             @include medium_and_up() {
-                @include setbox(null, null, 0 0 0 2rem, null);
+                @include setbox(null, null, 0 0 0 1rem, null);
                 @include large_and_up() {
                     @include setbox(null, null, 3%, null);
                 }
@@ -46,6 +48,16 @@
         }
     }
 }
+
+.rel {
+	position: relative;
+}
+
+.stick {
+	position: sticky;
+	top: 1rem;
+}
+
 
 #stick-1 {
     @include medium_and_up() {

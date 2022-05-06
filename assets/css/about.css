@@ -157,17 +157,20 @@ footer::before {
 @media screen and (min-width: 40em) {
   .p-left p,
 .p-right p {
-    padding: 0 1rem 0 1rem;
+    padding: 0;
     margin: 0;
   }
 }
 @media screen and (min-width: 40em) {
   .p-left h3,
 .p-right h3 {
-    padding: 2rem 1rem 0 1rem;
+    padding: 2rem 0 0 0;
   }
 }
 
+.media-object {
+  margin: auto;
+}
 @media screen and (min-width: 40em) {
   .media-object {
     margin: auto auto 50px auto;
@@ -183,7 +186,7 @@ footer::before {
 }
 @media screen and (min-width: 40em) {
   .media-object .media-object-section:nth-child(2) {
-    padding: 1rem;
+    padding: 0 0 0 2rem;
     margin: 1rem;
   }
 }
@@ -192,13 +195,22 @@ footer::before {
 }
 @media screen and (min-width: 40em) {
   .media-object .media-object-section:nth-child(1) {
-    padding: 0 0 0 2rem;
+    padding: 0 0 0 1rem;
   }
 }
 @media screen and (min-width: 40em) and (min-width: 64em) {
   .media-object .media-object-section:nth-child(1) {
     padding: 3%;
   }
+}
+
+.rel {
+  position: relative;
+}
+
+.stick {
+  position: sticky;
+  top: 1rem;
 }
 
 @media screen and (min-width: 40em) {
