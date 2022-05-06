@@ -113,6 +113,11 @@ main i {
   color: #f8f8ff;
   text-shadow: none;
 }
+.top-bar .top-bar-left #my-svg {
+  display: inline-block;
+  height: 100px;
+  width: 235px;
+}
 
 .title-bar {
   background-image: url(../../images/template/paper.png);
@@ -122,6 +127,10 @@ main i {
 .title-bar .title-bar-title,
 .title-bar .menu-icon {
   color: #f8f8ff;
+}
+.title-bar #my-svg-m {
+  height: 50px;
+  width: 50px;
 }
 
 footer {

@@ -17,8 +17,6 @@ if (!function_exists('portfolio_website_setup')) {
 
         add_theme_support('widget-customizer');
 
-        add_theme_support('custom-logo', array('height' => 100, 'width' => 235,  'unlink-homepage-logo' => true,  'header-text' => array('site-title', 'site-description')));
-
         add_theme_support('title-tag');
 
         add_theme_support('html5', ['script', 'style', 'comment-form', 'search-form', 'gallery', 'caption']);
@@ -43,6 +41,8 @@ function portfolio_website_scripts()
     wp_enqueue_style('icons', get_template_directory_uri() . '/assets/css/icons/foundation-icons.css');
 
     wp_enqueue_script('what-input', get_template_directory_uri() . '/js/vendor/what-input.js', array('jquery'), '', true);
+
+    wp_enqueue_script('vivus', get_template_directory_uri() . '/node_modules/vivus/dist/vivus.min.js', '', '', true);
 
     wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true);
 

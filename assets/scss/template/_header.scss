@@ -14,6 +14,13 @@
             }
         }
     }
+    .top-bar-left {
+        #my-svg {
+            display: inline-block;
+            height: 100px;
+            width: 235px;
+        }
+    }
 }
 
 .title-bar {
@@ -23,5 +30,9 @@
     .title-bar-title,
     .menu-icon {
         color: $white;
+    }
+    #my-svg-m {
+        height: 50px;
+        width: 50px;
     }
 }

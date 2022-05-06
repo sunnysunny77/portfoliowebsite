@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sunnysunny77/foundation_6_wp_template#readme",
   "dependencies": {
-    "sass": "latest"
+    "sass": "latest",
+    "vivus": "^0.4.6"
   }
 }
