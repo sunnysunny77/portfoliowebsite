@@ -1,11 +1,11 @@
-SCSS:
+Modules:
 <br>
 <br>
 <br>
-To change scss: https://docs.npmjs.com/about-npm 
+NPM: https://docs.npmjs.com/about-npm 
 <br>
 <br>
-“npm install” in the terminal project root directory to install dart sass.
+“npm install” in the terminal project root directory to install dart sass and vivus.
 <br>
 <br>
 Compile scss
