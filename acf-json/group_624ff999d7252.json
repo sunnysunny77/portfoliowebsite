@@ -22,6 +22,106 @@
             "maxlength": ""
         },
         {
+            "key": "field_624fea1fadd05",
+            "label": "Section heading 1",
+            "name": "section_heading_1",
+            "type": "text",
+            "instructions": "Section heading h3 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fea63add06",
+            "label": "Section paragraph 1",
+            "name": "section_paragraph_1",
+            "type": "text",
+            "instructions": "Section paragraph h3 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624feaa7add07",
+            "label": "Section heading 2",
+            "name": "section_heading_2",
+            "type": "text",
+            "instructions": "Section heading h3 1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624feaff5a1fe",
+            "label": "Section paragraph 2",
+            "name": "section_paragraph_2",
+            "type": "text",
+            "instructions": "Section paragraph h3 2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_624fe81fdc997",
+            "label": "media",
+            "name": "media",
+            "type": "image",
+            "instructions": "Center media image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 515,
+            "min_height": 387,
+            "min_size": "",
+            "max_width": 515,
+            "max_height": 387,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_624fe0829dc39",
             "label": "Media heading",
             "name": "media_heading",
@@ -122,106 +222,6 @@
             "name": "media_paragraph_2",
             "type": "text",
             "instructions": "Media paragraph h4 2",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_624fe81fdc997",
-            "label": "media",
-            "name": "media",
-            "type": "image",
-            "instructions": "Center media image",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": 515,
-            "min_height": 387,
-            "min_size": "",
-            "max_width": 515,
-            "max_height": 387,
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_624fea1fadd05",
-            "label": "Section heading 1",
-            "name": "section_heading_1",
-            "type": "text",
-            "instructions": "Section heading h4 1",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_624fea63add06",
-            "label": "Section paragraph 1",
-            "name": "section_paragraph_1",
-            "type": "text",
-            "instructions": "Section paragraph h4 1",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_624feaa7add07",
-            "label": "Section heading 2",
-            "name": "section_heading_2",
-            "type": "text",
-            "instructions": "Section heading h4 1",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_624feaff5a1fe",
-            "label": "Section paragraph 2",
-            "name": "section_paragraph_2",
-            "type": "text",
-            "instructions": "Section paragraph h4 2",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -369,7 +369,7 @@
             "label": "Card heading",
             "name": "card_heading",
             "type": "text",
-            "instructions": "Portrait heading h3",
+            "instructions": "Portrait heading h5",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -436,5 +436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651813668
+    "modified": 1651847107
 }
