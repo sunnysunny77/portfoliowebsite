@@ -175,7 +175,7 @@ footer::before {
 
 .orbit {
   max-width: 1200px;
-  margin: auto;
+  margin: auto auto 1rem auto;
 }
 .orbit .orbit-container img {
   max-height: 700px;
