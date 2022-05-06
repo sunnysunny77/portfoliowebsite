@@ -18,7 +18,7 @@
         <li class="small-3 text-center align-self-middle"> <i
                 class="fi-mail"></i></li>
         <li class="tabs-title is-active small-3"><a href="#panel1"
-                aria-selected="true"><h3>Employment</h3></a></li>
+                aria-selected="true"><h3>Hire</h3></a></li>
         <li class="tabs-title small-3"><a data-tabs-target="panel2"
                 href="#panel2"><h3>Purchase</h3></a></li>
         <li class="tabs-title small-3"><a data-tabs-target="panel3"

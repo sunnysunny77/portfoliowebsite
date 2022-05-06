@@ -155,6 +155,53 @@ footer::before {
 
 /* about */
 @media screen and (min-width: 40em) {
+  .media-object {
+    margin: auto auto 50px auto;
+    box-shadow: 0 -1px rgba(43, 36, 29, 0.1), 0 1px rgba(43, 36, 29, 0.1);
+  }
+}
+.media-object .media-object-section:nth-child(1) img {
+  width: 100%;
+  border-radius: 10px;
+}
+.media-object .media-object-section:nth-child(2) {
+  padding: 0;
+}
+@media screen and (min-width: 40em) {
+  .media-object .media-object-section:nth-child(2) {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+.media-object .media-object-section:nth-child(1) {
+  padding: 0 2% 1rem 2%;
+}
+@media screen and (min-width: 40em) {
+  .media-object .media-object-section:nth-child(1) {
+    padding: 0 0 0 2rem;
+  }
+}
+@media screen and (min-width: 40em) and (min-width: 64em) {
+  .media-object .media-object-section:nth-child(1) {
+    padding: 3%;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .p-left p,
+.p-right p {
+    padding: 0 1rem 0 1rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 40em) {
+  .p-left h4,
+.p-right h4 {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
+
+@media screen and (min-width: 40em) {
   #stick-1 {
     padding: 0 1rem 0 0;
   }

@@ -182,14 +182,9 @@ main .tabs li a {
   padding: 1%;
 }
 main .tabs li a h3 {
-  font-size: 14px;
+  font-size: initial;
   margin: 0;
   padding: 0;
-}
-@media screen and (min-width: 40em) {
-  main .tabs li a h3 {
-    font-size: initial;
-  }
 }
 main .tabs .tabs-title > a[aria-selected=true] {
   background-color: rgba(138, 138, 138, 0.1);

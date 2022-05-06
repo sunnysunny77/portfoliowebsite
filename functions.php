@@ -64,8 +64,6 @@ function portfolio_website_scripts()
                 'ajaxurl' => admin_url('admin-ajax.php'),
             )
         );
-    } else if (is_page('gallery')) {
-        wp_enqueue_style('gallery-css', get_template_directory_uri() . '/assets/css/gallery.css');
     } else if (is_search()) {
         wp_enqueue_style('search-css', get_template_directory_uri() . '/assets/css/search.css');
     } else if (is_404()) {
@@ -454,12 +452,28 @@ function portfolio_website_on_theme_activation()
         $id = wp_insert_post($page);
         update_option('page_on_front', $id);
         update_option('show_on_front', 'page');
-        portfolio_website_post_meta($id, 'heading', 'Portfolio website');
+        portfolio_website_post_meta($id, 'heading', 'Portfolio of work');
         portfolio_website_post_meta($id, '_heading', 'heading');
         portfolio_website_post_meta($id, 'carousel_1', '');
         portfolio_website_post_meta($id, '_carousel_1', 'carousel_1');
         portfolio_website_post_meta($id, 'carousel_2', '');
         portfolio_website_post_meta($id, '_carousel_2', 'carousel_2');
+        portfolio_website_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
+        portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
+    }
+
+    if (!get_page_template_slug(256)) {
+        $page = array(
+            'import_id'         =>  256,
+            'post_title'     => 'About',
+            'post_type'      => 'page',
+            'post_name'      => 'About',
+            'post_status'    => 'publish',
+            'page_template' => 'page-about.php',
+        );
+        $id = wp_insert_post($page);
+        portfolio_website_post_meta($id, 'heading', 'Biography');
+        portfolio_website_post_meta($id, '_heading', 'heading');
         portfolio_website_post_meta($id, 'media_heading', 'Lorem ipsum dolor');
         portfolio_website_post_meta($id, '_media_heading', 'media_heading');
         portfolio_website_post_meta($id, 'media_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at justo sapien. Proin tincidunt purus nec orci finibus laoreet. Curabitur facilisis est a posuere sodales.');
@@ -482,20 +496,6 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, '_section_heading_2', 'section_heading_2');
         portfolio_website_post_meta($id, 'section_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
         portfolio_website_post_meta($id, '_section_paragraph_2', 'section_paragraph_2');    
-    }
-
-    if (!get_page_template_slug(256)) {
-        $page = array(
-            'import_id'         =>  256,
-            'post_title'     => 'About',
-            'post_type'      => 'page',
-            'post_name'      => 'About',
-            'post_status'    => 'publish',
-            'page_template' => 'page-about.php',
-        );
-        $id = wp_insert_post($page);
-        portfolio_website_post_meta($id, 'heading', 'Biography');
-        portfolio_website_post_meta($id, '_heading', 'heading');
         portfolio_website_post_meta($id, 'sticky_image_1', '');
         portfolio_website_post_meta($id, '_sticky_image_1', 'sticky_image_1');
         portfolio_website_post_meta($id, 'biography_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -564,22 +564,6 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, '_quote', 'quote');
         portfolio_website_post_meta($id, 'cite', 'Jerry Verschoor');
         portfolio_website_post_meta($id, '_cite', 'cite');
-    }
-
-    if (!get_page_template_slug(258)) {
-        $page = array(
-            'import_id'         =>  258,
-            'post_title'     => 'Gallery',
-            'post_type'      => 'page',
-            'post_name'      => 'Gallery',
-            'post_status'    => 'publish',
-            'page_template' => 'page-gallery.php',
-        );
-        $id = wp_insert_post($page);
-        portfolio_website_post_meta($id, 'heading', 'Portfolio of work');
-        portfolio_website_post_meta($id, '_heading', 'heading');
-        portfolio_website_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
-        portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
     }
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');

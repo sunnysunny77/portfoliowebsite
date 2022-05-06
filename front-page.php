@@ -1,81 +1,423 @@
-<?php get_header(); ?>
+<?php get_header();
+$disclaimer = get_field('disclaimer');
+
+?>
 
 <h2 id="orbit-heading" class="text-center medium-text-right"><?php echo the_field('heading') ?></h2>
 
 <div class="orbit" data-options="animInFromLeft:fade-in;
-    animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;"
-    role="region" aria-label="Portfolio slider"
-    data-orbit>
+    animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" role="region" aria-label="Portfolio slider" data-orbit>
     <div class="orbit-wrapper">
-    <ul class="orbit-container">
-        <li class="is-active orbit-slide">
-            <?php
-            $image = get_field('carousel_1');
-            if (!empty($image)) { ?>
-            <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-        </li>
-        <li class="orbit-slide">
-            <?php
-            $image = get_field('carousel_2');
-            if (!empty($image)) { ?>
-            <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-        </li>
-    </ul>
+        <ul class="orbit-container">
+            <li class="is-active orbit-slide">
+                <?php
+                $image = get_field('carousel_1');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+            <li class="orbit-slide">
+                <?php
+                $image = get_field('carousel_2');
+                if (!empty($image)) { ?>
+                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php } ?>
+            </li>
+        </ul>
     </div>
 </div>
 
-<main id="main" class="grid-container grid-y">
+<main id="main" class="grid-y">
 
-    <section class="grid-x align-center stack-for-small
-    media-object">
+    <ul class="cell grid-x text-center menu align-center" data-tabs id="tabs">
+        <li class="cell small-6 medium-2 large-shrink tabs-title is-active"><a aria-selected="true" href="#panel1">
+                <h3>Film</h3>
+            </a></li>
+        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel2" href="#panel2">
+                <h3>Theatre</h3>
+            </a></li>
+        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel3" href="#panel3">
+                <h3>Design</h3>
+            </a></li>
+        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel4" href="#panel4">
+                <h3>Poetry</h3>
+            </a></li>
+        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel5" href="#panel5">
+                <h3>Sculptures</h3>
+            </a></li>
+        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel6" href="#panel6">
+                <h3>Illustrations </h3>
+            </a></li>
+    </ul>
 
-    <div class="cell medium-order-2 medium-7 large-6 grid-x align-justify
-        media-object-section">
+    <div class="tabs-content text-center" data-tabs-content="tabs">
 
-        <h3 class="cell text-center medium-text-left small-12"><?php echo the_field('media_heading') ?></h3>
-        <p class="cell small-12"><?php echo the_field('media_paragraph') ?></p>
+        <div class="tabs-panel is-active" id="panel1">
 
-        <div class="grid-x align-bottom">
+            <div class="grid-x align-right">
 
-        <p class="cell medium-text-right medium-order-2 small-7 medium-6"><?php echo the_field('media_paragraph_1') ?></p>
-        <h4 class="cell text-center medium-order-1 subheader align-self-middle medium-text-left small-5 medium-6"><?php echo the_field('media_heading_1') ?></h4>
-        <p class="cell small-7 medium-6"><?php echo the_field('media_paragraph_2') ?></p>
-        <h4 class="cell text-center subheader align-self-middle medium-text-right small-5 medium-6"><?php echo the_field('media_heading_2') ?></h4>
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Productions:
+                        <ul class="nested vertical menu">
+                            <li><i class="fi-list"></i><a href="#storyboard">Storyboarding</a></li>
+                            <li><i class="fi-list"></i><a href="#concept">Concept art</a></li>
+                        </ul>
+                    </li>
+                    <li><i class="fi-list"></i><a href="#independent">Independent
+                            creations</a></li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <div class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <section class="cell grid-x
+                        text-center align-center">
+
+                        <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
+                        <a aria-label="Go to top" class="cell top-link
+                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) {
+                            $loop->the_post();
+
+                        ?>
+
+                            <?php
+                            $image = get_field('storyboarding_films');
+                            if (!empty($image)) : ?>
+                                <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                        <?php }
+                        wp_reset_query(); ?>
+
+                    </section>
+
+                    <section class="cell grid-x
+                        text-center align-center">
+
+                        <h4 id="concept" class="cell text-right">Concept
+                            art</h4>
+
+                        <a aria-label="Go to top" class="cell top-link
+                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) {
+                            $loop->the_post();
+
+                        ?>
+
+                            <?php
+                            $image = get_field('concepts_films');
+                            if (!empty($image)) : ?>
+                                <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                        <?php }
+                        wp_reset_query(); ?>
+
+                    </section>
+
+                    <section class="cell grid-x
+                        text-center
+                        align-center">
+
+                        <h4 id="independent" class="cell text-right">Independent
+                            creations</h4>
+
+                        <a aria-label="Go to top" class="cell top-link
+                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) {
+                            $loop->the_post();
+
+                        ?>
+
+                            <?php
+                            $image = get_field('independent_films');
+                            if (!empty($image)) : ?>
+                                <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                        <?php }
+                        wp_reset_query(); ?>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-panel" id="panel2">
+
+            <div class="grid-x align-right">
+
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Theatre:</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <section class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <h4 class="cell text-right"> Theatre</h4>
+
+                    <a aria-label="Go to top" class="cell top-link
+                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) {
+                        $loop->the_post();
+
+                    ?>
+
+                        <?php
+                        $image = get_field('theatre');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                    <?php }
+                    wp_reset_query(); ?>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-panel" id="panel3">
+
+            <div class="grid-x align-right">
+
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Design:</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <section class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <h4 class="cell text-right">Design</h4>
+
+                    <a aria-label="Go to top" class="cell top-link
+                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) {
+                        $loop->the_post();
+
+                    ?>
+
+                        <?php
+                        $image = get_field('designs');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                    <?php }
+                    wp_reset_query(); ?>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-panel" id="panel4">
+
+            <div class="grid-x align-right">
+
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Poetry:
+                        <ul class="nested vertical menu">
+                            <li><i class="fi-list"></i><a href="#poetry">Poems</a></li>
+                            <li><i class="fi-list"></i><a href="#illustrated-poetry">Illustrated
+                                    Poetry</a></li>
+                        </ul>
+                    </li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <div class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <section class="cell grid-x
+                        text-center align-center">
+
+                        <h4 id="poetry" class="cell text-right">Poems</h4>
+                        <a aria-label="Go to top" class="cell top-link
+                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) {
+                            $loop->the_post();
+
+                        ?>
+
+                            <?php
+                            $image = get_field('poems_poetry');
+                            if (!empty($image)) : ?>
+                                <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                        <?php }
+                        wp_reset_query(); ?>
+
+                    </section>
+
+                    <section class="cell grid-x
+                        text-center align-center">
+
+                        <h4 id="illustrated-poetry" class="cell
+                            text-right">Illustrated
+                            Poetry</h4>
+
+                        <a aria-label="Go to top" class="cell top-link
+                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                        <?php
+                        $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
+
+                        while ($loop->have_posts()) {
+                            $loop->the_post();
+
+                        ?>
+
+                            <?php
+                            $image = get_field('illustrated_poetry');
+                            if (!empty($image)) : ?>
+                                <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                        <?php }
+                        wp_reset_query(); ?>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-panel" id="panel5">
+
+            <div class="grid-x align-right">
+
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Sculptures:</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <section class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <h4 class="cell text-right">Sculptures</h4>
+
+                    <a aria-label="Go to top" class="cell top-link
+                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) {
+                        $loop->the_post();
+
+                    ?>
+
+                        <?php
+                        $image = get_field('sculptures');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                    <?php }
+                    wp_reset_query(); ?>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <div class="tabs-panel" id="panel6">
+
+            <div class="grid-x align-right">
+
+                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                    vertical menu
+                    align-top">
+                    <li> <i class="fi-thumbnails"></i></li>
+                    <li>Illustrations:</li>
+                    <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                </ul>
+
+                <section class="cell small-12 medium-9 large-10 grid-x
+                    text-center align-center">
+
+                    <h4 class="cell text-right">Illustrations</h4>
+                    <a aria-label="Go to top" class="cell
+                        top-link
+                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+
+                    <?php
+                    $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));
+
+                    while ($loop->have_posts()) {
+                        $loop->the_post();
+
+                    ?>
+
+                        <?php
+                        $image = get_field('illustrations');
+                        if (!empty($image)) : ?>
+                            <img class="gallery" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                        <?php endif; ?>
+
+                    <?php }
+                    wp_reset_query(); ?>
+
+                </section>
+
+            </div>
 
         </div>
 
     </div>
-
-    <div class="cell medium-order-1 medium-5 large-6 align-self-middle
-        media-object-section">
-
-            <?php
-            $image = get_field('media');
-            if (!empty($image)) { ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-
-    </div>
-
-    </section>
-
-    <section class="grid-x p-left">
-
-    <h4 class="cell medium-order-2 small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_1') ?></h4>
-
-    <p class="cell medium-order-1 medium-text-left small-12 medium-7"><?php echo the_field('section_paragraph_1') ?></p>
-
-    </section>
-
-    <section class="grid-x p-right">
-
-    <h4 class="cell text-right small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_2') ?></h4>
-
-    <p class="cell text-right small-12 medium-7"><?php echo the_field('section_paragraph_2') ?></p>
-
-    </section>
 
 </main>
 
