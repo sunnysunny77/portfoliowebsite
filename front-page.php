@@ -66,22 +66,22 @@ $disclaimer = get_field('disclaimer');
 
     <ul class="cell grid-x text-center menu align-center" data-tabs id="tabs">
         <li class="cell small-6 medium-2 large-shrink tabs-title is-active"><a aria-selected="true" href="#panel1">
-                <h3>Film</h3>
+                <h3 class="hover-underline-animation">Film</h3>
             </a></li>
         <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel2" href="#panel2">
-                <h3>Theatre</h3>
+                <h3 class="hover-underline-animation">Theatre</h3>
             </a></li>
         <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel3" href="#panel3">
-                <h3>Design</h3>
+                <h3 class="hover-underline-animation">Design</h3>
             </a></li>
         <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel4" href="#panel4">
-                <h3>Poetry</h3>
+                <h3 class="hover-underline-animation">Poetry</h3>
             </a></li>
         <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel5" href="#panel5">
-                <h3>Sculptures</h3>
+                <h3 class="hover-underline-animation">Sculptures</h3>
             </a></li>
         <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel6" href="#panel6">
-                <h3>Illustrations </h3>
+                <h3 class="hover-underline-animation">Illustrations </h3>
             </a></li>
     </ul>
 
