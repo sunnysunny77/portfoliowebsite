@@ -5,7 +5,7 @@ Modules:
 NPM: https://docs.npmjs.com/about-npm 
 <br>
 <br>
-“npm install” in the terminal project root directory to install dart sass and vivus.
+“npm install” in the terminal project root directory to install dependencies.
 <br>
 <br>
 Compile scss
