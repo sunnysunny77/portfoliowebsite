@@ -235,7 +235,7 @@ footer::before {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-#tabs li a .hover-underline-animation:hover:after {
+#tabs li a .hover-underline-animation:hover:after, #tabs li a .hover-underline-animation:focus:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
