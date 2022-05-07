@@ -46,6 +46,10 @@ function portfolio_website_scripts()
 
     wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true);
 
+    wp_localize_script( 'app-js', 'path', array(
+        'dir' => get_template_directory_uri(),
+    ) );
+
     //AJAX
     wp_enqueue_script('jquery-form', '', array('jquery'), '', true);
 
