@@ -2,18 +2,17 @@
 /* home */
 
 .active {
-    @extend %active;
+  @extend %active;
 }
-
 
 .hover {
   @include setbox(null, null, null, 1rem auto);
   box-shadow: 0 -1px rgba($color1, 0.1);
   @include large_and_up {
-  @include setbox(null, null, null, 1rem auto 21vh auto);
-  box-shadow: 0 1px rgba($color1, 0.1), 0 -1px rgba($color1, 0.1);
+    @include setbox(null, null, null, 1rem auto 21vh auto);
+    box-shadow: 0 1px rgba($color1, 0.1), 0 -1px rgba($color1, 0.1);
   }
- 
+
   .hover-box {
     position: relative;
     display: inline-block;
@@ -77,7 +76,8 @@
       right: 0;
       z-index: 1;
     }
-    &:hover img, &:focus img{
+    &:hover img,
+    &:focus img {
       opacity: 1;
     }
     &:hover:before,
@@ -86,10 +86,12 @@
     &:focus:after {
       border-width: 10px;
     }
-    &:hover:before, &:focus:before {
+    &:hover:before,
+    &:focus:before {
       transform: rotate(45deg);
     }
-    &:hover:after, &:focus:after{
+    &:hover:after,
+    &:focus:after {
       transform: rotate(-45deg);
     }
   }
@@ -101,7 +103,7 @@
   border: none;
   @include box();
   .tabs-panel.is-active {
-    min-height: 79vh;
+    min-height: 85.8vh;
     @include box();
     @include medium_and_up {
       position: relative;
@@ -121,56 +123,57 @@
     }
   }
 }
-  
-  .sticky-ul {
-    background-image: url(../../images/home/side.png);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: top right;
+
+.sticky-ul {
+  background-image: url(../../images/home/side.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top right;
+  color: $color1;
+  @include setbox(null, null, 1rem 1rem 0 1rem, null);
+  font-size: 14.5px;
+  @include medium_and_up {
+    @include setbox(null, 221px, 1rem 1rem 0 1rem, null);
+    position: sticky;
+    top: 0;
+  }
+  li {
+    a {
+      @include box();
+      @extend %link;
+    }
+    &.last {
+      font-size: 12.5px;
+      color: darkShift($color6);
+    }
+  }
+  .fi-list {
+    font-size: 11px;
+  }
+}
+
+section {
+  h4 {
     color: $color1;
-    @include setbox(null,221px, 1rem 1rem 0 1rem, null);
-    font-size: 14.5px;
+    @include box(1rem 2rem 0 0, null);
+  }
+  .top-link {
+    position: sticky;
+    top: 0;
+    @include box(0 2rem 0 0, null);
+    i {
+      font-size: medium;
+      color: $color4;
+      &:hover,
+      &:focus {
+        color: $color3;
+      }
+    }
+  }
+  .gallery {
+    @include box(null, 2.5rem);
     @include medium_and_up {
-      position: sticky;
-      top: 0;
-    }
-    li {
-      a {
-        @include box();
-        @extend %link;
-      }
-      &.last {
-        font-size: 12.5px;
-        color: darkShift($color6);
-      }
-    }
-    .fi-list {
-      font-size: 11px;
+      @include box(null, 2.5rem 5rem);
     }
   }
-  
-  section {
-    h4 {
-      color: $color1;
-      @include box(1rem 2rem 0 0, null);
-    }
-    .top-link {
-      position: sticky;
-      top: 0;
-      @include box(0 2rem 0 0, null);
-      i {
-        font-size: medium;
-        color: $color4;
-        &:hover,
-        &:focus {
-          color: $color3;
-        }
-      }
-    }
-    .gallery {
-      @include box(null, 2.5rem);
-      @include medium_and_up {
-        @include box(null, 2.5rem 5rem);
-      }
-    }
-  }
+}
