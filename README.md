@@ -5,7 +5,7 @@ Modules:
 NPM: https://docs.npmjs.com/about-npm 
 <br>
 <br>
-“npm install” in the terminal project root directory to install dependencies.
+“npm install” in the terminal project root directory to install dependencies and enable the logo animation.
 <br>
 <br>
 Compile scss
