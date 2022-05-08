@@ -18,11 +18,12 @@ body {
         background-image: url(../../images/template/body-mobile.jpg);
         @include large_and_up {
             background-image: url(../../images/template/body.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
         background-position: center center;
+        background-size: contain;
     }
 }
 

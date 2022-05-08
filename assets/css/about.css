@@ -20,14 +20,15 @@ body::before {
   opacity: 0.6;
   background-color: rgba(225, 202, 111, 0.125);
   background-image: url(../../images/template/body-mobile.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center center;
+  background-size: contain;
 }
 @media screen and (min-width: 64em) {
   body::before {
     background-image: url(../../images/template/body.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
