@@ -110,7 +110,7 @@ $disclaimer = get_field('disclaimer');
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
-                    <li>Productions:
+                    <li>Film:
                         <ul class="nested vertical menu">
                             <li><i class="fi-list"></i><a href="#storyboard">Storyboarding</a></li>
                             <li><i class="fi-list"></i><a href="#concept">Concept art</a></li>
