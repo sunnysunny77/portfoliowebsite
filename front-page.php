@@ -3,89 +3,104 @@ $disclaimer = get_field('disclaimer');
 
 ?>
 
-<h2 id="orbit-heading" class="text-center medium-text-right"><?php echo the_field('heading') ?></h2>
-
-<div class="orbit" data-options="animInFromLeft:fade-in;
-    animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" role="region" aria-label="Portfolio slider" data-orbit>
-    <div class="orbit-wrapper">
-        <ul class="orbit-container">
-            <li class="is-active orbit-slide">
-                <?php
-                $image = get_field('carousel_1');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_2');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_3');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_4');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_5');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_6');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-            <li class="orbit-slide">
-                <?php
-                $image = get_field('carousel_7');
-                if (!empty($image)) { ?>
-                    <img class="orbit-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-            </li>
-        </ul>
-    </div>
-</div>
-
 <main id="main" class="grid-y">
 
-    <ul class="cell grid-x text-center menu align-center" data-tabs id="tabs">
-        <li class="cell small-6 medium-2 large-shrink tabs-title is-active"><a aria-selected="true" href="#panel1">
-                <h3 class="hover-underline-animation">Film</h3>
-            </a></li>
-        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel2" href="#panel2">
-                <h3 class="hover-underline-animation">Theatre</h3>
-            </a></li>
-        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel3" href="#panel3">
-                <h3 class="hover-underline-animation">Design</h3>
-            </a></li>
-        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel4" href="#panel4">
-                <h3 class="hover-underline-animation">Poetry</h3>
-            </a></li>
-        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel5" href="#panel5">
-                <h3 class="hover-underline-animation">Sculptures</h3>
-            </a></li>
-        <li class="cell small-6 medium-2 large-shrink tabs-title"><a data-tabs-target="panel6" href="#panel6">
-                <h3 class="hover-underline-animation">Illustrations </h3>
-            </a></li>
+    <section class="cell grid-container grid-x align-right text-center medium-text-right">
+
+        <h2 class="cell"><?php echo the_field('heading') ?></h2>
+
+        <?php
+            $image = get_field('heading_image');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+
+    </section>
+
+    <ul class="cell hover grid-x grid-container text-center menu align-center" data-tabs id="tabs">
+
+        <li class="cell small-6 medium-4 tabs-title
+    is-active">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('film');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>FILM</h3>
+                </figcaption>
+                <a class="goto" href="#panel1"></a>
+            </figure>
+        </li>
+        <li class="cell small-6 medium-4 tabs-title">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('theatre');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>THEATRE</h3>
+                </figcaption>
+                <a class="goto" data-tabs-target="panel2" href="#panel2"></a>
+            </figure>
+        </li>
+        <li class="cell small-6 medium-4 tabs-title">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('design');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>DESIGN</h3>
+                </figcaption>
+                <a class="goto" data-tabs-target="panel3" href="#panel3"></a>
+            </figure>
+        </li>
+        <li class="cell small-6 medium-4 tabs-title">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('poetry');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>POETRY</h3>
+                </figcaption>
+                <a class="goto" data-tabs-target="panel4" href="#panel4"></a>
+            </figure>
+        </li>
+        <li class="cell small-6 medium-4 tabs-title">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('sculptures');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>SCULPUTRES</h3>
+                </figcaption>
+                <a class="goto" data-tabs-target="panel5" href="#panel5"></a>
+            </figure>
+        </li>
+        <li class="cell small-6 medium-4 tabs-title">
+            <figure class="hover-box">
+            <?php
+            $image = get_field('illustrations');
+            if (!empty($image)) { ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+                <figcaption>
+                    <h3>ILLUSTRATIONS</h3>
+                </figcaption>
+                <a class="goto" data-tabs-target="panel6" href="#panel6"></a>
+            </figure>
+        </li>
     </ul>
 
-    <div class="tabs-content text-center" data-tabs-content="tabs">
+    <div class="tabs-content text-center" id="goto" data-tabs-content="tabs">
 
         <div class="tabs-panel is-active" id="panel1">
 
@@ -114,7 +129,7 @@ $disclaimer = get_field('disclaimer');
 
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
                         <a aria-label="Go to top" class="cell top-link
-                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+                            text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
@@ -142,7 +157,7 @@ $disclaimer = get_field('disclaimer');
                             art</h4>
 
                         <a aria-label="Go to top" class="cell top-link
-                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+                            text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
@@ -171,7 +186,7 @@ $disclaimer = get_field('disclaimer');
                             creations</h4>
 
                         <a aria-label="Go to top" class="cell top-link
-                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+                            text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
@@ -216,7 +231,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right"> Theatre</h4>
 
                     <a aria-label="Go to top" class="cell top-link
-                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+                        text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
@@ -259,7 +274,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Design</h4>
 
                     <a aria-label="Go to top" class="cell top-link
-                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+                        text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
@@ -310,7 +325,7 @@ $disclaimer = get_field('disclaimer');
 
                         <h4 id="poetry" class="cell text-right">Poems</h4>
                         <a aria-label="Go to top" class="cell top-link
-                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+                            text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
@@ -339,7 +354,7 @@ $disclaimer = get_field('disclaimer');
                             Poetry</h4>
 
                         <a aria-label="Go to top" class="cell top-link
-                            text-right" href="#tabs"><i class="fi-eject"></i></a>
+                            text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
@@ -384,7 +399,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Sculptures</h4>
 
                     <a aria-label="Go to top" class="cell top-link
-                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+                        text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
@@ -427,7 +442,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Illustrations</h4>
                     <a aria-label="Go to top" class="cell
                         top-link
-                        text-right" href="#tabs"><i class="fi-eject"></i></a>
+                        text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));

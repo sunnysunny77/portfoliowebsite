@@ -100,6 +100,7 @@ main i {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
   background-color: #e1ca6f;
+  font-size: 13px;
 }
 .title-bar .title-bar-title,
 .title-bar .menu-icon {
@@ -170,95 +171,93 @@ footer::before {
 }
 
 /* home */
-@media screen and (min-width: 40em) {
-  #orbit-heading {
-    padding: 0 1rem;
-    margin: 50px auto 1rem auto;
-  }
-}
-@media screen and (min-width: 1200px) {
-  #orbit-heading {
-    width: 1200px;
-  }
-}
-
-.orbit {
-  max-width: 1200px;
-  margin: auto auto 1rem auto;
-}
-.orbit .orbit-container img {
-  max-height: 700px;
-}
-
-#tabs {
-  height: fit-content;
-  border-top: 1px solid #f8f8ff;
+.hover {
+  margin: 1rem auto;
+  box-shadow: 0 -1px rgba(43, 36, 29, 0.1);
 }
 @media screen and (min-width: 64em) {
-  #tabs {
-    position: absolute;
-    z-index: 999;
+  .hover {
+    margin: 1rem auto 21vh auto;
+    box-shadow: 0 1px rgba(43, 36, 29, 0.1), 0 -1px rgba(43, 36, 29, 0.1);
   }
 }
-#tabs li a {
-  background-color: #eada99;
-  background-image: url(../../images/template/paper.png);
-  background-blend-mode: screen;
-  outline: none;
-  width: 100%;
-  padding: 0.2rem 0.5rem;
-  margin: 0;
-}
-#tabs li a h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-@media screen and (min-width: 64em) {
-  #tabs li a h3 {
-    font-size: 21.5px;
-  }
-}
-#tabs li a .hover-underline-animation {
-  display: inline-block;
+.hover .hover-box {
   position: relative;
+  display: inline-block;
+  margin: 20px;
+  max-width: 170px;
+  width: 100%;
 }
-#tabs li a .hover-underline-animation:after {
+.hover .hover-box *, .hover .hover-box:before, .hover .hover-box:after {
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+}
+.hover .hover-box:before, .hover .hover-box:after {
+  box-sizing: border-box;
+  border-radius: 50%;
   content: "";
   position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  border: 2px solid #493e32;
+  border-color: transparent #493e32;
+}
+.hover .hover-box img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+  border-radius: 50%;
+  padding: 9px;
+  opacity: 0.7;
+}
+.hover .hover-box figcaption {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  border-radius: 50%;
+}
+.hover .hover-box h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #0d0b08;
+  font-size: 16px;
+  padding: 0 5%;
+  font-weight: 500;
+  background-color: #eada99;
+  border-radius: 16px;
+}
+.hover .hover-box a {
+  position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
-  background-color: #2b241d;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  right: 0;
+  z-index: 1;
 }
-#tabs li a .hover-underline-animation:hover:after, #tabs li a .hover-underline-animation:focus:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.hover .hover-box:hover img, .hover .hover-box:focus img {
+  opacity: 1;
 }
-@media screen and (min-width: 64em) {
-  #tabs li:nth-child(1) a {
-    border-bottom-left-radius: 10px;
-  }
+.hover .hover-box:hover:before, .hover .hover-box:hover:after, .hover .hover-box:focus:before, .hover .hover-box:focus:after {
+  border-width: 10px;
 }
-@media screen and (min-width: 64em) {
-  #tabs li:nth-child(6) a {
-    border-bottom-right-radius: 10px;
-  }
+.hover .hover-box:hover:before, .hover .hover-box:focus:before {
+  transform: rotate(45deg);
 }
-#tabs .tabs-title.is-active a {
-  background-color: #2b241d;
-  background-image: none;
-}
-#tabs .tabs-title.is-active a h3 {
-  color: #f8f8ff;
+.hover .hover-box:hover:after, .hover .hover-box:focus:after {
+  transform: rotate(-45deg);
 }
 
 .tabs-content {
   background-color: transparent;
+  box-shadow: 0 -1px rgba(43, 36, 29, 0.2);
   border: none;
   margin: 0;
   padding: 0;
@@ -279,8 +278,8 @@ footer::before {
     right: 75%;
     bottom: 0;
     left: 0;
-    background-image: url(../../images/gallery/side-1.png);
-    border-right: 1px solid #f8f8ff;
+    background-image: url(../../images/home/side-1.png);
+    box-shadow: 1px 0 rgba(43, 36, 29, 0.2);
   }
 }
 @media screen and (min-width: 40em) and (min-width: 64em) {
@@ -290,7 +289,7 @@ footer::before {
 }
 
 .sticky-ul {
-  background-image: url(../../images/gallery/side.png);
+  background-image: url(../../images/home/side.png);
   background-size: auto;
   background-repeat: no-repeat;
   background-position: top right;

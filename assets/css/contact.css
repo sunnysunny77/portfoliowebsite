@@ -109,6 +109,7 @@ main i {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
   background-color: #e1ca6f;
+  font-size: 13px;
 }
 .title-bar .title-bar-title,
 .title-bar .menu-icon {

@@ -56,6 +56,7 @@ function portfolio_website_scripts()
     //theme styles
     if (is_front_page()) {
         wp_enqueue_style('home-css', get_template_directory_uri() . '/assets/css/home.css');
+        wp_enqueue_script('goto-js', get_template_directory_uri() . '/js/goto.js', array('jquery'), '', true);
     } else if (is_page('about')) {
         wp_enqueue_style('about-css', get_template_directory_uri() . '/assets/css/about.css');
     } else if (is_page('contact')) {
@@ -456,22 +457,22 @@ function portfolio_website_on_theme_activation()
         $id = wp_insert_post($page);
         update_option('page_on_front', $id);
         update_option('show_on_front', 'page');
-        portfolio_website_post_meta($id, 'heading', 'Portfolio of work');
+        portfolio_website_post_meta($id, 'heading', 'The Art of Jerry Verschoor');
         portfolio_website_post_meta($id, '_heading', 'heading');
-        portfolio_website_post_meta($id, 'carousel_1', '');
-        portfolio_website_post_meta($id, '_carousel_1', 'carousel_1');
-        portfolio_website_post_meta($id, 'carousel_2', '');
-        portfolio_website_post_meta($id, '_carousel_2', 'carousel_2');
-        portfolio_website_post_meta($id, 'carousel_3', '');
-        portfolio_website_post_meta($id, '_carousel_3', 'carousel_3');
-        portfolio_website_post_meta($id, 'carousel_4', '');
-        portfolio_website_post_meta($id, '_carousel_4', 'carousel_4');
-        portfolio_website_post_meta($id, 'carousel_5', '');
-        portfolio_website_post_meta($id, '_carousel_5', 'carousel_5');
-        portfolio_website_post_meta($id, 'carousel_6', '');
-        portfolio_website_post_meta($id, '_carousel_6', 'carousel_6');
-        portfolio_website_post_meta($id, 'carousel_7', '');
-        portfolio_website_post_meta($id, '_carousel_7', 'carousel_7');
+        portfolio_website_post_meta($id, 'heading_image', '');
+        portfolio_website_post_meta($id, '_heading_image', 'heading_image');
+        portfolio_website_post_meta($id, 'film,', '');
+        portfolio_website_post_meta($id, '_film', 'film');
+        portfolio_website_post_meta($id, 'theatre', '');
+        portfolio_website_post_meta($id, '_theatre', 'theatre');
+        portfolio_website_post_meta($id, 'design', '');
+        portfolio_website_post_meta($id, '_design', 'design');
+        portfolio_website_post_meta($id, 'poetry', '');
+        portfolio_website_post_meta($id, '_poetry', 'poetry');
+        portfolio_website_post_meta($id, 'sculptures', '');
+        portfolio_website_post_meta($id, '_sculptures', 'sculptures');
+        portfolio_website_post_meta($id, 'illustrations', '');
+        portfolio_website_post_meta($id, '_illustrations', 'illustrations');
         portfolio_website_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
         portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
     }
