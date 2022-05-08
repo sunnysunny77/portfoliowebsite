@@ -21,29 +21,32 @@
 }
 
 .media-object {
-	@include setbox(null, null, null, auto);
+    @include setbox(null, null, null, auto);
     @include medium_and_up() {
         @include setbox(null, null, null, auto auto 50px auto);
         box-shadow: 0 -1px rgba($color1, 0.1), 0 1px rgba($color1, 0.1);
     }
     .media-object-section:nth-child(1) img {
         @include setbox(100%, null, null, null);
+        @include medium_and_up() {
+            @include setbox( calc(100% - 0.5rem), null, null, null);
+        }
+        @include large_and_up() {
+            @include setbox(100%, null, null, null);
+        }
         border-radius: 10px;
     }
     .media-object-section {
         &:nth-child(2) {
             @include setbox(null, null, 0, null);
             @include medium_and_up() {
-                @include setbox(null, null, 0 0 0 2rem , 1rem);
+                @include setbox(null, null, 0 0 0 0.5rem, null);
             }
         }
         &:nth-child(1) {
-            @include setbox(null, null, 0 2% 1rem 2%, null);
-            @include medium_and_up() {
-                @include setbox(null, null, 0 0 0 1rem, null);
-                @include large_and_up() {
-                    @include setbox(null, null, 3%, null);
-                }
+            @include setbox(null, null, 0, null);
+            @include large_and_up() {
+                @include setbox(null, null, 3%, null);
             }
         }
     }

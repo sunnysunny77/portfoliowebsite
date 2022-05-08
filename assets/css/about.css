@@ -192,24 +192,28 @@ footer::before {
   width: 100%;
   border-radius: 10px;
 }
+@media screen and (min-width: 40em) {
+  .media-object .media-object-section:nth-child(1) img {
+    width: calc(100% - 0.5rem);
+  }
+}
+@media screen and (min-width: 64em) {
+  .media-object .media-object-section:nth-child(1) img {
+    width: 100%;
+  }
+}
 .media-object .media-object-section:nth-child(2) {
   padding: 0;
 }
 @media screen and (min-width: 40em) {
   .media-object .media-object-section:nth-child(2) {
-    padding: 0 0 0 2rem;
-    margin: 1rem;
+    padding: 0 0 0 0.5rem;
   }
 }
 .media-object .media-object-section:nth-child(1) {
-  padding: 0 2% 1rem 2%;
+  padding: 0;
 }
-@media screen and (min-width: 40em) {
-  .media-object .media-object-section:nth-child(1) {
-    padding: 0 0 0 1rem;
-  }
-}
-@media screen and (min-width: 40em) and (min-width: 64em) {
+@media screen and (min-width: 64em) {
   .media-object .media-object-section:nth-child(1) {
     padding: 3%;
   }
