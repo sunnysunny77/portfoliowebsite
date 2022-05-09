@@ -17,13 +17,7 @@
 
     <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 
-        <button id="my-svg-m" type="button" data-toggle="responsive-menu">
-
-            <span class="hide">
-                Menu
-            </span>
-
-        </button>
+        <span id="my-svg-m" data-toggle="responsive-menu"></span>
 
         <div class="title-bar-title" data-toggle="responsive-menu">
             Menu

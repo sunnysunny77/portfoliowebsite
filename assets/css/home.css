@@ -108,6 +108,7 @@ main i {
   color: #f8f8ff;
 }
 .title-bar #my-svg-m {
+  display: inline-block;
   height: 50px;
   width: 50px;
 }
