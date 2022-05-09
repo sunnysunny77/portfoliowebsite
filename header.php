@@ -20,7 +20,7 @@
         <span id="my-svg-m" data-toggle="responsive-menu"></span>
 
         <div class="title-bar-title" data-toggle="responsive-menu">
-            Menu
+            <i class="fi-list"></i>
         </div>
 
     </div>
