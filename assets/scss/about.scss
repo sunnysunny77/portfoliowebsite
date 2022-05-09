@@ -27,9 +27,9 @@
         box-shadow: 0 -1px rgba($color1, 0.1), 0 1px rgba($color1, 0.1);
     }
     .media-object-section:nth-child(1) img {
-        @include setbox(100%, null, null, null);
+        @include setbox(100%, null, null, auto auto 1rem auto);
         @include medium_and_up() {
-            @include setbox( calc(100% - 0.5rem), null, null, null);
+            @include setbox( calc(100% - 0.5rem), null, null, auto );
         }
         @include large_and_up() {
             @include setbox(100%, null, null, null);
