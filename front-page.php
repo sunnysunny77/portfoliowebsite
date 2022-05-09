@@ -10,94 +10,100 @@ $disclaimer = get_field('disclaimer');
         <h2 class="cell"><?php echo the_field('heading') ?></h2>
 
         <?php
-            $image = get_field('heading_image');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
+        $image = get_field('heading_image');
+        if (!empty($image)) { ?>
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+        <?php } ?>
 
     </section>
 
     <ul class="cell hover grid-x grid-container text-center menu align-center" data-tabs id="tabs">
 
-        <li class="cell small-6 medium-4 tabs-title
-    is-active">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('film');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>FILM</h3>
-                </figcaption>
-                <a class="goto" href="#panel1"></a>
-            </figure>
+        <li class="cell small-6 medium-4 tabs-title is-active">
+            <a aria-label="FILM" class="goto" href="#panel1">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('film');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>FILM</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
         <li class="cell small-6 medium-4 tabs-title">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('theatre');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>THEATRE</h3>
-                </figcaption>
-                <a class="goto" data-tabs-target="panel2" href="#panel2"></a>
-            </figure>
+            <a aria-label="THEATRE" class="goto" data-tabs-target="panel2" href="#panel2">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('theatre');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>THEATRE</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
         <li class="cell small-6 medium-4 tabs-title">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('design');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>DESIGN</h3>
-                </figcaption>
-                <a class="goto" data-tabs-target="panel3" href="#panel3"></a>
-            </figure>
+            <a aria-label="DESIGN" class="goto" data-tabs-target="panel3" href="#panel3">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('design');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>DESIGN</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
         <li class="cell small-6 medium-4 tabs-title">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('poetry');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>POETRY</h3>
-                </figcaption>
-                <a class="goto" data-tabs-target="panel4" href="#panel4"></a>
-            </figure>
+            <a aria-label="POETRY" class="goto" data-tabs-target="panel4" href="#panel4">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('poetry');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>POETRY</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
         <li class="cell small-6 medium-4 tabs-title">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('sculptures');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>SCULPUTRES</h3>
-                </figcaption>
-                <a class="goto" data-tabs-target="panel5" href="#panel5"></a>
-            </figure>
+            <a aria-label="SCULPUTRES" class="goto" data-tabs-target="panel5" href="#panel5">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('sculptures');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>SCULPUTRES</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
         <li class="cell small-6 medium-4 tabs-title">
-            <figure class="hover-box">
-            <?php
-            $image = get_field('illustrations');
-            if (!empty($image)) { ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php } ?>
-                <figcaption>
-                    <h3>ILLUSTRATIONS</h3>
-                </figcaption>
-                <a class="goto" data-tabs-target="panel6" href="#panel6"></a>
-            </figure>
+            <a aria-label="ILLUSTRATIONS" class="goto" data-tabs-target="panel6" href="#panel6">
+                <figure class="hover-box">
+                    <?php
+                    $image = get_field('illustrations');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php } ?>
+                    <figcaption>
+                        <h3>ILLUSTRATIONS</h3>
+                    </figcaption>
+                </figure>
+            </a>
         </li>
+
     </ul>
 
     <div class="tabs-content text-center" id="goto" data-tabs-content="tabs">

@@ -182,10 +182,13 @@ footer::before {
     box-shadow: 0 1px rgba(43, 36, 29, 0.1), 0 -1px rgba(43, 36, 29, 0.1);
   }
 }
+.hover .tabs-title > a[aria-selected=true],
+.hover .tabs-title a:hover {
+  background: transparent;
+}
 .hover .hover-box {
   position: relative;
   display: inline-block;
-  margin: 20px;
   max-width: 170px;
   width: 100%;
 }
@@ -234,14 +237,6 @@ footer::before {
   font-weight: 500;
   background-color: #eada99;
   border-radius: 16px;
-}
-.hover .hover-box a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
 }
 .hover .hover-box:hover img, .hover .hover-box:focus img {
   opacity: 1;
