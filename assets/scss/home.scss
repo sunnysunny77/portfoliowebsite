@@ -13,7 +13,8 @@
     box-shadow: 0 1px rgba($color1, 0.1), 0 -1px rgba($color1, 0.1);
   }
   .tabs-title > a[aria-selected="true"],
-  .tabs-title a:hover {
+  .tabs-title > a:hover,
+  .tabs-title > a:focus {
     background: transparent;
   }
   .hover-box {

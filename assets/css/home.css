@@ -184,7 +184,8 @@ footer::before {
   }
 }
 .hover .tabs-title > a[aria-selected=true],
-.hover .tabs-title a:hover {
+.hover .tabs-title > a:hover,
+.hover .tabs-title > a:focus {
   background: transparent;
 }
 .hover .hover-box {
