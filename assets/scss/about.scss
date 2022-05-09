@@ -34,7 +34,7 @@
         @include large_and_up() {
             @include setbox(100%, null, null, null);
         }
-        border-radius: 10px;
+        border-radius: 17px;
     }
     .media-object-section {
         &:nth-child(2) {
@@ -76,7 +76,9 @@
 
 .card {
     background-color: rgba($color6, 0.1);
-    border-radius: 5px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1px 1px rgba($color1, 0.2), -1px -1px rgba($color1, 0.2);
     .card-divider {
         background-color: rgba($color6, 0.1);
         font-size: larger;

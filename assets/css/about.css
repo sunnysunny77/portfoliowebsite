@@ -191,7 +191,7 @@ footer::before {
 .media-object .media-object-section:nth-child(1) img {
   width: 100%;
   margin: auto auto 1rem auto;
-  border-radius: 10px;
+  border-radius: 17px;
 }
 @media screen and (min-width: 40em) {
   .media-object .media-object-section:nth-child(1) img {
@@ -244,7 +244,9 @@ footer::before {
 
 .card {
   background-color: rgba(138, 138, 138, 0.1);
-  border-radius: 5px;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 1px 1px rgba(43, 36, 29, 0.2), -1px -1px rgba(43, 36, 29, 0.2);
 }
 .card .card-divider {
   background-color: rgba(138, 138, 138, 0.1);
