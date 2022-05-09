@@ -11,6 +11,9 @@ main a {
 
 main .tabs {
     background: $transparent;
+    border: none;
+    @include box(null, 0 0 1rem 0);
+    box-shadow: 0 1px rgba($color1, 0.1);
     li {
         background-color: rgba($color6, 0.05);
         background-image: url(../../images/template/paper.png);

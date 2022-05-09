@@ -183,6 +183,9 @@ footer::before {
 /* contact */
 main .tabs {
   background: transparent;
+  border: none;
+  padding: 0 0 1rem 0;
+  box-shadow: 0 1px rgba(43, 36, 29, 0.1);
 }
 main .tabs li {
   background-color: rgba(138, 138, 138, 0.05);
