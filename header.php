@@ -25,7 +25,7 @@
 
     </div>
 
-    <header class="top-bar" id="responsive-menu">
+    <header data-animate="hinge-in-from-top fade-out" class="top-bar" id="responsive-menu">
 
         <div class="top-bar-left show-for-medium">
 

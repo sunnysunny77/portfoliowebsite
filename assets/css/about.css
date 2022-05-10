@@ -73,14 +73,6 @@ main i {
   background-color: #e1ca6f;
   background-blend-mode: screen;
 }
-.top-bar .top-bar-right {
-  animation: slideIn0 1s ease-in-out;
-}
-@media screen and (min-width: 40em) {
-  .top-bar .top-bar-right {
-    animation: none;
-  }
-}
 .top-bar .top-bar-right ul {
   background: transparent;
 }
@@ -116,19 +108,6 @@ main i {
   height: 50px;
 }
 
-@keyframes slideIn0 {
-  0% {
-    margin-top: -38.391px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 0;
-  }
-}
 footer {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
