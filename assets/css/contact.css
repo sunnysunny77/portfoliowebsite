@@ -106,6 +106,10 @@ main i {
   height: 100px;
 }
 
+.color {
+  color: #2b241d;
+}
+
 .title-bar {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
