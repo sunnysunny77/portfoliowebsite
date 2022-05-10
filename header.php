@@ -41,7 +41,7 @@
 
             wp_nav_menu(array(
                 'menu' => 'Main Navigation',
-                'menu_class' => 'cell grid-x align-center dropdown menu',
+                'menu_class' => 'cell grid-x align-spaced dropdown menu',
                 'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
                 'walker' => new F6_TOPBAR_MENU_WALKER(),
                 'container' => false,
