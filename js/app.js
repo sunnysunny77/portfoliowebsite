@@ -15,6 +15,6 @@ new Vivus(
     },
     null
 );
-$(".title-bar").click(function () {
+$(".click").click(function () {
     $(".fi-list").toggleClass("color");
 });

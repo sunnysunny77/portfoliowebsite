@@ -17,9 +17,9 @@
 
     <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 
-        <span id="my-svg-m" data-toggle="responsive-menu"></span>
+        <span class="click" id="my-svg-m" data-toggle="responsive-menu"></span>
 
-        <div class="title-bar-title" data-toggle="responsive-menu">
+        <div class="title-bar-title click" data-toggle="responsive-menu">
             <i class="fi-list"></i>
         </div>
 
