@@ -32,8 +32,12 @@
     background-color: $color3;
     font-size: 13px;
     .title-bar-title {
-        color: $white;
-        @include setbox(nill, 50px, 25px 0 0 0, null);
+		color: $white;
+        @include setbox(25px, 50px, 25px 0 0 0, null);
+		&:hover,
+		&:focus {
+			color: $color1;
+		}
     }
     #my-svg-m {
         display: inline-block;

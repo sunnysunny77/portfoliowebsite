@@ -132,9 +132,12 @@ main i {
 }
 .title-bar .title-bar-title {
   color: #f8f8ff;
-  width: nill;
+  width: 25px;
   height: 50px;
   padding: 25px 0 0 0;
+}
+.title-bar .title-bar-title:hover, .title-bar .title-bar-title:focus {
+  color: #2b241d;
 }
 .title-bar #my-svg-m {
   display: inline-block;
