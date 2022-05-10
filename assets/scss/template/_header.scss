@@ -2,23 +2,28 @@
     background-image: url(../../images/template/paper.png);
     background-color: $color3;
     background-blend-mode: screen;
-    .top-bar-right ul {
-        background: $transparent;
-        li a {
-            color: $color1;
-            @include box(null, 0.5rem);
-            &:hover,
-            &:focus {
-                color: $white;
-                text-shadow: none;
+    .top-bar-right {
+        animation: slideIn0 1s ease-in-out;
+        @include medium_and_up() {
+            animation: none;
+        }
+        ul {
+            background: $transparent;
+            li a {
+                color: $color1;
+                @include box(null, 0.5rem);
+                &:hover,
+                &:focus {
+                    color: $white;
+                    text-shadow: none;
+                }
             }
         }
     }
     .top-bar-left {
         #my-svg {
             display: inline-block;
-            height: 100px;
-            width: 235px;
+            @include setbox(235px, 100px, null, null);
         }
     }
 }
@@ -28,13 +33,26 @@
     background-blend-mode: screen;
     background-color: $color3;
     font-size: 13px;
-    .title-bar-title,
-    .menu-icon {
+    .title-bar-title {
         color: $white;
+        @include setbox(nill, 50px, 25px 0 0 0, null);
     }
     #my-svg-m {
         display: inline-block;
-        height: 50px;
-        width: 50px;
+        @include setbox(50px, 50px, null, null);
+    }
+}
+
+@keyframes slideIn0 {
+    0% {
+        margin-top: -38.391px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
     }
 }
