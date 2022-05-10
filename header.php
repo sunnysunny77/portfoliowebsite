@@ -15,12 +15,13 @@
 
     <a class="hide" href="#main" accesskey="S"> Skip navigation </a>
 
-    <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+    <div class="title-bar grid-x" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 
-        <span class="click" id="my-svg-m" data-toggle="responsive-menu"></span>
+        <div data-toggle="responsive-menu"  class="cell title-bar-title">
 
-        <div class="title-bar-title click" data-toggle="responsive-menu">
+            <span id="my-svg-m" ></span>
             <i class="fi-list"></i>
+            
         </div>
 
     </div>

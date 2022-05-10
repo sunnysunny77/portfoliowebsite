@@ -23,21 +23,24 @@
 }
 
 .color {
-    color: #2b241d;
+    color: $color1;
 }
 
 .title-bar {
     background-image: url(../../images/template/paper.png);
     background-blend-mode: screen;
     background-color: $color3;
-    font-size: 13px;
     .title-bar-title {
-		color: $white;
-        @include setbox(25px, 50px, 25px 0 0 0, null);
-		&:hover,
-		&:focus {
-			color: $color1;
-		}
+        @include setbox(null, 50px, null, null);
+        color: $white;
+        font-size: 16px;
+        &:hover,
+        &:focus {
+            color: $color1;
+        }
+        i {
+            position: absolute;
+        }
     }
     #my-svg-m {
         display: inline-block;
