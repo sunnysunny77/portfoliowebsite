@@ -111,11 +111,11 @@ main i {
   color: #f8f8ff;
   font-size: 16px;
 }
-.title-bar .title-bar-title:hover, .title-bar .title-bar-title:focus {
-  color: #2b241d;
-}
 .title-bar .title-bar-title i {
   position: absolute;
+}
+.title-bar .title-bar-title i:hover, .title-bar .title-bar-title i:focus {
+  color: #2b241d;
 }
 .title-bar #my-svg-m {
   display: inline-block;
