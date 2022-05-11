@@ -20,7 +20,9 @@
         <div data-toggle="responsive-menu"  class="cell title-bar-title">
 
             <span id="my-svg-m" ></span>
-            <i class="fi-list"></i>
+            <i class="fi-list">
+                <span class="hide">menu</span>
+            </i>
             
         </div>
 
