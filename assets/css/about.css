@@ -98,6 +98,8 @@ main i {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
   background-color: #e1ca6f;
+  position: relative;
+  z-index: 1;
 }
 .title-bar .title-bar-title {
   height: 50px;

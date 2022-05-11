@@ -30,6 +30,8 @@
     background-image: url(../../images/template/paper.png);
     background-blend-mode: screen;
     background-color: $color3;
+    position: relative;
+    z-index: 1;
     .title-bar-title {
         @include setbox(null, 50px, null, null);
         color: $white;
