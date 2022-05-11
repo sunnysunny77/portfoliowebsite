@@ -13,7 +13,7 @@
 
       <ul class="cell small-5 medium-shrink text-right align-self-middle no-bullet">
 
-        <li>Portfolio website&nbsp;&copy;</li>
+        <li>Portfolio website<br/>&copy;</li>
         <?php dynamic_sidebar("widget_one"); ?>
 
 	    </ul>
