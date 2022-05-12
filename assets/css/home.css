@@ -337,7 +337,7 @@ section .top-link {
   margin: 0 2rem 0 0;
 }
 section .top-link i {
-  font-size: medium;
+  font-size: 20px;
   color: #4B7C6A;
 }
 section .top-link i:hover, section .top-link i:focus {
