@@ -12,7 +12,7 @@
         $phone = $_REQUEST["phone"];
         $text = $_REQUEST["text"];
         $to_email = "shlooby07@gmail.com";
-        $subject = "New Employment Form Message";
+        $subject = "New Enquiry Form Message";
         $contactus = "
         You have a message from the Enquiry Form on your website:
         Name: ".$first_name." ".$last_name."
