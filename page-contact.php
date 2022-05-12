@@ -102,7 +102,7 @@
                     </label>
                     <label class="cell small-6 large-3">
                         Post code   
-                        <input required type="text" name="post-code" maxlength="20">
+                        <input required type="text" name="post-code" pattern="[0-9]*" maxlength="20" title="Accepts digits #">
                     </label>
                     <label class="cell">
                         Purchase details
