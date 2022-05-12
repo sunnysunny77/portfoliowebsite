@@ -105,6 +105,8 @@ add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 function portfolio_website_remove_admin_menus() {
     remove_menu_page( 'edit.php' );
     remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'index.php' );
+	remove_menu_page( 'tools.php' );  
 }
 add_action( 'admin_menu', 'portfolio_website_remove_admin_menus' );
 
