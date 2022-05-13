@@ -155,6 +155,9 @@ footer {
   position: relative;
   z-index: 0;
 }
+footer #right {
+  font-size: smaller;
+}
 footer li a {
   color: #2b241d;
   padding: 0.5rem;

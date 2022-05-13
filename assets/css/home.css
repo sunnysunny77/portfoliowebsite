@@ -146,6 +146,9 @@ footer {
   position: relative;
   z-index: 0;
 }
+footer #right {
+  font-size: smaller;
+}
 footer li a {
   color: #2b241d;
   padding: 0.5rem;
@@ -266,7 +269,7 @@ footer::before {
 }
 @media screen and (min-width: 40em) {
   .hover .hover-box h3 {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .hover .hover-box:hover img, .hover .hover-box:focus img {
@@ -322,11 +325,12 @@ footer::before {
   background-position: top right;
   color: #2b241d;
   padding: 1rem 1rem 0 1rem;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 }
 @media screen and (min-width: 40em) {
   .sticky-ul {
+    font-size: 16px;
     height: 221px;
     padding: 1rem 1rem 0 1rem;
     position: sticky;

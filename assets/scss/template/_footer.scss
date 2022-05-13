@@ -6,7 +6,10 @@ footer {
     color: $color1;
     position: relative;
     z-index: 0;
-     li a {
+    #right {
+        font-size: smaller;
+    }
+    li a {
         color: $color1;
         @include box(null, 0.5rem);
         &:hover,
@@ -27,13 +30,14 @@ footer {
             cursor: pointer;
         }
         button {
-            background-color: rgba($color4,0.5);
-            &:hover, &:focus {
-                background-color: rgba($color5,0.5);
+            background-color: rgba($color4, 0.5);
+            &:hover,
+            &:focus {
+                background-color: rgba($color5, 0.5);
             }
         }
         input {
-            background-color: rgba($white,0.15);
+            background-color: rgba($white, 0.15);
         }
         label {
             display: inline-block;

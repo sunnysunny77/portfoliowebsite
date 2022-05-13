@@ -5,6 +5,9 @@
     @extend %active;
 }
 
+.fi-pencil {
+    @include box(0 0 1rem 0, null); 
+}
 
 .p-left,
 .p-right {

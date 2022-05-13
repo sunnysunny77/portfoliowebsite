@@ -11,9 +11,9 @@
       );?>
           
 
-      <ul class="cell small-5 medium-shrink text-right align-self-middle no-bullet">
+      <ul id="right" class="cell small-5 medium-shrink text-right align-self-middle no-bullet">
 
-        <li>Portfolio website<br/>&copy;</li>
+        <li>Portfolio website&nbsp;&copy;</li>
         <?php dynamic_sidebar("widget_one"); ?>
 
 	    </ul>

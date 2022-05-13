@@ -67,7 +67,7 @@
       color: lightShift($color1);
       font-size: 12px;
       @include medium_and_up {
-           font-size: 14px;
+           font-size: 15px;
       }
       @include setbox(null, null, 0 5%, null);
       font-weight: 600;
@@ -129,9 +129,10 @@
   background-position: top right;
   color: $color1;
   @include setbox(null, null, 1rem 1rem 0 1rem, null);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   @include medium_and_up {
+    font-size: 16px;
     @include setbox(null, 221px, 1rem 1rem 0 1rem, null);
     position: sticky;
     top: 0;
