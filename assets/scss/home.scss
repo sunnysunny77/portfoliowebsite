@@ -109,9 +109,12 @@
         position: absolute;
         content: "";
         top: 0;
-        right: 75%;
+        right: 66.7%;
+        background-blend-mode: screen;
+        opacity: 0.7;
+        background-color: rgba($color3, 0.125);
         @include large_and_up {
-          right: 83.34%;
+          right: 75%;
         }
         bottom: 0;
         left: 0;

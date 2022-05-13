@@ -112,7 +112,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -127,7 +127,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <div class="cell small-12 medium-9 large-10 grid-x
+                <div class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <section class="cell grid-x
@@ -223,7 +223,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -231,7 +231,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <section class="cell small-12 medium-9 large-10 grid-x
+                <section class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <h4 class="cell text-right"> Theatre</h4>
@@ -266,7 +266,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -274,7 +274,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <section class="cell small-12 medium-9 large-10 grid-x
+                <section class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <h4 class="cell text-right">Design</h4>
@@ -309,7 +309,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -323,7 +323,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <div class="cell small-12 medium-9 large-10 grid-x
+                <div class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <section class="cell grid-x
@@ -391,7 +391,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -399,7 +399,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <section class="cell small-12 medium-9 large-10 grid-x
+                <section class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <h4 class="cell text-right">Sculptures</h4>
@@ -434,7 +434,7 @@ $disclaimer = get_field('disclaimer');
 
             <div class="grid-x align-right">
 
-                <ul class="cell sticky-ul grid-x small-12 medium-3 large-2 text-left
+                <ul class="cell sticky-ul grid-x small-12 medium-4 large-3 text-left
                     vertical menu
                     align-top">
                     <li> <i class="fi-thumbnails"></i></li>
@@ -442,7 +442,7 @@ $disclaimer = get_field('disclaimer');
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                 </ul>
 
-                <section class="cell small-12 medium-9 large-10 grid-x
+                <section class="cell small-12 medium-8 large-9 grid-x
                     text-center align-center">
 
                     <h4 class="cell text-right">Illustrations</h4>

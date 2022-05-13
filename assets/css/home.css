@@ -305,7 +305,10 @@ footer::before {
     position: absolute;
     content: "";
     top: 0;
-    right: 75%;
+    right: 66.7%;
+    background-blend-mode: screen;
+    opacity: 0.7;
+    background-color: rgba(225, 202, 111, 0.125);
     bottom: 0;
     left: 0;
     background-image: url(../../images/home/side-1.png);
@@ -314,7 +317,7 @@ footer::before {
 }
 @media screen and (min-width: 40em) and (min-width: 64em) {
   .tabs-content .tabs-panel.is-active::before {
-    right: 83.34%;
+    right: 75%;
   }
 }
 
