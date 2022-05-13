@@ -129,7 +129,7 @@
   background-position: top right;
   color: $color1;
   @include setbox(null, null, 1rem 1rem 0 1rem, null);
-  font-size: 14.5px;
+  font-size: 16px;
   @include medium_and_up {
     @include setbox(null, 221px, 1rem 1rem 0 1rem, null);
     position: sticky;

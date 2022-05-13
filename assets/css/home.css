@@ -322,7 +322,7 @@ footer::before {
   background-position: top right;
   color: #2b241d;
   padding: 1rem 1rem 0 1rem;
-  font-size: 14.5px;
+  font-size: 16px;
 }
 @media screen and (min-width: 40em) {
   .sticky-ul {
