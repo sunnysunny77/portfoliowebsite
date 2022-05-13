@@ -254,6 +254,11 @@ footer::before {
   position: sticky;
   top: 1rem;
 }
+@media screen and (min-width: 64em) {
+  .stick {
+    top: 15rem;
+  }
+}
 
 @media screen and (min-width: 40em) {
   #stick-1 {
