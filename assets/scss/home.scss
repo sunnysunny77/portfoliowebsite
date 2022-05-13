@@ -65,7 +65,10 @@
       transform: translate(-50%, -50%);
       z-index: 1;
       color: lightShift($color1);
-      font-size: 14px;
+      font-size: 12px;
+      @include medium_and_up {
+           font-size: 14px;
+      }
       @include setbox(null, null, 0 5%, null);
       font-weight: 500;
       background-color: lightShift($color3);
