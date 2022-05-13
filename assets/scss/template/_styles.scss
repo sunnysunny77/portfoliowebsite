@@ -4,6 +4,7 @@ body {
     max-width: 1920px;
     @include setbox(null, null, null, auto);
     position: relative;
+    font-family: "Arial Unicode";
     &::before {
         position: absolute;
         content: "";
@@ -26,6 +27,15 @@ body {
         background-size: contain;
     }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Arial Unicode";
+}
+
 
 h1 {
     font-size: inherit;

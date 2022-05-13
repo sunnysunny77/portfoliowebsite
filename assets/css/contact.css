@@ -18,11 +18,16 @@ main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
   text-shadow: 0.25px 0 0 #2b241d;
 }
 
+@font-face {
+  font-family: "Arial Unicode";
+  src: url("./Fonts/Arial Unicode.ttf");
+}
 /* template */
 body {
   max-width: 1920px;
   margin: auto;
   position: relative;
+  font-family: "Arial Unicode";
 }
 body::before {
   position: absolute;
@@ -46,6 +51,14 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Arial Unicode";
 }
 
 h1 {

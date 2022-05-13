@@ -32,11 +32,16 @@ main input[type=submit]:hover, main input[type=submit]:focus {
   background-color: rgba(78, 127, 61, 0.5);
 }
 
+@font-face {
+  font-family: "Arial Unicode";
+  src: url("./Fonts/Arial Unicode.ttf");
+}
 /* template */
 body {
   max-width: 1920px;
   margin: auto;
   position: relative;
+  font-family: "Arial Unicode";
 }
 body::before {
   position: absolute;
@@ -60,6 +65,14 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Arial Unicode";
 }
 
 h1 {
