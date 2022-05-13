@@ -4,7 +4,6 @@ body {
     max-width: 1920px;
     @include setbox(null, null, null, auto);
     position: relative;
-    font-family: "Arial Unicode";
     &::before {
         position: absolute;
         content: "";
@@ -28,14 +27,6 @@ body {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: "Arial Unicode";
-}
-
 h1 {
     font-size: inherit;
     @include box();
@@ -45,6 +36,7 @@ h2 {
     @include setbox(null, null, null, 1rem auto);
     color: darkShift($color1);
     font-style: oblique;
+    font-family: Montserrat-Regular;
     text-shadow: 0 0 2.5px $color1;
     @include medium_and_up() {
         @include setbox(null, null, null, 50px auto);
