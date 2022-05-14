@@ -29,7 +29,7 @@ function showResponse_1(responseText, statusText, xhr, $form) {
         res.html(text);
         $("#submit-1").prop( "disabled", false );
         $form.trigger("reset");
-    }, 5000);
+    }, 9000);
 }
 
 function showRequest_2(formData, jqForm, options) { 
@@ -44,7 +44,7 @@ function showResponse_2(responseText, statusText, xhr, $form) {
         res.html(text);
         $("#submit-2").prop( "disabled", false );
         $form.trigger("reset");
-    }, 5000);
+    }, 9000);
 }
 
 function showRequest_3(formData, jqForm, options) { 
@@ -59,7 +59,7 @@ function showResponse_3(responseText, statusText, xhr, $form) {
         res.html(text);
         $("#submit-3").prop( "disabled", false );
         $form.trigger("reset");
-    }, 5000);
+    }, 9000);
 }
 
 $(document).ready(function () {
