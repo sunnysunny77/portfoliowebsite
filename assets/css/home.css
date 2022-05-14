@@ -1,5 +1,5 @@
 .sticky-ul li a {
-  color: #395d2c;
+  color: #345428;
 }
 .sticky-ul li a:hover, .sticky-ul li a:focus {
   color: #566CAE;
@@ -57,7 +57,7 @@ h1 {
 
 h2 {
   margin: 1rem auto;
-  color: #493e32;
+  color: #463b2f;
   font-style: oblique;
   font-family: Montserrat-Regular;
   text-shadow: 0 0 2.5px #2b241d;
@@ -71,7 +71,7 @@ h2 {
 h3,
 h4,
 h5 {
-  color: #493e32;
+  color: #463b2f;
   font-family: OpenSans-Regular;
 }
 
@@ -141,7 +141,7 @@ footer {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
   padding-top: 15px;
-  background-color: #d8ba45;
+  background-color: #d9bc49;
   color: #2b241d;
   position: relative;
   z-index: 0;
@@ -235,8 +235,8 @@ footer::before {
   left: 0px;
   right: 0px;
   z-index: -1;
-  border: 2px solid #493e32;
-  border-color: transparent #493e32;
+  border: 2px solid #463b2f;
+  border-color: transparent #463b2f;
 }
 .hover .hover-box img {
   max-width: 100%;
@@ -260,11 +260,11 @@ footer::before {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: #0d0b08;
+  color: #050403;
   font-size: 12px;
   padding: 0 5%;
   font-weight: 600;
-  background-color: #eada99;
+  background-color: #ecdda4;
   border-radius: 16px;
 }
 @media screen and (min-width: 40em) {
@@ -346,7 +346,7 @@ footer::before {
 }
 .sticky-ul li.last {
   font-size: 12.5px;
-  color: #717171;
+  color: #737373;
 }
 .sticky-ul .fi-list {
   font-size: 11px;
@@ -370,7 +370,7 @@ section .top-link {
 }
 section .top-link i {
   font-size: medium;
-  color: #4B7C6A;
+  color: #3a5f52;
 }
 @media screen and (min-width: 40em) {
   section .top-link i {

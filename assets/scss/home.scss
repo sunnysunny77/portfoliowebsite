@@ -174,7 +174,7 @@ section {
   @include medium_and_up {
         font-size: 20px;
    }
-      color: $color4;
+      color: darkShift($color4);
       &:hover,
       &:focus {
         color: $color3;

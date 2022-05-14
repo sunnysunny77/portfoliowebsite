@@ -12,16 +12,16 @@
 
 @function darkShift($color) {
     @if (lightness($color) > 25%) {
-        @return darken($color, 10%);
+        @return darken($color, 9%);
     } @else {
-        @return lighten($color, 10%);
+        @return lighten($color, 9%);
     }
 }
 
 @function lightShift($color) {
     @if (lightness($color) > 60%) {
-        @return lighten($color, 10%);
+        @return lighten($color, 12.5%);
     } @else {
-        @return darken($color, 10%);
+        @return darken($color, 12.5%);
     }
 }
