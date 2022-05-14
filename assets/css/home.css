@@ -206,7 +206,7 @@ footer::before {
 }
 @media screen and (min-width: 64em) {
   .hover {
-    margin: 1rem auto 21vh auto;
+    margin: 1rem auto 24vh auto;
     box-shadow: 0 1px rgba(43, 36, 29, 0.1), 0 -1px rgba(43, 36, 29, 0.1);
   }
 }
@@ -293,7 +293,7 @@ footer::before {
   padding: 0;
 }
 .tabs-content .tabs-panel.is-active {
-  min-height: 85.8vh;
+  min-height: 86vh;
   margin: 0;
   padding: 0;
 }
