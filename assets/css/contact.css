@@ -2,7 +2,7 @@ main .tabs li a h3, main a {
   color: #345428;
 }
 main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
-  color: #566CAE;
+  color: #405185;
 }
 
 .tabs-content .button {
