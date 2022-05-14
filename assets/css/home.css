@@ -274,6 +274,7 @@ footer::before {
 }
 .hover .hover-box:hover img, .hover .hover-box:focus img {
   opacity: 1;
+  transform: scale(0.99);
 }
 .hover .hover-box:hover:before, .hover .hover-box:hover:after, .hover .hover-box:focus:before, .hover .hover-box:focus:after {
   border-width: 10px;
