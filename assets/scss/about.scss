@@ -6,7 +6,7 @@
 }
 
 .fi-pencil {
-    @include box(0 0 1rem 0, null); 
+    @include box(0 0 1rem 0, null);
 }
 
 .p-left,
@@ -44,7 +44,7 @@
             img {
                 @include setbox(100%, null, null, auto auto 1rem auto);
                 @include medium_and_up() {
-                    @include setbox( calc(100% - 0.5rem), null, null, auto );
+                    @include setbox(calc(100% - 0.5rem), null, null, auto);
                 }
                 @include large_and_up() {
                     @include setbox(100%, null, null, null);
@@ -56,17 +56,16 @@
 }
 
 .rel {
-	position: relative;
+    position: relative;
 }
 
 .stick {
-	position: sticky;
-	top: 1rem;
+    position: sticky;
+    top: 1rem;
     @include large_and_up() {
         top: 15rem;
     }
 }
-
 
 #stick-1 {
     @include medium_and_up() {

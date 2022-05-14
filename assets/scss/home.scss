@@ -67,7 +67,7 @@
       color: lightShift($color1);
       font-size: 12px;
       @include medium_and_up {
-           font-size: 15px;
+        font-size: 15px;
       }
       @include setbox(null, null, 0 5%, null);
       font-weight: 600;
@@ -163,17 +163,17 @@ section {
   .top-link {
     position: sticky;
     top: 0;
-  right: 10px;
+    right: 10px;
     @include box(0 1.75rem 0 0, null);
-  @include medium_and_up {
-  top: 10px;
-  @include box(0 2.5rem 0 0, null);
-  }
+    @include medium_and_up {
+      top: 10px;
+      @include box(0 2.5rem 0 0, null);
+    }
     i {
-  font-size: medium;
-  @include medium_and_up {
+      font-size: medium;
+      @include medium_and_up {
         font-size: 20px;
-   }
+      }
       color: darkShift($color4);
       &:hover,
       &:focus {

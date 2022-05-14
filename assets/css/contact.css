@@ -246,7 +246,8 @@ main .tabs .tabs-title > a[aria-selected=true] {
   color: #2b241d;
 }
 
-#main form input, #main form textarea {
+#main form input,
+#main form textarea {
   background-image: url(../../images/template/paper.png);
 }
 #main form textarea {

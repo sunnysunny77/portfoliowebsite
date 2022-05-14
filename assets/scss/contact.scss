@@ -21,8 +21,8 @@ main .tabs {
         a {
             @include box(null, 1%);
 
-            h3 { 
-				font-size: initial;
+            h3 {
+                font-size: initial;
                 @include box();
                 @extend %link;
             }
@@ -51,7 +51,8 @@ main .tabs {
 }
 
 #main form {
-    input, textarea{
+    input,
+    textarea {
         background-image: url(../../images/template/paper.png);
     }
     textarea {
