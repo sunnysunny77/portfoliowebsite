@@ -108,7 +108,10 @@ function portfolio_website_remove_admin_menus() {
 	remove_menu_page( 'index.php' );
 	remove_menu_page( 'tools.php' );  
 }
-add_action( 'admin_menu', 'portfolio_website_remove_admin_menus' );
+if ( current_user_can( 'editor' ) ){
+    add_action( 'admin_menu', 'portfolio_website_remove_admin_menus' );
+}
+
 
 function portfolio_website_enable_vcard_upload($mime_types)
 {
