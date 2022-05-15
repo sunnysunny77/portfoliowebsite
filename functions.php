@@ -553,6 +553,15 @@ function portfolio_website_on_theme_activation()
         )
     );
 
+    wp_insert_term(
+        'contact',
+        'category',
+        array(
+            'name' => 'contact',
+            'slug' => 'contact'
+        )
+    );
+
     function portfolio_website_post_meta($id, $key, $val)
     {
         add_post_meta($id, $key, $val, true);
