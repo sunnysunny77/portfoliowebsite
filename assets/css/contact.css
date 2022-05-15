@@ -250,6 +250,9 @@ main .tabs .tabs-title > a[aria-selected=true] {
 #main form textarea {
   background-image: url(../../images/template/paper.png);
 }
+#main form input[type=submit] {
+  width: 80px;
+}
 #main form input[type=submit]:disabled {
   opacity: 1;
 }
