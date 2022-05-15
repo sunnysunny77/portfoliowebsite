@@ -46,9 +46,9 @@ function portfolio_website_scripts()
 
     wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', array('jquery'), '', true);
 
-    wp_localize_script( 'app-js', 'path', array(
+    wp_localize_script('app-js', 'path', array(
         'dir' => get_template_directory_uri(),
-    ) );
+    ));
 
     //AJAX
     wp_enqueue_script('jquery-form', '', array('jquery'), '', true);
@@ -100,16 +100,17 @@ add_filter('pre_option_upload_url_path', function ($upload_url_path) {
     return get_template_directory_uri() . '/files';
 });
 
-add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
+add_filter('option_uploads_use_yearmonth_folders', '__return_false', 100);
 
-function portfolio_website_remove_admin_menus() {
-    remove_menu_page( 'edit.php' );
-    remove_menu_page( 'edit-comments.php' );
-	remove_menu_page( 'index.php' );
-	remove_menu_page( 'tools.php' );  
+function portfolio_website_remove_admin_menus()
+{
+    remove_menu_page('edit.php');
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('index.php');
+    remove_menu_page('tools.php');
 }
-if ( current_user_can( 'editor' ) ){
-    add_action( 'admin_menu', 'portfolio_website_remove_admin_menus' );
+if (current_user_can('editor')) {
+    add_action('admin_menu', 'portfolio_website_remove_admin_menus');
 }
 
 
@@ -444,8 +445,114 @@ function portfolio_website_register_cptui()
 }
 add_action('init', 'portfolio_website_register_cptui');
 
+
 function portfolio_website_on_theme_activation()
 {
+    $post = get_page_by_path('hello-world', OBJECT, 'post');
+
+    if ($post) {
+        wp_delete_post($post->ID, true);
+    }
+
+    wp_insert_term(
+        'storyboarding_films',
+        'category',
+        array(
+            'name' => 'storyboarding_films',
+            'slug' => 'storyboarding_films'
+        )
+    );
+
+    wp_insert_term(
+        'concepts_films',
+        'category',
+        array(
+            'name' => 'concepts_films',
+            'slug' => 'concepts_films'
+        )
+    );
+
+    wp_insert_term(
+        'independent_films',
+        'category',
+        array(
+            'name' => 'independent_films',
+            'slug' => 'independent_films'
+        )
+    );
+
+    wp_insert_term(
+        'theatre',
+        'category',
+        array(
+            'name' => 'theatre',
+            'slug' => 'theatre'
+        )
+    );
+
+    wp_insert_term(
+        'designs',
+        'category',
+        array(
+            'name' => 'designs',
+            'slug' => 'designs'
+        )
+    );
+
+    wp_insert_term(
+        'poems_poetry',
+        'category',
+        array(
+            'name' => 'poems_poetry',
+            'slug' => 'poems_poetry'
+        )
+    );
+
+    wp_insert_term(
+        'illustrated_poetry',
+        'category',
+        array(
+            'name' => 'illustrated_poetry',
+            'slug' => 'illustrated_poetry'
+        )
+    );
+
+    wp_insert_term(
+        'sculptures',
+        'category',
+        array(
+            'name' => 'sculptures',
+            'slug' => 'sculptures'
+        )
+    );
+
+    wp_insert_term(
+        'illustrations',
+        'category',
+        array(
+            'name' => 'illustrations',
+            'slug' => 'illustrations'
+        )
+    );
+
+    wp_insert_term(
+        'about',
+        'category',
+        array(
+            'name' => 'about',
+            'slug' => 'about'
+        )
+    );
+
+    wp_insert_term(
+        'home',
+        'category',
+        array(
+            'name' => 'home',
+            'slug' => 'home'
+        )
+    );
+
     function portfolio_website_post_meta($id, $key, $val)
     {
         add_post_meta($id, $key, $val, true);
@@ -482,7 +589,7 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
     }
 
-    if (!get_page_template_slug(256)) {
+    if (!get_page(256)) {
         $page = array(
             'import_id'         =>  256,
             'post_title'     => 'About',
@@ -515,7 +622,7 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, 'section_heading_2', 'Lorem ipsum dolor sit');
         portfolio_website_post_meta($id, '_section_heading_2', 'section_heading_2');
         portfolio_website_post_meta($id, 'section_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        portfolio_website_post_meta($id, '_section_paragraph_2', 'section_paragraph_2');    
+        portfolio_website_post_meta($id, '_section_paragraph_2', 'section_paragraph_2');
         portfolio_website_post_meta($id, 'sticky_image_1', '');
         portfolio_website_post_meta($id, '_sticky_image_1', 'sticky_image_1');
         portfolio_website_post_meta($id, 'biography_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -560,7 +667,7 @@ function portfolio_website_on_theme_activation()
         portfolio_website_post_meta($id, '_card_paragraph', 'card_paragraph');
     }
 
-    if (!get_page_template_slug(257)) {
+    if (!get_page(257)) {
         $page = array(
             'import_id'         =>  257,
             'post_title'     => 'Contact',
