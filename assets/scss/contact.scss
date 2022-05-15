@@ -55,6 +55,9 @@ main .tabs {
     textarea {
         background-image: url(../../images/template/paper.png);
     }
+    input[type="submit"]:disabled {
+        opacity: 1;
+    }
     textarea {
         appearance: auto;
         overflow-y: scroll;

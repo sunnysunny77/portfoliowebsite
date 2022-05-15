@@ -18,7 +18,9 @@ const options_3 = {
 };
 
 function showRequest_1(formData, jqForm, options) { 
-    $("#submit-1").prop( "disabled", true );
+    const sub = $("#submit-1");
+    sub.prop( "disabled", true );
+    sub.val('Sent');
 } 
 
 function showResponse_1(responseText, statusText, xhr, $form) {
@@ -27,13 +29,17 @@ function showResponse_1(responseText, statusText, xhr, $form) {
     res.html(responseText);
     setTimeout(function (){
         res.html(text);
-        $("#submit-1").prop( "disabled", false );
+        const sub = $("#submit-1");
+        sub.prop( "disabled", false );
+        sub.val('Submit');
         $form.trigger("reset");
     }, 9000);
 }
 
 function showRequest_2(formData, jqForm, options) { 
-    $("#submit-2").prop( "disabled", true );
+    const sub = $("#submit-2");
+    sub.prop( "disabled", true );
+    sub.val('Sent');
 } 
 
 function showResponse_2(responseText, statusText, xhr, $form) {
@@ -42,13 +48,17 @@ function showResponse_2(responseText, statusText, xhr, $form) {
     res.html(responseText);
     setTimeout(function (){
         res.html(text);
-        $("#submit-2").prop( "disabled", false );
+        const sub = $("#submit-2");
+        sub.prop( "disabled", false );
+        sub.val('Submit');
         $form.trigger("reset");
     }, 9000);
 }
 
 function showRequest_3(formData, jqForm, options) { 
-    $("#submit-3").prop( "disabled", true );
+    const sub = $("#submit-3");
+    sub.prop( "disabled", true );
+    sub.val('Sent');
 } 
 
 function showResponse_3(responseText, statusText, xhr, $form) {
@@ -57,7 +67,9 @@ function showResponse_3(responseText, statusText, xhr, $form) {
     res.html(responseText);
     setTimeout(function (){
         res.html(text);
-        $("#submit-3").prop( "disabled", false );
+        const sub = $("#submit-3");
+        sub.prop( "disabled", false );
+        sub.val('Submit');
         $form.trigger("reset");
     }, 9000);
 }
