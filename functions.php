@@ -516,19 +516,19 @@ add_action('edit_attachment', 'portfolio_website_set_attachment_category');
 
 function portfolio_website_on_theme_activation()
 {
-    $post = get_post(1);
+    $post = get_page_by_path('hello-world', OBJECT, 'post');
 
     if ($post) {
         wp_delete_post($post->ID, true);
     }
 
-    $post = get_post(2);
+    $post = get_page_by_path('Sample Page', OBJECT, 'page');
 
     if ($post) {
         wp_delete_post($post->ID, true);
     }
 
-    $post = get_post(3);
+    $post = get_page_by_path('Privacy Policy', OBJECT, 'page');
 
     if ($post) {
         wp_delete_post($post->ID, true);
