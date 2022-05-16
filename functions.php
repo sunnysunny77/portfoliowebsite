@@ -445,6 +445,26 @@ function portfolio_website_register_cptui()
 }
 add_action('init', 'portfolio_website_register_cptui');
 
+function portfolio_website_category_media()
+{
+    register_taxonomy_for_object_type('category', 'attachment');
+
+}
+
+add_action('init', 'portfolio_website_category_media');
+
+
+function portfolio_website_set_attachment_category($post_ID)
+{
+    $post = get_post( $post_ID );
+    $parent = get_post( $post->post_parent );
+    if($parent->post_type == 'storyboarding_films') {
+    $category = get_term_by( 'name', 'storyboarding_films', 'category' );
+    wp_set_object_terms($post_ID, $category->term_id, "category");
+    }
+};
+add_action('add_attachment', 'portfolio_website_set_attachment_category');
+add_action('edit_attachment', 'portfolio_website_set_attachment_category');
 
 function portfolio_website_on_theme_activation()
 {
