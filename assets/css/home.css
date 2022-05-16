@@ -200,7 +200,7 @@ footer::before {
 
 /* home */
 main > section {
-  margin: auto auto 3.6vh auto;
+  margin: auto auto 4.1vh auto;
 }
 
 .hover {
@@ -209,7 +209,7 @@ main > section {
 }
 @media screen and (min-width: 64em) {
   .hover {
-    margin: 7.3vh auto 22vh auto;
+    margin: 8.2vh auto 24.6vh auto;
     box-shadow: 0 1px rgba(43, 36, 29, 0.1), 0 -1px rgba(43, 36, 29, 0.1);
   }
 }
