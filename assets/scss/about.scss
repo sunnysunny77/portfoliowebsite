@@ -35,6 +35,9 @@
             @include medium_and_up() {
                 @include setbox(null, null, 0 0 0 0.5rem, null);
             }
+            h4 {
+                color: darkShift($color6);
+            }
         }
         &:nth-child(1) {
             @include setbox(null, null, 0, null);

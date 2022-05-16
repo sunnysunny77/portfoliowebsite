@@ -215,7 +215,7 @@ main .tabs {
   box-shadow: 0 1px rgba(43, 36, 29, 0.1);
 }
 main .tabs li {
-  background-color: rgba(138, 138, 138, 0.1);
+  background-color: rgba(97, 97, 97, 0.1);
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
 }
@@ -228,7 +228,7 @@ main .tabs li a h3 {
   padding: 0;
 }
 main .tabs .tabs-title > a[aria-selected=true] {
-  background-color: rgba(138, 138, 138, 0.1);
+  background-color: rgba(97, 97, 97, 0.1);
 }
 
 .tabs-content {
@@ -259,7 +259,7 @@ main .tabs .tabs-title > a[aria-selected=true] {
   appearance: auto;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #e1ca6f rgba(138, 138, 138, 0.25);
+  scrollbar-color: #e1ca6f rgba(97, 97, 97, 0.25);
   scrollbar-width: thin;
 }
 #main form textarea::-webkit-scrollbar {
@@ -269,11 +269,11 @@ main .tabs .tabs-title > a[aria-selected=true] {
   background: #e1ca6f;
 }
 #main form textarea::-webkit-scrollbar-track {
-  background: rgba(138, 138, 138, 0.25);
+  background: rgba(97, 97, 97, 0.25);
 }
 blockquote,
 cite {
-  color: #6a6a6a;
+  color: #414141;
 }
 
 /*# sourceMappingURL=contact.css.map */

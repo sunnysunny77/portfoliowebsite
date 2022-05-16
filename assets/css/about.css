@@ -227,6 +227,9 @@ footer::before {
     padding: 0 0 0 0.5rem;
   }
 }
+.media-object .media-object-section:nth-child(2) h4 {
+  color: #4a4a4a;
+}
 .media-object .media-object-section:nth-child(1) {
   padding: 0;
 }
@@ -279,13 +282,13 @@ footer::before {
 }
 
 .card {
-  background-color: rgba(138, 138, 138, 0.1);
+  background-color: rgba(97, 97, 97, 0.1);
   border: none;
   border-radius: 7px;
   box-shadow: 1px 1px rgba(43, 36, 29, 0.2), -1px -1px rgba(43, 36, 29, 0.2);
 }
 .card .card-divider {
-  background-color: rgba(138, 138, 138, 0.1);
+  background-color: rgba(97, 97, 97, 0.1);
   font-size: larger;
   color: #2b241d;
 }
