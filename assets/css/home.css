@@ -360,23 +360,11 @@ section h4 {
 section .top-link {
   position: sticky;
   top: 0;
-  right: 10px;
   margin: 0 1.75rem 0 0;
-}
-@media screen and (min-width: 40em) {
-  section .top-link {
-    top: 10px;
-    margin: 0 2.5rem 0 0;
-  }
 }
 section .top-link i {
   font-size: medium;
   color: #3a5f52;
-}
-@media screen and (min-width: 40em) {
-  section .top-link i {
-    font-size: 20px;
-  }
 }
 section .top-link i:hover, section .top-link i:focus {
   color: #e1ca6f;
