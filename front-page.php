@@ -126,11 +126,11 @@ $disclaimer = get_field('disclaimer');
                             creations</a></li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="cell small-12 medium-8 large-9 grid-x
@@ -236,11 +236,11 @@ $disclaimer = get_field('disclaimer');
                     <li>Theatre:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -285,11 +285,11 @@ $disclaimer = get_field('disclaimer');
                     <li>Design:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -340,11 +340,11 @@ $disclaimer = get_field('disclaimer');
                     </li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <div class="cell small-12 medium-8 large-9 grid-x
@@ -422,11 +422,11 @@ $disclaimer = get_field('disclaimer');
                     <li>Sculptures:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -471,11 +471,11 @@ $disclaimer = get_field('disclaimer');
                     <li>Illustrations:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                                <a href="#main"><br/>
-                                    <i class="fi-eject"></i>
-                                    Return to menu
-                                </a>
-                            </li>
+                        <a href="#main"><br />
+                            <i class="fi-eject"></i>
+                            Return to menu
+                        </a>
+                    </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
