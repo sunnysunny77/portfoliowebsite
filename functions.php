@@ -448,19 +448,57 @@ add_action('init', 'portfolio_website_register_cptui');
 function portfolio_website_category_media()
 {
     register_taxonomy_for_object_type('category', 'attachment');
-
 }
-
 add_action('init', 'portfolio_website_category_media');
-
 
 function portfolio_website_set_attachment_category($post_ID)
 {
-    $post = get_post( $post_ID );
-    $parent = get_post( $post->post_parent );
-    if($parent->post_type == 'storyboarding_films') {
-    $category = get_term_by( 'name', 'storyboarding_films', 'category' );
-    wp_set_object_terms($post_ID, $category->term_id, "category");
+    $post = get_post($post_ID);
+    $parent = get_post($post->post_parent);
+    if ($parent->post_type == 'storyboarding_films') {
+        $category = get_term_by('name', 'storyboarding_films', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'concepts_films') {
+        $category = get_term_by('name', 'concepts_films', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'independent_films') {
+        $category = get_term_by('name', 'independent_films', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'theatre') {
+        $category = get_term_by('name', 'theatre', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'designs') {
+        $category = get_term_by('name', 'designs', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'poems_poetry') {
+        $category = get_term_by('name', 'poems_poetry', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'illustrated_poetry') {
+        $category = get_term_by('name', 'illustrated_poetry', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'sculptures') {
+        $category = get_term_by('name', 'sculptures', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
+    }
+    if ($parent->post_type == 'illustrations') {
+        $category = get_term_by('name', 'illustrations', 'category');
+        wp_set_object_terms($post_ID, $category->term_id, "category");
+        return;
     }
 };
 add_action('add_attachment', 'portfolio_website_set_attachment_category');
@@ -552,33 +590,6 @@ function portfolio_website_on_theme_activation()
         array(
             'name' => 'illustrations',
             'slug' => 'illustrations'
-        )
-    );
-
-    wp_insert_term(
-        'about',
-        'category',
-        array(
-            'name' => 'about',
-            'slug' => 'about'
-        )
-    );
-
-    wp_insert_term(
-        'home',
-        'category',
-        array(
-            'name' => 'home',
-            'slug' => 'home'
-        )
-    );
-
-    wp_insert_term(
-        'contact',
-        'category',
-        array(
-            'name' => 'contact',
-            'slug' => 'contact'
         )
     );
 
