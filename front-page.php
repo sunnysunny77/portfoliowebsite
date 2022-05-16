@@ -125,6 +125,12 @@ $disclaimer = get_field('disclaimer');
                     <li><i class="fi-list"></i><a href="#independent">Independent
                             creations</a></li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <div class="cell small-12 medium-8 large-9 grid-x
@@ -134,7 +140,7 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
-                        <a aria-label="Go to top" class="cell top-link
+                        <a aria-label="Go to top" class="cell top-link show-for-small-only
                             text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
@@ -162,7 +168,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="concept" class="cell text-right">Concept
                             art</h4>
 
-                        <a aria-label="Go to top" class="cell top-link
+                        <a aria-label="Go to top" class="cell top-link show-for-small-only
                             text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
@@ -191,7 +197,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="independent" class="cell text-right">Independent
                             creations</h4>
 
-                        <a aria-label="Go to top" class="cell top-link
+                        <a aria-label="Go to top" class="cell top-link show-for-small-only
                             text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
@@ -229,6 +235,12 @@ $disclaimer = get_field('disclaimer');
                     <li> <i class="fi-thumbnails"></i></li>
                     <li>Theatre:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -236,7 +248,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right"> Theatre</h4>
 
-                    <a aria-label="Go to top" class="cell top-link
+                    <a aria-label="Go to top" class="cell top-link show-for-small-only
                         text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
@@ -272,6 +284,12 @@ $disclaimer = get_field('disclaimer');
                     <li> <i class="fi-thumbnails"></i></li>
                     <li>Design:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -279,7 +297,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Design</h4>
 
-                    <a aria-label="Go to top" class="cell top-link
+                    <a aria-label="Go to top" class="cell top-link show-for-small-only
                         text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
@@ -321,6 +339,12 @@ $disclaimer = get_field('disclaimer');
                         </ul>
                     </li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <div class="cell small-12 medium-8 large-9 grid-x
@@ -330,7 +354,7 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="poetry" class="cell text-right">Poems</h4>
-                        <a aria-label="Go to top" class="cell top-link
+                        <a aria-label="Go to top" class="cell top-link show-for-small-only
                             text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
@@ -359,7 +383,7 @@ $disclaimer = get_field('disclaimer');
                             text-right">Illustrated
                             Poetry</h4>
 
-                        <a aria-label="Go to top" class="cell top-link
+                        <a aria-label="Go to top" class="cell top-link show-for-small-only
                             text-right" href="#main"><i class="fi-eject"></i></a>
 
                         <?php
@@ -397,6 +421,12 @@ $disclaimer = get_field('disclaimer');
                     <li> <i class="fi-thumbnails"></i></li>
                     <li>Sculptures:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -404,7 +434,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Sculptures</h4>
 
-                    <a aria-label="Go to top" class="cell top-link
+                    <a aria-label="Go to top" class="cell top-link show-for-small-only
                         text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
@@ -440,6 +470,12 @@ $disclaimer = get_field('disclaimer');
                     <li> <i class="fi-thumbnails"></i></li>
                     <li>Illustrations:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
+                    <li class="show-for-medium">
+                                <a href="#main"><br/>
+                                    <i class="fi-eject"></i>
+                                    Return to menu
+                                </a>
+                            </li>
                 </ul>
 
                 <section class="cell small-12 medium-8 large-9 grid-x
@@ -447,7 +483,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Illustrations</h4>
                     <a aria-label="Go to top" class="cell
-                        top-link
+                        top-link show-for-small-only
                         text-right" href="#main"><i class="fi-eject"></i></a>
 
                     <?php
