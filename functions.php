@@ -451,14 +451,15 @@ function portfolio_website_category_media()
 }
 add_action('init', 'portfolio_website_category_media');
 
-function portfolio_website_change_category_arg() {
+function portfolio_website_change_category_arg()
+{
     global $wp_taxonomies;
-    if ( ! taxonomy_exists('category') )
+    if (!taxonomy_exists('category'))
         return false;
 
     $wp_taxonomies['category']->update_count_callback = '_update_generic_term_count';
 }
-add_action( 'init', 'portfolio_website_change_category_arg' );
+add_action('init', 'portfolio_website_change_category_arg');
 
 function portfolio_website_set_attachment_category($post_ID)
 {
@@ -520,87 +521,105 @@ function portfolio_website_on_theme_activation()
     if ($post) {
         wp_delete_post($post->ID, true);
     }
+    
+    if (!term_exists('storyboarding films', 'category')) {
+        wp_insert_term(
+            'storyboarding_films',
+            'category',
+            array(
+                'name' => 'storyboarding_films',
+                'slug' => 'storyboarding_films'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'storyboarding_films',
-        'category',
-        array(
-            'name' => 'storyboarding_films',
-            'slug' => 'storyboarding_films'
-        )
-    );
+    if (!term_exists('concepts_films', 'category')) {
+        wp_insert_term(
+            'concepts_films',
+            'category',
+            array(
+                'name' => 'concepts_films',
+                'slug' => 'concepts_films'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'concepts_films',
-        'category',
-        array(
-            'name' => 'concepts_films',
-            'slug' => 'concepts_films'
-        )
-    );
+    if (!term_exists('independent_films', 'category')) {
+        wp_insert_term(
+            'independent_films',
+            'category',
+            array(
+                'name' => 'independent_films',
+                'slug' => 'independent_films'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'independent_films',
-        'category',
-        array(
-            'name' => 'independent_films',
-            'slug' => 'independent_films'
-        )
-    );
+    if (!term_exists('theatre', 'category')) {
+        wp_insert_term(
+            'theatre',
+            'category',
+            array(
+                'name' => 'theatre',
+                'slug' => 'theatre'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'theatre',
-        'category',
-        array(
-            'name' => 'theatre',
-            'slug' => 'theatre'
-        )
-    );
+    if (!term_exists('designs', 'category')) {
+        wp_insert_term(
+            'designs',
+            'category',
+            array(
+                'name' => 'designs',
+                'slug' => 'designs'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'designs',
-        'category',
-        array(
-            'name' => 'designs',
-            'slug' => 'designs'
-        )
-    );
+    if (!term_exists('poems_poetry', 'category')) {
+        wp_insert_term(
+            'poems_poetry',
+            'category',
+            array(
+                'name' => 'poems_poetry',
+                'slug' => 'poems_poetry'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'poems_poetry',
-        'category',
-        array(
-            'name' => 'poems_poetry',
-            'slug' => 'poems_poetry'
-        )
-    );
+    if (!term_exists('illustrated_poetry', 'category')) {
+        wp_insert_term(
+            'illustrated_poetry',
+            'category',
+            array(
+                'name' => 'illustrated_poetry',
+                'slug' => 'illustrated_poetry'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'illustrated_poetry',
-        'category',
-        array(
-            'name' => 'illustrated_poetry',
-            'slug' => 'illustrated_poetry'
-        )
-    );
+    if (!term_exists('sculptures', 'category')) {
+        wp_insert_term(
+            'sculptures',
+            'category',
+            array(
+                'name' => 'sculptures',
+                'slug' => 'sculptures'
+            )
+        );
+    }
 
-    wp_insert_term(
-        'sculptures',
-        'category',
-        array(
-            'name' => 'sculptures',
-            'slug' => 'sculptures'
-        )
-    );
-
-    wp_insert_term(
-        'illustrations',
-        'category',
-        array(
-            'name' => 'illustrations',
-            'slug' => 'illustrations'
-        )
-    );
+    if (!term_exists('illustrations', 'category')) {
+        wp_insert_term(
+            'illustrations',
+            'category',
+            array(
+                'name' => 'illustrations',
+                'slug' => 'illustrations'
+            )
+        );
+    }
 
     function portfolio_website_post_meta($id, $key, $val)
     {
