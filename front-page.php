@@ -126,7 +126,7 @@ $disclaimer = get_field('disclaimer');
                             creations</a></li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -141,7 +141,7 @@ $disclaimer = get_field('disclaimer');
 
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
                         <a aria-label="Go to top" class="cell top-link show-for-small-only
-                            text-right" href="#main"><i class="fi-eject"></i></a>
+                            text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
@@ -169,7 +169,7 @@ $disclaimer = get_field('disclaimer');
                             art</h4>
 
                         <a aria-label="Go to top" class="cell top-link show-for-small-only
-                            text-right" href="#main"><i class="fi-eject"></i></a>
+                            text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
@@ -198,7 +198,7 @@ $disclaimer = get_field('disclaimer');
                             creations</h4>
 
                         <a aria-label="Go to top" class="cell top-link show-for-small-only
-                            text-right" href="#main"><i class="fi-eject"></i></a>
+                            text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
@@ -236,7 +236,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Theatre:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -249,7 +249,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right"> Theatre</h4>
 
                     <a aria-label="Go to top" class="cell top-link show-for-small-only
-                        text-right" href="#main"><i class="fi-eject"></i></a>
+                        text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
@@ -285,7 +285,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Design:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -298,7 +298,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Design</h4>
 
                     <a aria-label="Go to top" class="cell top-link show-for-small-only
-                        text-right" href="#main"><i class="fi-eject"></i></a>
+                        text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
@@ -340,7 +340,7 @@ $disclaimer = get_field('disclaimer');
                     </li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -355,7 +355,7 @@ $disclaimer = get_field('disclaimer');
 
                         <h4 id="poetry" class="cell text-right">Poems</h4>
                         <a aria-label="Go to top" class="cell top-link show-for-small-only
-                            text-right" href="#main"><i class="fi-eject"></i></a>
+                            text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
@@ -384,7 +384,7 @@ $disclaimer = get_field('disclaimer');
                             Poetry</h4>
 
                         <a aria-label="Go to top" class="cell top-link show-for-small-only
-                            text-right" href="#main"><i class="fi-eject"></i></a>
+                            text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
@@ -422,7 +422,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Sculptures:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -435,7 +435,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Sculptures</h4>
 
                     <a aria-label="Go to top" class="cell top-link show-for-small-only
-                        text-right" href="#main"><i class="fi-eject"></i></a>
+                        text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
@@ -471,7 +471,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Illustrations:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#main"><br />
+                        <a href="#responsive-menu"><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -484,7 +484,7 @@ $disclaimer = get_field('disclaimer');
                     <h4 class="cell text-right">Illustrations</h4>
                     <a aria-label="Go to top" class="cell
                         top-link show-for-small-only
-                        text-right" href="#main"><i class="fi-eject"></i></a>
+                        text-right" href="#responsive-menu"><i class="fi-eject"></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));
