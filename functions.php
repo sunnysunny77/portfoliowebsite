@@ -451,6 +451,15 @@ function portfolio_website_category_media()
 }
 add_action('init', 'portfolio_website_category_media');
 
+function portfolio_website_change_category_arg() {
+    global $wp_taxonomies;
+    if ( ! taxonomy_exists('category') )
+        return false;
+
+    $wp_taxonomies['category']->update_count_callback = '_update_generic_term_count';
+}
+add_action( 'init', 'portfolio_website_change_category_arg' );
+
 function portfolio_website_set_attachment_category($post_ID)
 {
     $post = get_post($post_ID);
