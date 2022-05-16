@@ -5,11 +5,15 @@
   @extend %active;
 }
 
+main > section {
+  @include setbox(null, null, null, auto auto 3.8vh auto);
+}
+
 .hover {
   @include setbox(null, null, null, 1rem auto);
   box-shadow: 0 -1px rgba($color1, 0.1);
   @include large_and_up {
-    @include setbox(null, null, null, 1rem auto 24vh auto);
+    @include setbox(null, null, null, 7.6vh auto 18vh auto);
     box-shadow: 0 1px rgba($color1, 0.1), 0 -1px rgba($color1, 0.1);
   }
   .tabs-title > a[aria-selected="true"],

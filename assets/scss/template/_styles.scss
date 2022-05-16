@@ -1,7 +1,6 @@
 /* template */
 
 body {
-    max-width: 1920px;
     @include setbox(null, null, null, auto);
     position: relative;
     font-family: OpenSans-Regular;

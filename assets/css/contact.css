@@ -28,7 +28,6 @@ main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
 }
 /* template */
 body {
-  max-width: 1920px;
   margin: auto;
   position: relative;
   font-family: OpenSans-Regular;

@@ -42,7 +42,6 @@ main input[type=submit]:hover, main input[type=submit]:focus {
 }
 /* template */
 body {
-  max-width: 1920px;
   margin: auto;
   position: relative;
   font-family: OpenSans-Regular;
