@@ -457,67 +457,73 @@ add_action('init', 'portfolio_website_category_media');
 
 function portfolio_website_set_attachment_category($post_ID)
 {
+    $post_types = ["storyboarding_films","concepts_films","independent_films","theatre","designs","poems_poetry","illustrated_poetry","sculptures","illustrations"];
+    
     $post = get_post($post_ID);
     $parent = get_post($post->post_parent);
+    $post = $parent->post_type;
 
-    function portfolio_website_set_terms($value, $post_ID)
-    {
-        $category = get_term_by('name', $value, 'category');
-        wp_set_object_terms($post_ID, $category->term_id, 'category');
-    }
+    if (in_array($post, $post_types)) {
 
-    $post_type = "storyboarding_films";
+        function portfolio_website_set_terms($value, $post_ID)
+        {
+            $category = get_term_by('name', $value, 'category');
+            wp_set_object_terms($post_ID, $category->term_id, 'category');
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[0];
 
-    $post_type = "concepts_films";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[1];
 
-    $post_type = "independent_films";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[2];
 
-    $post_type = "theatre";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[3];
 
-    $post_type = "designs";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[4];
 
-    $post_type = "poems_poetry";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[5];
 
-    $post_type = "illustrated_poetry";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[6];
 
-    $post_type = "sculptures";
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
-    }
+        $post_type = $post_types[7];
 
-    $post_type = "illustrations";
+        if ($post== $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
 
-    if ($parent->post_type == $post_type) {
-        portfolio_website_set_terms($post_type, $post_ID);
+        $post_type = $post_types[8];
+
+        if ($post == $post_type) {
+            portfolio_website_set_terms($post_type, $post_ID);
+        }
     }
 };
 add_action('add_attachment', 'portfolio_website_set_attachment_category');
