@@ -510,122 +510,52 @@ add_action('edit_attachment', 'portfolio_website_set_attachment_category');
 
 function portfolio_website_on_theme_activation()
 {
-    $post = get_page_by_path('hello-world', OBJECT, 'post');
 
-    if ($post) {
-        wp_delete_post($post->ID, true);
+    function portfolio_website_remove_post($page_path, $output, $post_type)
+    {
+        $post = get_page_by_path($page_path, $output, $post_type);
+        if ($post) {
+            wp_delete_post($post->ID, true);
+        }
     }
 
-    $post = get_page_by_path('Sample Page', OBJECT, 'page');
+    portfolio_website_remove_post('hello-world', 'OBJECT', 'post');
 
-    if ($post) {
-        wp_delete_post($post->ID, true);
+    portfolio_website_remove_post('Sample Page', 'OBJECT', 'page');
+
+    portfolio_website_remove_post('Privacy Policy', 'OBJECT', 'page');
+
+    function portfolio_website_insert_term($term, $taxonomy)
+    {
+        if (!term_exists($term, $taxonomy)) {
+            wp_insert_term(
+                $term,
+                $taxonomy,
+                array(
+                    'name' => $term,
+                    'slug' => $term,
+                )
+            );
+        }
     }
 
-    $post = get_page_by_path('Privacy Policy', OBJECT, 'page');
+    portfolio_website_insert_term('storyboarding_films','category');
 
-    if ($post) {
-        wp_delete_post($post->ID, true);
-    }
-    
-    if (!term_exists('storyboarding films', 'category')) {
-        wp_insert_term(
-            'storyboarding_films',
-            'category',
-            array(
-                'name' => 'storyboarding_films',
-                'slug' => 'storyboarding_films'
-            )
-        );
-    }
+    portfolio_website_insert_term('concepts_films', 'category');
 
-    if (!term_exists('concepts_films', 'category')) {
-        wp_insert_term(
-            'concepts_films',
-            'category',
-            array(
-                'name' => 'concepts_films',
-                'slug' => 'concepts_films'
-            )
-        );
-    }
+    portfolio_website_insert_term('independent_films', 'category');
 
-    if (!term_exists('independent_films', 'category')) {
-        wp_insert_term(
-            'independent_films',
-            'category',
-            array(
-                'name' => 'independent_films',
-                'slug' => 'independent_films'
-            )
-        );
-    }
+    portfolio_website_insert_term('theatre', 'category');
 
-    if (!term_exists('theatre', 'category')) {
-        wp_insert_term(
-            'theatre',
-            'category',
-            array(
-                'name' => 'theatre',
-                'slug' => 'theatre'
-            )
-        );
-    }
+    portfolio_website_insert_term('designs', 'category');
 
-    if (!term_exists('designs', 'category')) {
-        wp_insert_term(
-            'designs',
-            'category',
-            array(
-                'name' => 'designs',
-                'slug' => 'designs'
-            )
-        );
-    }
+    portfolio_website_insert_term('poems_poetry', 'category');
 
-    if (!term_exists('poems_poetry', 'category')) {
-        wp_insert_term(
-            'poems_poetry',
-            'category',
-            array(
-                'name' => 'poems_poetry',
-                'slug' => 'poems_poetry'
-            )
-        );
-    }
+    portfolio_website_insert_term('illustrated_poetry', 'category');
 
-    if (!term_exists('illustrated_poetry', 'category')) {
-        wp_insert_term(
-            'illustrated_poetry',
-            'category',
-            array(
-                'name' => 'illustrated_poetry',
-                'slug' => 'illustrated_poetry'
-            )
-        );
-    }
+    portfolio_website_insert_term('sculptures', 'category');
 
-    if (!term_exists('sculptures', 'category')) {
-        wp_insert_term(
-            'sculptures',
-            'category',
-            array(
-                'name' => 'sculptures',
-                'slug' => 'sculptures'
-            )
-        );
-    }
-
-    if (!term_exists('illustrations', 'category')) {
-        wp_insert_term(
-            'illustrations',
-            'category',
-            array(
-                'name' => 'illustrations',
-                'slug' => 'illustrations'
-            )
-        );
-    }
+    portfolio_website_insert_term('illustrations', 'category');
 
     function portfolio_website_post_meta($id, $key, $val)
     {
