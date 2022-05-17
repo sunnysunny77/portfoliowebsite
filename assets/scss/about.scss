@@ -73,12 +73,14 @@
 #stick-1 {
     @include medium_and_up() {
         @include box(null, 0 1rem 0 0);
+        box-sizing: border-box;
     }
 }
 
 #stick-2 {
     @include medium_and_up() {
         @include box(null, 0 0 0 1rem);
+        box-sizing: border-box;
     }
 }
 

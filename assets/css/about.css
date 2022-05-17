@@ -306,12 +306,14 @@ footer::before {
 @media screen and (min-width: 40em) {
   #stick-1 {
     padding: 0 1rem 0 0;
+    box-sizing: border-box;
   }
 }
 
 @media screen and (min-width: 40em) {
   #stick-2 {
     padding: 0 0 0 1rem;
+    box-sizing: border-box;
   }
 }
 
