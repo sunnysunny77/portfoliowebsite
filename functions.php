@@ -457,8 +457,8 @@ add_action('init', 'portfolio_website_category_media');
 
 function portfolio_website_set_attachment_category($post_ID)
 {
-    $post_types = ["storyboarding_films","concepts_films","independent_films","theatre","designs","poems_poetry","illustrated_poetry","sculptures","illustrations"];
-    
+    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+
     $post = get_post($post_ID);
     $parent = get_post($post->post_parent);
     $post = $parent->post_type;
@@ -471,58 +471,11 @@ function portfolio_website_set_attachment_category($post_ID)
             wp_set_object_terms($post_ID, $category->term_id, 'category');
         }
 
-        $post_type = $post_types[0];
+        foreach ($post_types as $post_type) {
 
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[1];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[2];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[3];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[4];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[5];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[6];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[7];
-
-        if ($post== $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
-        }
-
-        $post_type = $post_types[8];
-
-        if ($post == $post_type) {
-            portfolio_website_set_terms($post_type, $post_ID);
+            if ($post == $post_type) {
+                portfolio_website_set_terms($post_type, $post_ID);
+            }
         }
     }
 };
