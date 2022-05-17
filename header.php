@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Foundation 6 Wordpress theme">
-    <meta name="keywords" content="Foundation 6, Wordpress">
+    <meta name="description" content="Jerry Verschoor's portfolio website">
+    <meta name="keywords" content="Film, Theatre, Design, Poetry, Sculptures, Illustrations">
     <meta name="author" content="D.C">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_title('', false); ?>
