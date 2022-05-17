@@ -53,6 +53,10 @@ h5 {
 
 main {
     min-height: 89vh;
+    @include x_large_and_up {
+        @include setbox(1920px, null, null, auto);
+        box-shadow: 1px 0 rgba($color1, 0.2), -1px 0 rgba($color1, 0.2);
+    }
     @include medium_and_up() {
         > * {
             margin-bottom: 50px;

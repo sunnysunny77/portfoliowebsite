@@ -86,6 +86,13 @@ h5 {
 main {
   min-height: 89vh;
 }
+@media screen and (min-width: 1921px) {
+  main {
+    width: 1920px;
+    margin: auto;
+    box-shadow: 1px 0 rgba(43, 36, 29, 0.2), -1px 0 rgba(43, 36, 29, 0.2);
+  }
+}
 @media screen and (min-width: 40em) {
   main > * {
     margin-bottom: 50px;
