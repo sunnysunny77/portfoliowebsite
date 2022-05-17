@@ -314,12 +314,12 @@ main > section {
   background-color: transparent;
   box-shadow: 0 -1px rgba(43, 36, 29, 0.2);
   border: none;
-  max-width: 1920px;
   margin: 0;
   padding: 0;
 }
 @media screen and (min-width: 1920px) {
   .tabs-content {
+    width: 1920px;
     margin: auto;
     box-shadow: 1px -1px rgba(43, 36, 29, 0.2), -1px 0 rgba(43, 36, 29, 0.2);
   }

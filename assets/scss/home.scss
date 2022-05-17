@@ -105,9 +105,8 @@ main > section {
   background-color: $transparent;
   box-shadow: 0 -1px rgba($color1, 0.2);
   border: none;
-  max-width: 1920px;
   @include x_large_and_up {
-    @include box(auto, null);
+    @include setbox(1920px, null, null, auto);
     box-shadow: 1px -1px rgba($color1, 0.2), -1px 0 rgba($color1, 0.2);
   }
   @include box();
