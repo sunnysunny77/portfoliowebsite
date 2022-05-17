@@ -6,8 +6,16 @@ footer {
     color: $color1;
     position: relative;
     z-index: 0;
-    ul + ul {
+    > ul.no-bullet  {
+        @include x_large_and_up {
+            @include box(auto auto auto calc(50vw - 960px), null);
+        }
+    }
+    ul + ul.no-bullet {
         font-size: smaller;
+        @include x_large_and_up {
+            @include box(auto calc(50vw - 960px) auto auto, null);
+        }
     }
     li a {
         color: $color1;

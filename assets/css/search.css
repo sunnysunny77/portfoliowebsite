@@ -98,7 +98,7 @@ h5 {
 }
 
 main {
-  min-height: 78.92vh;
+  min-height: 89vh;
 }
 @media screen and (min-width: 40em) {
   main > * {
@@ -114,6 +114,11 @@ main i {
   background-color: #e1ca6f;
   background-blend-mode: screen;
 }
+@media screen and (min-width: 1920px) {
+  .top-bar .top-bar-right {
+    margin: auto calc(50vw - 960px) auto auto;
+  }
+}
 .top-bar .top-bar-right ul {
   background: transparent;
 }
@@ -124,6 +129,11 @@ main i {
 .top-bar .top-bar-right ul li a:hover, .top-bar .top-bar-right ul li a:focus {
   color: #f8f8ff;
   text-shadow: none;
+}
+@media screen and (min-width: 1920px) {
+  .top-bar .top-bar-left {
+    margin: auto auto auto calc(50vw - 960px);
+  }
 }
 .top-bar .top-bar-left #my-svg {
   display: inline-block;
@@ -168,8 +178,18 @@ footer {
   position: relative;
   z-index: 0;
 }
-footer ul + ul {
+@media screen and (min-width: 1920px) {
+  footer > ul.no-bullet {
+    margin: auto auto auto calc(50vw - 960px);
+  }
+}
+footer ul + ul.no-bullet {
   font-size: smaller;
+}
+@media screen and (min-width: 1920px) {
+  footer ul + ul.no-bullet {
+    margin: auto calc(50vw - 960px) auto auto;
+  }
 }
 footer li a {
   color: #2b241d;

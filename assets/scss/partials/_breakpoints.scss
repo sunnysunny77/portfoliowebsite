@@ -5,3 +5,7 @@
 @mixin large_and_up {
     @media screen and (min-width: 64em) { @content; }
 }
+
+@mixin x_large_and_up {
+    @media screen and (min-width: 1920px) { @content; }
+}
