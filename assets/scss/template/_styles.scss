@@ -67,6 +67,13 @@ main {
     }
 }
 
+main.grid-container {
+    @include x_large_and_up {
+        box-sizing: content-box;
+        @include setbox(null, null, 0 360px, null);
+    }
+}
+
 @import "./header";
 
 @import "./footer";
