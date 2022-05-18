@@ -28,6 +28,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-media-interactive',
 ];
 
 register_post_type("storyboarding_films", $args);
@@ -60,6 +61,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-welcome-view-site',
 ];
 
 register_post_type("concepts_films", $args);
@@ -92,6 +94,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-video-alt2',
 ];
 
 register_post_type("independent_films", $args);
@@ -124,6 +127,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-tickets-alt',
 ];
 
 register_post_type("theatre", $args);
@@ -156,6 +160,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-slides',
 ];
 
 register_post_type("designs", $args);
@@ -188,6 +193,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-text-page',
 ];
 
 register_post_type("poems_poetry", $args);
@@ -220,6 +226,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-format-gallery',
 ];
 
 register_post_type("illustrated_poetry", $args);
@@ -252,6 +259,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-editor-customchar',
 ];
 
 register_post_type("sculptures", $args);
@@ -284,6 +292,7 @@ $args = [
     "query_var" => true,
     "supports" => ["title"],
     "show_in_graphql" => false,
+    'menu_icon' => 'dashicons-art',
 ];
 
 register_post_type("illustrations", $args);
