@@ -140,7 +140,7 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
-                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
@@ -168,7 +168,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="concept" class="cell text-right">Concept
                             art</h4>
 
-                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
@@ -197,7 +197,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="independent" class="cell text-right">Independent
                             creations</h4>
 
-                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
@@ -248,7 +248,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right"> Theatre</h4>
 
-                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                    <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
@@ -297,7 +297,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Design</h4>
 
-                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                    <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
@@ -354,7 +354,7 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="poetry" class="cell text-right">Poems</h4>
-                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
@@ -383,7 +383,7 @@ $disclaimer = get_field('disclaimer');
                             text-right">Illustrated
                             Poetry</h4>
 
-                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
@@ -434,7 +434,7 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Sculptures</h4>
 
-                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                    <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
@@ -482,7 +482,7 @@ $disclaimer = get_field('disclaimer');
                     text-center align-center">
 
                     <h4 class="cell text-right">Illustrations</h4>
-                    <a aria-label="Return to top" class="cell
+                    <a aria-label="Return to menu" class="cell
                         top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
