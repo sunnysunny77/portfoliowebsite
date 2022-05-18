@@ -40,8 +40,6 @@ function portfolio_website_scripts()
 
     wp_enqueue_style('icons', get_template_directory_uri() . '/assets/css/icons/foundation-icons.css');
 
-    wp_enqueue_style( 'dashicons' );
-
     wp_enqueue_script('what-input', get_template_directory_uri() . '/js/vendor/what-input.js', array('jquery'), '', true);
 
     wp_enqueue_script('vivus', get_template_directory_uri() . '/node_modules/vivus/dist/vivus.min.js', '', '', true);
