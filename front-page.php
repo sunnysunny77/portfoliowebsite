@@ -140,8 +140,8 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
-                        <a  class="cell top-link show-for-small-only
-                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
@@ -168,8 +168,8 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="concept" class="cell text-right">Concept
                             art</h4>
 
-                        <a  class="cell top-link show-for-small-only
-                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
@@ -197,8 +197,8 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="independent" class="cell text-right">Independent
                             creations</h4>
 
-                        <a  class="cell top-link show-for-small-only
-                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
@@ -248,8 +248,8 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right"> Theatre</h4>
 
-                    <a  class="cell top-link show-for-small-only
-                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
@@ -297,8 +297,8 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Design</h4>
 
-                    <a  class="cell top-link show-for-small-only
-                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
@@ -354,8 +354,8 @@ $disclaimer = get_field('disclaimer');
                         text-center align-center">
 
                         <h4 id="poetry" class="cell text-right">Poems</h4>
-                        <a  class="cell top-link show-for-small-only
-                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
@@ -383,8 +383,8 @@ $disclaimer = get_field('disclaimer');
                             text-right">Illustrated
                             Poetry</h4>
 
-                        <a  class="cell top-link show-for-small-only
-                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        <a aria-label="Return to top" class="cell top-link show-for-small-only
+                            text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                         <?php
                         $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
@@ -434,8 +434,8 @@ $disclaimer = get_field('disclaimer');
 
                     <h4 class="cell text-right">Sculptures</h4>
 
-                    <a  class="cell top-link show-for-small-only
-                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                    <a aria-label="Return to top" class="cell top-link show-for-small-only
+                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
@@ -482,9 +482,9 @@ $disclaimer = get_field('disclaimer');
                     text-center align-center">
 
                     <h4 class="cell text-right">Illustrations</h4>
-                    <a  class="cell
+                    <a aria-label="Return to top" class="cell
                         top-link show-for-small-only
-                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i><span class="hide">Return to menu</span></a>
+                        text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
 
                     <?php
                     $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));
