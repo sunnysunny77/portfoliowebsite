@@ -19,7 +19,7 @@
 
         <div data-toggle="responsive-menu"  class="cell title-bar-title">
 
-            <span role="img" aria-label="Small Logo Verschoor Vision Imagenation" id="my-svg-m" ></span>
+            <span role="img" aria-label="Small Logo Verschoor Vision Imagi/enation" id="my-svg-m" ></span>
             <i class="fi-list">
                 <span class="hide">menu</span>
             </i>
@@ -32,7 +32,7 @@
 
         <div class="top-bar-left show-for-medium">
 
-            <span role="img" aria-label="Full Logo Verschoor Vision Imagenation" id="my-svg"></span>
+            <span role="img" aria-label="Full Logo Verschoor Vision Imagi/enation" id="my-svg"></span>
 
         </div>
 
