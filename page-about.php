@@ -4,7 +4,7 @@
 
     <h2 class="cell text-center medium-text-right"><?php echo the_field('heading') ?></h2>
 
-    <i class="fi-pencil"></i>
+    <i class="fi-pencil"><span class="hide">Pen icon</span></i>
 
     <section class="grid-x p-left">
 
