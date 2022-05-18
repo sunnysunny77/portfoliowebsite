@@ -12,7 +12,7 @@
         $phone = $_REQUEST["phone"];
         $outside_aus = $_REQUEST["outside-aus"]? "Yes" : "No"; 
         $street = $_REQUEST["street"];
-        $suberb = $_REQUEST["suberb"];
+        $suburb = $_REQUEST["suburb"];
         $city = $_REQUEST["city"];
         $post_code = $_REQUEST["post-code"];
         $text = $_REQUEST["text"];
@@ -25,7 +25,7 @@
         Phone: ".$phone."
         Outside Australia: ".$outside_aus."
         Street: ".$street."
-        Suberb: ".$suberb."
+        Suburb: ".$suburb."
         City: ".$city."
         Post Code: ".$post_code."
         Purchase details: ".$text;

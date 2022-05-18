@@ -126,7 +126,7 @@ $disclaimer = get_field('disclaimer');
                             creations</a></li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -236,7 +236,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Theatre:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -285,7 +285,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Design:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -340,7 +340,7 @@ $disclaimer = get_field('disclaimer');
                     </li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -422,7 +422,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Sculptures:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>
@@ -471,7 +471,7 @@ $disclaimer = get_field('disclaimer');
                     <li>Illustrations:</li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
                     <li class="show-for-medium">
-                        <a href="#top"><br />
+                        <a href="#top"><br /><br />
                             <i class="fi-eject"></i>
                             Return to menu
                         </a>

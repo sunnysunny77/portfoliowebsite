@@ -379,6 +379,11 @@ main > section {
     top: 0;
   }
 }
+@media screen and (min-width: 64em) {
+  .sticky-ul {
+    font-size: 19px;
+  }
+}
 .sticky-ul li a {
   margin: 0;
   padding: 0;

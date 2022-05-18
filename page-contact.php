@@ -93,8 +93,8 @@
                         <input required type="text" name="street" maxlength="40">
                     </label>
                     <label class="cell large-3">
-                        Suberb  
-                        <input required type="text" name="suberb" maxlength="40">
+                        Suburb  
+                        <input required type="text" name="suburb" maxlength="40">
                     </label>
                     <label class="cell small-6 large-3">
                         City   
