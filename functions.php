@@ -29,7 +29,7 @@ add_action('after_setup_theme', 'portfolio_website_setup');
 function portfolio_website_scripts()
 {
 
-    //foundation 6 for sites and icons + vivus
+    //foundation 6 for sites and icons + vivus + app
     wp_deregister_script('jquery');
 
     wp_enqueue_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', '', '', false);
