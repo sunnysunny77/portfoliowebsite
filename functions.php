@@ -53,7 +53,7 @@ function portfolio_website_scripts()
     //AJAX
     wp_enqueue_script('jquery-form', '', array('jquery'), '', true);
 
-    //theme styles
+    //theme 
     if (is_front_page()) {
         wp_enqueue_style('home-css', get_template_directory_uri() . '/assets/css/home.css');
         wp_enqueue_script('goto-js', get_template_directory_uri() . '/js/goto.js', array('jquery'), '', true);
