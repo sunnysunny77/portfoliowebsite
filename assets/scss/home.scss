@@ -99,6 +99,7 @@ main > section {
   background-color: $transparent;
   box-shadow: 0 -1px rgba($color1, 0.2);
   border: none;
+  transition: none;
   @include box();
   .tabs-panel.is-active {
     min-height: 86vh;

@@ -322,6 +322,7 @@ main > section {
   background-color: transparent;
   box-shadow: 0 -1px rgba(43, 36, 29, 0.2);
   border: none;
+  transition: none;
   margin: 0;
   padding: 0;
 }
