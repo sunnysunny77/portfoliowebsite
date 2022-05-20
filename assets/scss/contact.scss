@@ -36,6 +36,7 @@ main .tabs {
 .tabs-content {
     background: $transparent;
     border: none;
+    transition: none;
     .is-active {
         @include box(null, 1rem 0);
     }
