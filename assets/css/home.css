@@ -260,9 +260,9 @@ main > section {
 }
 .hover .hover-box *, .hover .hover-box:before, .hover .hover-box:after {
   box-sizing: border-box;
-  transition: all 0.3s linear;
 }
 .hover .hover-box:before, .hover .hover-box:after {
+  transition: all 0.3s linear;
   box-sizing: border-box;
   border-radius: 50%;
   content: "";
@@ -276,6 +276,7 @@ main > section {
   border-color: transparent #463b2f;
 }
 .hover .hover-box img {
+  transition: transform 0.3s linear, opacity 0.3s linear;
   max-width: 100%;
   backface-visibility: hidden;
   vertical-align: top;

@@ -30,10 +30,10 @@ main > section {
     &:before,
     &:after {
       box-sizing: border-box;
-      transition: all 0.3s linear;
     }
     &:before,
     &:after {
+      transition: all 0.3s linear;
       box-sizing: border-box;
       border-radius: 50%;
       content: "";
@@ -47,6 +47,7 @@ main > section {
       border-color: transparent darkShift($color1);
     }
     img {
+      transition: transform 0.3s linear, opacity 0.3s linear;
       max-width: 100%;
       backface-visibility: hidden;
       vertical-align: top;
