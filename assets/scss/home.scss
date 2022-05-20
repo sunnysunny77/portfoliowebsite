@@ -16,6 +16,7 @@ main > section {
     @include setbox(null, null, null, 8.2vh auto 24.6vh auto);
     box-shadow: 0 1px rgba($color1, 0.1), 0 -1px rgba($color1, 0.1);
   }
+  .is-active > a,
   .tabs-title > a[aria-selected="true"],
   .tabs-title > a:hover,
   .tabs-title > a:focus {
