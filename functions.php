@@ -177,8 +177,8 @@ function portfolio_website_set_attachment_category($post_ID)
     $post = get_post($post_ID);
     $parent = get_post($post->post_parent);
     $post = $parent->post_type;
-
-    if (in_array($post, $post_types)) {
+    
+    if (in_array($post, $post_types) && !get_the_terms( $post_ID, 'category')) {
 
         function portfolio_website_set_terms($value, $post_ID)
         {
