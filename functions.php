@@ -169,32 +169,65 @@ function portfolio_website_category_media()
 }
 add_action('init', 'portfolio_website_category_media');
 
-function portfolio_website_set_attachment_category($post_ID)
+
+
+function portfolio_website_after_post_meta($meta_id, $post_id, $meta_key, $meta_value)
 {
-    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-
-    $post = get_post($post_ID);
-    $parent = get_post($post->post_parent);
-    $post = $parent->post_type;
-
-    if (in_array($post, $post_types) && !get_the_terms($post_ID, 'category')) {
-
-        function portfolio_website_set_terms($value, $post_ID)
-        {
-            $category = get_term_by('name', $value, 'category');
-            wp_set_object_terms($post_ID, $category->term_id, 'category');
+    if ('storyboarding_films' == $meta_key) {
+        $terms = get_the_terms($meta_value, 'category');
+        $array = [];
+        foreach ( $terms as $term ) {
+            array_push($array, $term->term_id);
         }
-
-        foreach ($post_types as $post_type) {
-
-            if ($post == $post_type) {
-                portfolio_website_set_terms($post_type, $post_ID);
-            }
+        $category = get_term_by('name', "storyboarding_films", 'category');
+        if (!in_array($category->term_id, $array)){
+            array_push($array, $category->term_id);
         }
+        wp_set_object_terms($meta_value, $array, 'category');
     }
-};
-add_action('add_attachment', 'portfolio_website_set_attachment_category');
-add_action('edit_attachment', 'portfolio_website_set_attachment_category');
+    if ('concepts_films' == $meta_key) {
+        $terms = get_the_terms($meta_value, 'category');
+        $array = [];
+        foreach ( $terms as $term ) {
+            array_push($array, $term->term_id);
+        }
+        $category = get_term_by('name', "concepts_films", 'category');
+        if (!in_array($category->term_id, $array)){
+            array_push($array, $category->term_id);
+        }
+        wp_set_object_terms($meta_value, $array, 'category');
+    }
+
+}
+add_action('added_post_meta', 'portfolio_website_after_post_meta', 10, 4);
+add_action('updated_post_meta', 'portfolio_website_after_post_meta', 10, 4);
+
+
+function my_wp_trash_post( $post_id ) {
+
+    $post_type = get_post_type( $post_id );
+    $post_status = get_post_status( $post_id );
+    if ( $post_type == 'storyboarding_films' && in_array(
+        $post_status, array( 'publish','draft','future' )
+    )) {
+       
+        $meta = get_post_meta( $post_id , "storyboarding_films" , true);
+        $category = get_term_by('name', "storyboarding_films", 'category');
+      
+        wp_remove_object_terms( $meta, $category->term_id , 'category' );
+    }
+
+    if ( $post_type == 'concepts_films' && in_array(
+        $post_status, array( 'publish','draft','future' )
+    )) {
+       
+        $meta = get_post_meta( $post_id , "concepts_films" , true);
+        $category = get_term_by('name', "concepts_films", 'category');
+      
+        wp_remove_object_terms( $meta, $category->term_id , 'category' );
+    }
+}
+add_action( 'wp_trash_post', 'my_wp_trash_post' );
 
 function portfolio_website_remove_category($fields)
 {
@@ -226,11 +259,11 @@ function portfolio_website_columns_display($column_name, $post_id)
             }
 
             if (current_user_can('edit_post', $parent)) {
-            ?>
+?>
                 <a href="<?php echo get_edit_post_link($parent); ?>">
                     <?php echo $title ?>
                 </a>
-            <?php
+<?php
             } else {
                 echo $title;
             }
