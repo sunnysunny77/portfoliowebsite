@@ -11,6 +11,13 @@ function portfolio_website_category_media()
 }
 add_action('init', 'portfolio_website_category_media');
 
+// remove category meta_box so a user cant enter an incorrect category 
+function portfolio_website_remove_post_meta_boxes()
+{
+    remove_meta_box('categorydiv', 'attachment', 'normal');
+}
+add_action('admin_menu', 'portfolio_website_remove_post_meta_boxes');
+
 // remove category field so a user cant enter an incorrect category 
 function portfolio_website_remove_category($fields)
 {
