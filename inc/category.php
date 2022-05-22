@@ -77,16 +77,11 @@ function portfolio_website_set_attachment_category($post_ID)
 
     if (in_array($post, $post_types)) {
 
-        function portfolio_website_set_terms($value, $post_ID)
-        {
-            $category = get_term_by('name', $value, 'category');
-            wp_set_object_terms($post_ID, $category->term_id, 'category');
-        }
-
         foreach ($post_types as $post_type) {
 
             if ($post == $post_type) {
-                portfolio_website_set_terms($post_type, $post_ID);
+                $category = get_term_by('name', $post_type, 'category');
+                wp_set_object_terms($post_ID, $category->term_id, 'category');
             }
         }
     }
@@ -101,11 +96,14 @@ function portfolio_website_trash_post($post_id)
 
     $post = get_post_type($post_id);
 
-    foreach ($post_types as  $post_type) {
-        if ($post_type == $post) {
-            $meta = get_post_meta($post_id, $post, true);
-            $category = get_term_by('name', $post, 'category');
-            wp_remove_object_terms($meta, $category->term_id, 'category');
+    if (in_array($post, $post_types)) {
+
+        foreach ($post_types as  $post_type) {
+            if ($post_type == $post) {
+                $meta = get_post_meta($post_id, $post, true);
+                $category = get_term_by('name', $post, 'category');
+                wp_remove_object_terms($meta, $category->term_id, 'category');
+            }
         }
     }
 }
@@ -119,11 +117,14 @@ function portfolio_website_untrash_posts($post_id)
 
     $post = get_post_type($post_id);
 
-    foreach ($post_types as  $post_type) {
-        if ($post_type == $post) {
-            $meta = get_post_meta($post_id, $post, true);
-            $category = get_term_by('name', $post, 'category');
-            wp_set_object_terms($meta, $category->term_id, 'category');
+    if (in_array($post, $post_types)) {
+
+        foreach ($post_types as  $post_type) {
+            if ($post_type == $post) {
+                $meta = get_post_meta($post_id, $post, true);
+                $category = get_term_by('name', $post, 'category');
+                wp_set_object_terms($meta, $category->term_id, 'category');
+            }
         }
     }
 }
