@@ -121,6 +121,20 @@ function portfolio_website_enable_vcard_upload($mime_types)
 }
 add_filter('upload_mimes', 'portfolio_website_enable_vcard_upload');
 
+function portfolio_website_media_columns($columns) {
+    $columns['post_parent'] = 'Post parent';
+    return $columns;
+} 
+add_filter( 'manage_media_columns', 'portfolio_website_media_columns' );
+ 
+function portfolio_website_media_custom_column($columnName, $columnID){
+    if($columnName == 'post_parent'){
+        $parent = get_post_parent($columnID);
+       echo get_post_type($parent);
+    }
+}
+add_filter( 'manage_media_custom_column', 'portfolio_website_media_custom_column', 10, 2 );
+
 function portfolio_website_submit_form_1()
 {
 
@@ -316,17 +330,3 @@ function portfolio_website_on_theme_activation()
     }
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
-
-function portfolio_website_media_columns($columns) {
-    $columns['post_parent'] = 'Post parent';
-    return $columns;
-} 
-add_filter( 'manage_media_columns', 'portfolio_website_media_columns' );
- 
-function portfolio_website_media_custom_column($columnName, $columnID){
-    if($columnName == 'post_parent'){
-        $parent = get_post_parent($columnID);
-       echo get_post_type($parent);
-    }
-}
-add_filter( 'manage_media_custom_column', 'portfolio_website_media_custom_column', 10, 2 );
