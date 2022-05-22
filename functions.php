@@ -158,7 +158,22 @@ function portfolio_website_register_cptui()
 }
 add_action('init', 'portfolio_website_register_cptui');
 
-require_once(get_template_directory() . '/inc/category.php');
+function portfolio_website_category_media()
+{
+    $taxonomies = get_taxonomies(array('name' => 'category'), 'objects')['category'];
+
+    $taxonomies->update_count_callback = '_update_generic_term_count';
+
+    register_taxonomy_for_object_type('category', 'attachment');
+}
+add_action('init', 'portfolio_website_category_media');
+
+function portfolio_website_remove_category($fields)
+{
+    unset($fields['category']);
+    return $fields;
+}
+add_filter('attachment_fields_to_edit', 'portfolio_website_remove_category');
 
 function portfolio_website_on_theme_activation()
 {
