@@ -158,23 +158,6 @@ function portfolio_website_register_cptui()
 }
 add_action('init', 'portfolio_website_register_cptui');
 
-function portfolio_website_category_media()
-{
-    $taxonomies = get_taxonomies(array('name' => 'category'), 'objects')['category'];
-
-    $taxonomies->update_count_callback = '_update_generic_term_count';
-
-    register_taxonomy_for_object_type('category', 'attachment');
-}
-add_action('init', 'portfolio_website_category_media');
-
-function portfolio_website_remove_category($fields)
-{
-    unset($fields['category']);
-    return $fields;
-}
-add_filter('attachment_fields_to_edit', 'portfolio_website_remove_category');
-
 function portfolio_website_on_theme_activation()
 {
 
@@ -191,38 +174,6 @@ function portfolio_website_on_theme_activation()
     portfolio_website_remove_post('Sample Page', 'OBJECT', 'page');
 
     portfolio_website_remove_post('Privacy Policy', 'OBJECT', 'page');
-
-    function portfolio_website_insert_term($term, $taxonomy)
-    {
-        if (!term_exists($term, $taxonomy)) {
-            wp_insert_term(
-                $term,
-                $taxonomy,
-                array(
-                    'name' => $term,
-                    'slug' => $term,
-                )
-            );
-        }
-    }
-
-    portfolio_website_insert_term('storyboarding_films', 'category');
-
-    portfolio_website_insert_term('concepts_films', 'category');
-
-    portfolio_website_insert_term('independent_films', 'category');
-
-    portfolio_website_insert_term('theatre', 'category');
-
-    portfolio_website_insert_term('designs', 'category');
-
-    portfolio_website_insert_term('poems_poetry', 'category');
-
-    portfolio_website_insert_term('illustrated_poetry', 'category');
-
-    portfolio_website_insert_term('sculptures', 'category');
-
-    portfolio_website_insert_term('illustrations', 'category');
 
     function portfolio_website_post_meta($id, $key, $val)
     {
