@@ -156,7 +156,6 @@ function portfolio_website_register_cptui()
 {
 
     require_once(get_template_directory() . '/inc/custom-post-types.php');
-    
 }
 add_action('init', 'portfolio_website_register_cptui');
 
@@ -177,8 +176,8 @@ function portfolio_website_set_attachment_category($post_ID)
     $post = get_post($post_ID);
     $parent = get_post($post->post_parent);
     $post = $parent->post_type;
-    
-    if (in_array($post, $post_types) && !get_the_terms( $post_ID, 'category')) {
+
+    if (in_array($post, $post_types) && !get_the_terms($post_ID, 'category')) {
 
         function portfolio_website_set_terms($value, $post_ID)
         {
@@ -203,6 +202,45 @@ function portfolio_website_remove_category($fields)
     return $fields;
 }
 add_filter('attachment_fields_to_edit', 'portfolio_website_remove_category');
+
+function portfolio_website_columns_manage($columns)
+{
+    unset($columns['parent']);
+    $columns['attached'] = 'Parent';
+    return $columns;
+}
+add_filter('manage_upload_columns', 'portfolio_website_columns_manage');
+
+function portfolio_website_columns_display($column_name, $post_id)
+{
+    if ('attached' == $column_name) {
+        $post = get_post($post_id);
+        $parent =  $post->post_parent;
+
+        if ($parent > 0) {
+
+            $title = '';
+
+            if (get_post($parent)) {
+                $title = _draft_or_post_title($parent);
+            }
+
+            if (current_user_can('edit_post', $parent)) {
+            ?>
+                <a href="<?php echo get_edit_post_link($parent); ?>">
+                    <?php echo $title ?>
+                </a>
+            <?php
+            } else {
+                echo $title;
+            }
+        } else {
+
+            echo '(Unattached)';
+        }
+    }
+}
+add_action('manage_media_custom_column', 'portfolio_website_columns_display', 10, 2);
 
 function portfolio_website_on_theme_activation()
 {
