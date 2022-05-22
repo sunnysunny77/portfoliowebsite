@@ -208,6 +208,30 @@ function portfolio_website_trash_post($post_id)
 }
 add_action('wp_trash_post', 'portfolio_website_trash_post');
 
+function portfolio_website_untrash_posts( $post_id ) {
+
+    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    $post = get_post_type($post_id);
+
+    foreach ($post_types as  $post_type) {
+        if ($post_type == $post) {
+            $meta = get_post_meta($post_id, $post, true);
+            $terms = get_the_terms($meta, 'category');
+            $array = [];
+            foreach ($terms as $term) {
+                array_push($array, $term->term_id);
+            }
+            $category = get_term_by('name', $post_type, 'category');
+            if (!in_array($category->term_id, $array)) {
+                array_push($array, $category->term_id);
+            }
+            wp_set_object_terms($meta, $array, 'category');
+        }
+    }
+   
+}
+add_action( 'untrash_post', 'portfolio_website_untrash_posts' );
+
 function portfolio_website_remove_category($fields)
 {
     unset($fields['category']);
