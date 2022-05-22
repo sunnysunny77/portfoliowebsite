@@ -197,6 +197,13 @@ function portfolio_website_set_attachment_category($post_ID)
 add_action('add_attachment', 'portfolio_website_set_attachment_category');
 add_action('edit_attachment', 'portfolio_website_set_attachment_category');
 
+function portfolio_website_remove_category($fields)
+{
+    unset($fields['category']);
+    return $fields;
+}
+add_filter('attachment_fields_to_edit', 'portfolio_website_remove_category');
+
 function portfolio_website_on_theme_activation()
 {
 
