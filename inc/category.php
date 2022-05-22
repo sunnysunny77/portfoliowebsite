@@ -39,8 +39,8 @@ add_filter('manage_upload_columns', 'portfolio_website_columns_manage');
 function portfolio_website_columns_display($column_name, $post_id)
 {
     if ('attached' == $column_name) {
-        $post = get_post($post_id);
-        $parent =  $post->post_parent;
+
+        $parent = get_post_parent($post_id);
 
         if ($parent > 0) {
 
