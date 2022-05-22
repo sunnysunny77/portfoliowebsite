@@ -67,30 +67,32 @@ function portfolio_website_columns_display($column_name, $post_id)
 }
 add_action('manage_media_custom_column', 'portfolio_website_columns_display', 10, 2);
 
-// set category after post
-function portfolio_website_after_post_meta($meta_id, $post_id, $meta_key, $meta_value)
+// set category after attachment
+function portfolio_website_set_attachment_category($post_ID)
 {
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
 
-    foreach ($post_types as  $post_type) {
-        if ($post_type == $meta_key) {
+    $post = get_post($post_ID);
+    $post = get_post_type($post->post_parent);
 
-            $terms = get_the_terms($meta_value, 'category');
-            $array = [];
-            foreach ($terms as $term) {
-                array_push($array, $term->term_id);
+    if (in_array($post, $post_types)) {
+
+        function portfolio_website_set_terms($value, $post_ID)
+        {
+            $category = get_term_by('name', $value, 'category');
+            wp_set_object_terms($post_ID, $category->term_id, 'category');
+        }
+
+        foreach ($post_types as $post_type) {
+
+            if ($post == $post_type) {
+                portfolio_website_set_terms($post_type, $post_ID);
             }
-            $category = get_term_by('name', $meta_key, 'category');
-            if (!in_array($category->term_id, $array)) {
-                array_push($array, $category->term_id);
-            }
-            wp_set_object_terms($meta_value, $array, 'category');
         }
     }
-}
-add_action('added_post_meta', 'portfolio_website_after_post_meta', 10, 4);
-add_action('updated_post_meta', 'portfolio_website_after_post_meta', 10, 4);
-
+};
+add_action('add_attachment', 'portfolio_website_set_attachment_category');
+add_action('edit_attachment', 'portfolio_website_set_attachment_category');
 
 // remove category before trash
 function portfolio_website_trash_post($post_id)
@@ -110,7 +112,7 @@ function portfolio_website_trash_post($post_id)
 add_action('wp_trash_post', 'portfolio_website_trash_post');
 
 
-// add category when untashing
+// add category when un-trashing
 function portfolio_website_untrash_posts($post_id)
 {
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
@@ -120,16 +122,8 @@ function portfolio_website_untrash_posts($post_id)
     foreach ($post_types as  $post_type) {
         if ($post_type == $post) {
             $meta = get_post_meta($post_id, $post, true);
-            $terms = get_the_terms($meta, 'category');
-            $array = [];
-            foreach ($terms as $term) {
-                array_push($array, $term->term_id);
-            }
             $category = get_term_by('name', $post, 'category');
-            if (!in_array($category->term_id, $array)) {
-                array_push($array, $category->term_id);
-            }
-            wp_set_object_terms($meta, $array, 'category');
+            wp_set_object_terms($meta, $category->term_id, 'category');
         }
     }
 }
