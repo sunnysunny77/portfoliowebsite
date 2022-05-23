@@ -127,14 +127,6 @@ function portfolio_website_metadata($meta_id, $post_id, $meta_key, $meta_value)
 }
 add_action('added_post_meta', 'portfolio_website_metadata', 10, 4);
 
-
-
-function check_values($post_ID, $post_after, $post_before){
-    mail("shlooby07@gmail.com","My subject","ADssaddsdsads");
-}
- 
-add_action( 'post_updated', 'check_values', 10, 3 );
-
 function portfolio_website_add_column_parent($posts_columns)
 {
 
@@ -149,9 +141,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     $attached = get_post_parent($post_id);
     $parent_id = $attached->ID;
-    $attached_post = get_post($post_id);
-    $attached_parent =  $attached_post->post_parent;
-
+  
     if ('post_parent' == $column_name) {
 
         $parent =  get_post_meta($post_id, 'parent', true);
