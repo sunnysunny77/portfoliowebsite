@@ -124,46 +124,22 @@ function portfolio_website_metadata($meta_id, $post_id, $meta_key, $meta_value)
         $parent = get_post_parent($post_id);
         update_post_meta($post_id, 'parent', $parent->post_type);
     }
-
-    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-    if (in_array($meta_key, $post_types)) {
-        foreach ($post_types as  $post_type) {
-            if ($post_type == $meta_key) {
-                $attached = get_post_parent($meta_value);
-                if ($post_id == $attached->ID) {
-                    update_post_meta($meta_value, 'parent',  $meta_key);
-                }
-            }
-        }
-    }
 }
 add_action('added_post_meta', 'portfolio_website_metadata', 10, 4);
-add_action('updated_post_meta', 'portfolio_website_metadata', 10, 4);
 
-function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key, $_meta_value)
-{
 
-    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-    if (in_array($meta_key, $post_types)) {
-        foreach ($post_types as  $post_type) {
-            if ($post_type == $meta_key) {
-                $attached = get_post_parent($meta_value);
-                if ($post_id == $attached->ID) {
-                    delete_post_meta($_meta_value, 'parent');
-                }
-            }
-        }
-    }
+
+function check_values($post_ID, $post_after, $post_before){
+    mail("shlooby07@gmail.com","My subject","ADssaddsdsads");
 }
-add_action('deleted_post_meta', 'portfolio_website_deleted_post_meta', 10, 4);
+ 
+add_action( 'post_updated', 'check_values', 10, 3 );
 
 function portfolio_website_add_column_parent($posts_columns)
 {
 
     $posts_columns['post_parent'] = __('Post parent');
     $posts_columns['non_parent'] = __('Non parent');
-    unset($posts_columns['parent']);
-    $posts_columns['attached'] = 'Parent';
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
@@ -215,28 +191,6 @@ function portfolio_website_custom_column($column_name, $post_id)
             echo $text;
         } else {
             echo '-';
-        }
-    }
-
-    if ('attached' == $column_name) {
-
- 
-        if ($attached_parent  > 0) {
-            $value = '';
-            if (get_post($attached_parent)) {
-                $value = "Title: " . _draft_or_post_title($attached_parent) . "<br/> Status: " . get_post_status($attached_parent);
-            }
-            if (current_user_can('edit_post', $attached_parent)) {
-?>
-                <a href="<?php echo get_edit_post_link($attached_parent); ?>">
-                    <?php echo  $value; ?>
-                </a>
-<?php
-            } else {
-                echo $value;
-            }
-        } else {
-            echo '(Unattached)';
         }
     }
     return false;
