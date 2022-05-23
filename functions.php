@@ -162,6 +162,8 @@ function portfolio_website_add_column_parent($posts_columns)
 
     $posts_columns['post_parent'] = __('Post parent');
     $posts_columns['non_parent'] = __('Non parent');
+    unset($posts_columns['parent']);
+    $posts_columns['attached'] = 'Parent';
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
@@ -171,6 +173,8 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     $attached = get_post_parent($post_id);
     $parent_id = $attached->ID;
+    $attached_post = get_post($post_id);
+    $attached_parent =  $attached_post->post_parent;
 
     if ('post_parent' == $column_name) {
 
@@ -193,7 +197,7 @@ function portfolio_website_custom_column($column_name, $post_id)
         $all = $wpdb->get_results(
             $wpdb->prepare(
                 "
-            SELECT meta_key
+            SELECT meta_key, post_id
             FROM $wpdb->postmeta
             WHERE meta_value = %s AND NOT post_id = %d
         ",
@@ -204,13 +208,35 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         foreach ($all as $row) {
 
-            $text .= $row->meta_key . '<br/>';
+            $text .= "Title: " . _draft_or_post_title($row->post_id) . '<br/>' . $row->meta_key . '<br/><br/>';
         }
 
         if ($text) {
             echo $text;
         } else {
             echo '-';
+        }
+    }
+
+    if ('attached' == $column_name) {
+
+ 
+        if ($attached_parent  > 0) {
+            $value = '';
+            if (get_post($attached_parent)) {
+                $value = "Title: " . _draft_or_post_title($attached_parent) . "<br/> Status: " . get_post_status($attached_parent);
+            }
+            if (current_user_can('edit_post', $attached_parent)) {
+?>
+                <a href="<?php echo get_edit_post_link($attached_parent); ?>">
+                    <?php echo  $value; ?>
+                </a>
+<?php
+            } else {
+                echo $value;
+            }
+        } else {
+            echo '(Unattached)';
         }
     }
     return false;
