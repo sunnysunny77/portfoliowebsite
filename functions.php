@@ -117,21 +117,10 @@ add_filter('pre_option_upload_url_path', function ($upload_url_path) {
 
 add_filter('option_uploads_use_yearmonth_folders', '__return_false');
 
-function portfolio_website_metadata($meta_id, $post_id, $meta_key, $meta_value)
-{
-
-    if ('_wp_attachment_metadata' == $meta_key) {
-        $parent = get_post_parent($post_id);
-        update_post_meta($post_id, 'parent', $parent->post_type);
-    }
-}
-add_action('added_post_meta', 'portfolio_website_metadata', 10, 4);
-
 function portfolio_website_add_column_parent($posts_columns)
 {
 
-    $posts_columns['post_parent'] = __('Post parent');
-    $posts_columns['non_parent'] = __('Non parent');
+    $posts_columns['parents'] = __('Parent');
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
@@ -139,21 +128,7 @@ add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 function portfolio_website_custom_column($column_name, $post_id)
 {
 
-    $attached = get_post_parent($post_id);
-    $parent_id = $attached->ID;
-  
-    if ('post_parent' == $column_name) {
-
-        $parent =  get_post_meta($post_id, 'parent', true);
-
-        if ($parent) {
-            echo $parent;
-        } else {
-            echo '-';
-        }
-    }
-
-    if ('non_parent' == $column_name) {
+    if ('parents' == $column_name) {
 
         $text = '';
 
@@ -165,16 +140,15 @@ function portfolio_website_custom_column($column_name, $post_id)
                 "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
-            WHERE meta_value = %s AND NOT post_id = %d
+            WHERE meta_value = %s 
         ",
                 $post_id,
-                $parent_id
             )
         );
 
         foreach ($all as $row) {
 
-            $text .= "Title: " . _draft_or_post_title($row->post_id) . '<br/>' . $row->meta_key . '<br/><br/>';
+            $text .= "Title:    <a href='" . get_edit_post_link($row->post_id) . "'>" . _draft_or_post_title($row->post_id) . '</a><br/>' . $row->meta_key . '<br/><br/>';
         }
 
         if ($text) {
@@ -186,32 +160,6 @@ function portfolio_website_custom_column($column_name, $post_id)
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
-
-function portfolio_website_add_column_sortable($columns)
-{
-
-    $columns['post_parent'] = 'post_parent';
-    return $columns;
-}
-add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
-
-function portfolio_website_sortable($query)
-{
-
-    if (!is_admin() || !$query->is_main_query()) {
-        return;
-    }
-
-    if ('post_parent' === $query->get('orderby')) {
-        $query->set('order', 'ASC');
-        $query->set('orderby', 'meta_value');
-        $query->set('meta_key', 'parent');
-        if ('desc' == $_REQUEST['order']) {
-            $query->set('order', 'DSC');
-        }
-    }
-}
-add_action('pre_get_posts', 'portfolio_website_sortable');
 
 function portfolio_website_submit_form_1()
 {
@@ -252,162 +200,7 @@ add_action('init', 'portfolio_website_register_cptui');
 
 function portfolio_website_on_theme_activation()
 {
-
-    function portfolio_website_remove_post($page_path, $output, $post_type)
-    {
-
-        $post = get_page_by_path($page_path, $output, $post_type);
-
-        if ($post) {
-            wp_delete_post($post->ID, true);
-        }
-    }
-
-    portfolio_website_remove_post('hello-world', 'OBJECT', 'post');
-
-    portfolio_website_remove_post('Sample Page', 'OBJECT', 'page');
-
-    portfolio_website_remove_post('Privacy Policy', 'OBJECT', 'page');
-
-    function portfolio_website_post_meta($id, $key, $val)
-    {
-
-        add_post_meta($id, $key, $val, true);
-    }
-
-    if (!get_option('page_on_front')) {
-        $page = array(
-            'import_id'      =>  254,
-            'post_title'     => 'Home',
-            'post_type'      => 'page',
-            'post_name'      => 'Home',
-            'post_status'    => 'publish',
-        );
-        $id = wp_insert_post($page);
-        update_option('page_on_front', $id);
-        update_option('show_on_front', 'page');
-        portfolio_website_post_meta($id, 'heading', 'The Art of Jerry Verschoor');
-        portfolio_website_post_meta($id, '_heading', 'heading');
-        portfolio_website_post_meta($id, 'heading_image', '');
-        portfolio_website_post_meta($id, '_heading_image', 'heading_image');
-        portfolio_website_post_meta($id, 'film,', '');
-        portfolio_website_post_meta($id, '_film', 'film');
-        portfolio_website_post_meta($id, 'theatre', '');
-        portfolio_website_post_meta($id, '_theatre', 'theatre');
-        portfolio_website_post_meta($id, 'design', '');
-        portfolio_website_post_meta($id, '_design', 'design');
-        portfolio_website_post_meta($id, 'poetry', '');
-        portfolio_website_post_meta($id, '_poetry', 'poetry');
-        portfolio_website_post_meta($id, 'sculptures', '');
-        portfolio_website_post_meta($id, '_sculptures', 'sculptures');
-        portfolio_website_post_meta($id, 'illustrations', '');
-        portfolio_website_post_meta($id, '_illustrations', 'illustrations');
-        portfolio_website_post_meta($id, 'disclaimer', '* Photoshop images are hand drawn, all work is drawn and illustrated by hand digital or not.');
-        portfolio_website_post_meta($id, '_disclaimer', 'disclaimer');
-    }
-
-    if (!get_page(256)) {
-        $page = array(
-            'import_id'         =>  256,
-            'post_title'     => 'About',
-            'post_type'      => 'page',
-            'post_name'      => 'About',
-            'post_status'    => 'publish',
-            'page_template' => 'page-about.php',
-        );
-        $id = wp_insert_post($page);
-        portfolio_website_post_meta($id, 'heading', 'Biography');
-        portfolio_website_post_meta($id, '_heading', 'heading');
-        portfolio_website_post_meta($id, 'media_heading', 'Lorem ipsum dolor');
-        portfolio_website_post_meta($id, '_media_heading', 'media_heading');
-        portfolio_website_post_meta($id, 'media_paragraph', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at justo sapien. Proin tincidunt purus nec orci finibus laoreet. Curabitur facilisis est a posuere sodales.');
-        portfolio_website_post_meta($id, '_media_paragraph', 'media_paragraph');
-        portfolio_website_post_meta($id, 'media_heading_1', 'Lorem ipsum');
-        portfolio_website_post_meta($id, '_media_heading_1', 'media_heading_1');
-        portfolio_website_post_meta($id, 'media_paragraph_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.');
-        portfolio_website_post_meta($id, '_media_paragraph_1', 'media_paragraph_1');
-        portfolio_website_post_meta($id, 'media_heading_2', 'Lorem ipsum');
-        portfolio_website_post_meta($id, '_media_heading_2', 'media_heading_2');
-        portfolio_website_post_meta($id, 'media_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.');
-        portfolio_website_post_meta($id, '_media_paragraph_2', 'media_paragraph_2');
-        portfolio_website_post_meta($id, 'media', '');
-        portfolio_website_post_meta($id, '_media', 'media');
-        portfolio_website_post_meta($id, 'section_heading_1', 'Lorem ipsum dolor sit');
-        portfolio_website_post_meta($id, '_section_heading_1', 'section_heading_1');
-        portfolio_website_post_meta($id, 'section_paragraph_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        portfolio_website_post_meta($id, '_section_paragraph_1', 'section_paragraph_1');
-        portfolio_website_post_meta($id, 'section_heading_2', 'Lorem ipsum dolor sit');
-        portfolio_website_post_meta($id, '_section_heading_2', 'section_heading_2');
-        portfolio_website_post_meta($id, 'section_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
-        portfolio_website_post_meta($id, '_section_paragraph_2', 'section_paragraph_2');
-        portfolio_website_post_meta($id, 'sticky_image_1', '');
-        portfolio_website_post_meta($id, '_sticky_image_1', 'sticky_image_1');
-        portfolio_website_post_meta($id, 'biography_1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        portfolio_website_post_meta($id, '_biography_1', 'biography_1');
-        portfolio_website_post_meta($id, 'sticky_image_2', '');
-        portfolio_website_post_meta($id, '_sticky_image_2', 'sticky_image_2');
-        portfolio_website_post_meta($id, 'biography_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        portfolio_website_post_meta($id, '_biography_2', 'biography_2');
-        portfolio_website_post_meta($id, 'card_title', 'Creative Artist');
-        portfolio_website_post_meta($id, '_card_title', 'card_title');
-        portfolio_website_post_meta($id, 'card_heading', 'Jerry Verschoor');
-        portfolio_website_post_meta($id, '_card_heading', 'card_heading');
-        portfolio_website_post_meta($id, 'card_paragraph', 'Life is an Exploration, Art is a Journey, and no one lives these principles to the fullest than Jerry Verschoor');
-        portfolio_website_post_meta($id, '_card_paragraph', 'card_paragraph');
-    }
-
-    if (!get_page(257)) {
-        $page = array(
-            'import_id'         =>  257,
-            'post_title'     => 'Contact',
-            'post_type'      => 'page',
-            'post_name'      => 'Contact',
-            'post_status'    => 'publish',
-            'page_template' => 'page-contact.php',
-        );
-        $id = wp_insert_post($page);
-        portfolio_website_post_meta($id, 'heading', 'Get in touch');
-        portfolio_website_post_meta($id, '_heading', 'heading');
-        portfolio_website_post_meta($id, 'email', 'example@example.com');
-        portfolio_website_post_meta($id, '_email', 'email');
-        portfolio_website_post_meta($id, 'phone', '0412620989');
-        portfolio_website_post_meta($id, '_phone', 'phone');
-        portfolio_website_post_meta($id, 'download', 'Download Contact');
-        portfolio_website_post_meta($id, '_download', 'download');
-        portfolio_website_post_meta($id, 'paragraph', 'Please try the forms below');
-        portfolio_website_post_meta($id, '_paragraph', 'paragraph');
-        portfolio_website_post_meta($id, 'quote', 'He Thumbs through the pages of his life, his soul bites out with ancestry force and his life surrounds his every move as his child constantly guiding him from over his shoulder.');
-        portfolio_website_post_meta($id, '_quote', 'quote');
-        portfolio_website_post_meta($id, 'cite', 'Jerry Verschoor');
-        portfolio_website_post_meta($id, '_cite', 'cite');
-    }
+    
+    require_once(get_template_directory() . '/inc/activation.php');
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
