@@ -125,23 +125,27 @@ add_action('added_post_meta', 'portfolio_website_metadata_to_images', 10, 4);
 function portfolio_website_add_column_parent($posts_columns)
 {
     $posts_columns['post_parent'] = __('Post parent');
+    $posts_columns['non_parent'] = __('Non parent');
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 
 function portfolio_website_custom_column($column_name, $post_id)
 {
+
+    $attached = get_post_parent($post_id);
+    $parent_id = $attached->ID;
+
     if ('post_parent' == $column_name) {
 
-        $attached = get_post_parent($post_id);
-        $attached = $attached->post_type;
         $parent = get_post_meta($post_id, 'parent', true);
-       
-        if (!$parent || $parent !== $attached) {
-            update_post_meta($post_id, 'parent',  $attached);
+        $post_type = $attached->post_type;
+
+        if (!$parent || $parent !== $post_type) {
+            update_post_meta($post_id, 'parent',  $post_type);
         }
 
-        $parent = get_post_meta($post_id, 'parent', true);
+        $parent =  get_post_meta($post_id, 'parent', true);
 
         if ($parent) {
             echo $parent;
@@ -149,6 +153,39 @@ function portfolio_website_custom_column($column_name, $post_id)
             echo '-';
         }
     }
+
+    if ('non_parent' == $column_name) {
+
+        $text = '';
+
+        global $wpdb;
+
+
+        $all = $wpdb->get_results(
+            $wpdb->prepare(
+                "
+            SELECT meta_key
+            FROM $wpdb->postmeta
+            WHERE meta_value = %s AND NOT post_id = %d
+        ",
+                $post_id,
+                $parent_id
+            )
+        );
+
+        foreach ($all as $row) {
+
+            $text .= $row->meta_key . '<br/>';
+        }
+
+        if ($text) {
+            echo $text;
+        } else {
+            echo '-';
+        }
+    }
+
+
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
