@@ -140,7 +140,7 @@ function portfolio_website_custom_column($column_name, $post_id)
         if (!$parent || $parent !== $attached) {
             update_post_meta($post_id, 'parent',  $attached);
         }
-           
+
         $parent = get_post_meta($post_id, 'parent', true);
 
         if ($parent) {
