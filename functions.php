@@ -132,12 +132,17 @@ add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 function portfolio_website_custom_column($column_name, $post_id)
 {
     if ('post_parent' == $column_name) {
-        if (!get_post_meta($post_id, 'parent', true)) {
-            $parent = get_post_parent($post_id);
-            update_post_meta($post_id, 'parent',  $parent->post_type);
-        } else {
-            $parent = get_post_meta($post_id, 'parent', true);
+
+        $attached = get_post_parent($post_id);
+        $attached = $attached->post_type;
+        $parent = get_post_meta($post_id, 'parent', true);
+       
+        if (!$parent || $parent !== $attached) {
+            update_post_meta($post_id, 'parent',  $attached);
         }
+           
+        $parent = get_post_meta($post_id, 'parent', true);
+
         if ($parent) {
             echo $parent;
         } else {
