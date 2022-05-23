@@ -79,6 +79,7 @@ add_action('wp_enqueue_scripts', 'portfolio_website_scripts');
 
 function portfolio_website_remove_admin_menus()
 {
+
     remove_menu_page('edit.php');
     remove_menu_page('edit-comments.php');
     remove_menu_page('index.php');
@@ -90,6 +91,7 @@ if (current_user_can('editor')) {
 
 function portfolio_website_custom_sidebars()
 {
+
     register_sidebar(
         array(
             'name' => 'widget one',
@@ -104,26 +106,60 @@ function portfolio_website_custom_sidebars()
 add_action('widgets_init', 'portfolio_website_custom_sidebars');
 
 add_filter('pre_option_upload_path', function ($upload_path) {
+
     return  get_template_directory() . '/files';
 });
 
 add_filter('pre_option_upload_url_path', function ($upload_url_path) {
+
     return get_template_directory_uri() . '/files';
 });
 
 add_filter('option_uploads_use_yearmonth_folders', '__return_false');
 
-function portfolio_website_metadata_to_images($meta_id, $post_id, $meta_key, $meta_value)
+function portfolio_website_metadata($meta_id, $post_id, $meta_key, $meta_value)
 {
+
     if ('_wp_attachment_metadata' == $meta_key) {
         $parent = get_post_parent($post_id);
         update_post_meta($post_id, 'parent', $parent->post_type);
     }
+
+    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    if (in_array($meta_key, $post_types)) {
+        foreach ($post_types as  $post_type) {
+            if ($post_type == $meta_key) {
+                $attached = get_post_parent($meta_value);
+                if ($post_id == $attached->ID) {
+                    update_post_meta($meta_value, 'parent',  $meta_key);
+                }
+            }
+        }
+    }
 }
-add_action('added_post_meta', 'portfolio_website_metadata_to_images', 10, 4);
+add_action('added_post_meta', 'portfolio_website_metadata', 10, 4);
+add_action('updated_post_meta', 'portfolio_website_metadata', 10, 4);
+
+function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key, $_meta_value)
+{
+
+    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    if (in_array($meta_key, $post_types)) {
+        foreach ($post_types as  $post_type) {
+            if ($post_type == $meta_key) {
+                $attached = get_post_parent($meta_value);
+                if ($post_id == $attached->ID) {
+                    delete_post_meta($_meta_value, 'parent');
+                }
+            }
+        }
+    }
+}
+add_action('deleted_post_meta', 'portfolio_website_deleted_post_meta', 10, 4);
 
 function portfolio_website_add_column_parent($posts_columns)
 {
+
     $posts_columns['post_parent'] = __('Post parent');
     $posts_columns['non_parent'] = __('Non parent');
     return $posts_columns;
@@ -137,13 +173,6 @@ function portfolio_website_custom_column($column_name, $post_id)
     $parent_id = $attached->ID;
 
     if ('post_parent' == $column_name) {
-
-        $parent = get_post_meta($post_id, 'parent', true);
-        $post_type = $attached->post_type;
-
-        if (!$parent || $parent !== $post_type) {
-            update_post_meta($post_id, 'parent',  $post_type);
-        }
 
         $parent =  get_post_meta($post_id, 'parent', true);
 
@@ -184,14 +213,13 @@ function portfolio_website_custom_column($column_name, $post_id)
             echo '-';
         }
     }
-
-
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
 
 function portfolio_website_add_column_sortable($columns)
 {
+
     $columns['post_parent'] = 'post_parent';
     return $columns;
 }
@@ -199,6 +227,7 @@ add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sorta
 
 function portfolio_website_sortable($query)
 {
+
     if (!is_admin() || !$query->is_main_query()) {
         return;
     }
@@ -256,7 +285,9 @@ function portfolio_website_on_theme_activation()
 
     function portfolio_website_remove_post($page_path, $output, $post_type)
     {
+
         $post = get_page_by_path($page_path, $output, $post_type);
+
         if ($post) {
             wp_delete_post($post->ID, true);
         }
@@ -270,6 +301,7 @@ function portfolio_website_on_theme_activation()
 
     function portfolio_website_post_meta($id, $key, $val)
     {
+
         add_post_meta($id, $key, $val, true);
     }
 
