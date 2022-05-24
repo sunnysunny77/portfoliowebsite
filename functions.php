@@ -105,6 +105,15 @@ function portfolio_website_custom_sidebars()
 }
 add_action('widgets_init', 'portfolio_website_custom_sidebars');
 
+function portfolio_website_enable_vcard_upload($mime_types)
+{
+    
+    $mime_types['vcf'] = 'text/vcard';
+    $mime_types['vcard'] = 'text/vcard';
+    return $mime_types;
+    }
+add_filter('upload_mimes', 'portfolio_website_enable_vcard_upload');
+
 add_filter('pre_option_upload_path', function ($upload_path) {
 
     return  get_template_directory() . '/files';
