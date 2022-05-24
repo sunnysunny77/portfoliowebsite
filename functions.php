@@ -128,7 +128,7 @@ add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 
 function portfolio_website_custom_column($column_name, $post_id)
 {
-  
+
     if ('category' == $column_name) {
 
         $text =  get_post_meta($post_id, 'parent', true);
@@ -138,7 +138,7 @@ function portfolio_website_custom_column($column_name, $post_id)
             echo '-';
         }
     }
-    
+
 
     if ('parents' == $column_name) {
 
@@ -149,16 +149,16 @@ function portfolio_website_custom_column($column_name, $post_id)
         $result = $wpdb->get_results(
             $wpdb->prepare(
                 "
-            SELECT meta_key, post_id
+            SELECT meta_key, post_id, meta_value
             FROM $wpdb->postmeta
-            WHERE meta_value = %s AND NOT post_id = %d
+            WHERE meta_value = %s
         ",
                 $post_id,
-                $parent_id
             )
         );
 
         foreach ($result as $row) {
+
             $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>";
         }
 
