@@ -120,8 +120,8 @@ add_filter('option_uploads_use_yearmonth_folders', '__return_false');
 function portfolio_website_add_column_parent($posts_columns)
 {
 
-    $posts_columns['category'] = __('Category');
-    $posts_columns['parents'] = __('Parents');
+    $posts_columns['parents'] = __('Parent');
+    $posts_columns['child'] = __('Children');
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
@@ -131,7 +131,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     global $wpdb;
 
-    if ('category' == $column_name) {
+    if ('parents' == $column_name) {
 
         $meta_key =  get_post_meta($post_id, 'parent', true);
 
@@ -147,7 +147,9 @@ function portfolio_website_custom_column($column_name, $post_id)
         }
     }
 
-    if ('parents' == $column_name) {
+    if ('child' == $column_name) {
+
+        $attached = get_post_parent($post_id);
 
         $text = '';
 
@@ -156,9 +158,10 @@ function portfolio_website_custom_column($column_name, $post_id)
                 "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
-            WHERE meta_value = %s
-        ",
-                $post_id,
+            WHERE meta_value = %sAND NOT post_id = %d
+            ",
+                    $post_id,
+                    $attached->ID
             )
         );
 
@@ -180,7 +183,7 @@ add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 
 function portfolio_website_add_column_sortable($columns)
 {
 
-    $columns['category'] = 'category';
+    $columns['parents'] = 'parents';
     return $columns;
 }
 add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
@@ -191,7 +194,7 @@ function portfolio_website_sortable($query)
     if (!is_admin() || !$query->is_main_query()) {
         return;
     }
-    if ('category' === $query->get('orderby')) {
+    if ('parents' === $query->get('orderby')) {
         $query->set('order', 'ASC');
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'parent');
