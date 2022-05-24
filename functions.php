@@ -190,14 +190,16 @@ function portfolio_website_set_attachment($post_ID)
 {
 
     $post = get_post_parent($post_ID);
+    if ($post) {
     update_post_meta($post_ID, "parent", $post->post_type);
+    }
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
 add_action('edit_attachment', 'portfolio_website_set_attachment');
 
 function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
-
+    
     $post = get_post($parent_id);
     if ($action == "attach") {
         update_post_meta($attachment_id, "parent", $post->post_type);
@@ -209,13 +211,13 @@ add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
 function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key, $_meta_value)
 {
-    
+
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if (in_array($meta_key, $post_types)) {
         foreach ($post_types as  $post_type) {
             if ($post_type == $meta_key) {
-                $attached = get_the_ID($meta_value);
-                if ($post_id == $attached) {
+                $attached = get_post_parent($_meta_value);
+                if ($object_id == $attached->ID) {
                     delete_post_meta($_meta_value, 'parent');
                 }
             }
