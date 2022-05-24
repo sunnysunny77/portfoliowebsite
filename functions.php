@@ -169,12 +169,6 @@ function portfolio_website_add_column_sortable($columns)
 }
 add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
 
-add_filter('posts_orderby', 'edit_posts_orderby');
-
-function edit_posts_orderby($orderby_statement) {
-    $orderby_statement = "parents DESC";
-    return $orderby_statement;
-}
 
 
 function portfolio_website_submit_form_1()
