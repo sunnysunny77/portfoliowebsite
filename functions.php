@@ -132,6 +132,7 @@ function portfolio_website_custom_column($column_name, $post_id)
     if ('category' == $column_name) {
 
         $text =  get_post_meta($post_id, 'parent', true);
+
         if ($text) {
             echo  $text;
         } else {
@@ -149,7 +150,7 @@ function portfolio_website_custom_column($column_name, $post_id)
         $result = $wpdb->get_results(
             $wpdb->prepare(
                 "
-            SELECT meta_key, post_id, meta_value
+            SELECT meta_key, post_id
             FROM $wpdb->postmeta
             WHERE meta_value = %s
         ",
