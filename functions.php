@@ -129,23 +129,27 @@ add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 function portfolio_website_custom_column($column_name, $post_id)
 {
 
+    global $wpdb;
+
     if ('category' == $column_name) {
 
-        $text =  get_post_meta($post_id, 'parent', true);
+        $meta_key =  get_post_meta($post_id, 'parent', true);
 
-        if ($text) {
-            echo  $text;
+        $result = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s LIMIT 1", $meta_key));
+
+        if ($meta_key) {
+            echo $meta_key;
+            if (!$result) {
+                echo '<br/> Uploaded to is NULL';
+            }
         } else {
             echo '-';
         }
     }
 
-
     if ('parents' == $column_name) {
 
         $text = '';
-
-        global $wpdb;
 
         $result = $wpdb->get_results(
             $wpdb->prepare(
