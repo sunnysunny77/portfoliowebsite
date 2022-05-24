@@ -148,7 +148,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         foreach ($all as $row) {
 
-            $text .= "Title:    <a href='" . get_edit_post_link($row->post_id) . "'>" . _draft_or_post_title($row->post_id) . '</a><br/>' . $row->meta_key . '<br/><br/>';
+            $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>";
         }
 
         if ($text) {
@@ -160,6 +160,22 @@ function portfolio_website_custom_column($column_name, $post_id)
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
+
+function portfolio_website_add_column_sortable($columns)
+{
+
+    $columns['parents'] = 'parents';
+    return $columns;
+}
+add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
+
+add_filter('posts_orderby', 'edit_posts_orderby');
+
+function edit_posts_orderby($orderby_statement) {
+    $orderby_statement = "parents DESC";
+    return $orderby_statement;
+}
+
 
 function portfolio_website_submit_form_1()
 {
@@ -200,7 +216,7 @@ add_action('init', 'portfolio_website_register_cptui');
 
 function portfolio_website_on_theme_activation()
 {
-    
+
     require_once(get_template_directory() . '/inc/activation.php');
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
