@@ -189,6 +189,7 @@ function portfolio_website_set_attachment($post_ID)
     update_post_meta($post_ID, "parent", $post->post_type);
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
+add_action('edit_attachment', 'portfolio_website_set_attachment');
 
 
 function portfolio_website_attach_action($action , $attachment_id, $parent_id)
@@ -202,6 +203,15 @@ function portfolio_website_attach_action($action , $attachment_id, $parent_id)
     }
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
+
+
+// define the wp_insert_post_parent callback 
+function filter_wp_insert_post_parent( $post_parent, $post_id, $compact, $postarr ) { 
+    update_post_meta(900, "parent", "oo");
+    return $post_parent; 
+}; 
+         
+add_action( 'rest_insert_attachment', 'action_rest_insert_attachment', 10, 3 ); 
 
 function portfolio_website_submit_form_1()
 {
