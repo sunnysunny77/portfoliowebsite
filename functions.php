@@ -120,13 +120,25 @@ add_filter('option_uploads_use_yearmonth_folders', '__return_false');
 function portfolio_website_add_column_parent($posts_columns)
 {
 
-    $posts_columns['parents'] = __('Parent');
+    $posts_columns['category'] = __('Category');
+    $posts_columns['parents'] = __('Parents');
     return $posts_columns;
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 
 function portfolio_website_custom_column($column_name, $post_id)
 {
+  
+    if ('category' == $column_name) {
+
+        $text =  get_post_meta($post_id, 'parent', true);
+        if ($text) {
+            echo  $text;
+        } else {
+            echo '-';
+        }
+    }
+    
 
     if ('parents' == $column_name) {
 
@@ -134,19 +146,19 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         global $wpdb;
 
-        $all = $wpdb->get_results(
+        $result = $wpdb->get_results(
             $wpdb->prepare(
                 "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
-            WHERE meta_value = %s 
+            WHERE meta_value = %s AND NOT post_id = %d
         ",
                 $post_id,
+                $parent_id
             )
         );
 
-        foreach ($all as $row) {
-
+        foreach ($result as $row) {
             $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>";
         }
 
@@ -163,7 +175,7 @@ add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 
 function portfolio_website_add_column_sortable($columns)
 {
 
-    $columns['parents'] = 'parents';
+    $columns['category'] = 'category';
     return $columns;
 }
 add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
@@ -174,7 +186,7 @@ function portfolio_website_sortable($query)
     if (!is_admin() || !$query->is_main_query()) {
         return;
     }
-    if ('parents' === $query->get('orderby')) {
+    if ('category' === $query->get('orderby')) {
         $query->set('order', 'ASC');
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'parent');
@@ -191,7 +203,7 @@ function portfolio_website_set_attachment($post_ID)
 
     $post = get_post_parent($post_ID);
     if ($post) {
-    update_post_meta($post_ID, "parent", $post->post_type);
+        update_post_meta($post_ID, "parent", $post->post_type);
     }
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
@@ -199,7 +211,7 @@ add_action('edit_attachment', 'portfolio_website_set_attachment');
 
 function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
-    
+
     $post = get_post($parent_id);
     if ($action == "attach") {
         update_post_meta($attachment_id, "parent", $post->post_type);
@@ -216,7 +228,7 @@ function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key,
     if (in_array($meta_key, $post_types)) {
         foreach ($post_types as  $post_type) {
             if ($post_type == $meta_key) {
-                $meta = get_post_meta( $_meta_value, 'parent', true );   
+                $meta = get_post_meta($_meta_value, 'parent', true);
                 if ($meta == $meta_key) {
                     delete_post_meta($_meta_value, 'parent');
                 }
