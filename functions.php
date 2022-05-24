@@ -147,7 +147,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         foreach ($all as $row) {
 
-            $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>" ;
+            $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>";
         }
 
         if ($text) {
@@ -159,6 +159,49 @@ function portfolio_website_custom_column($column_name, $post_id)
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
+
+function portfolio_website_add_column_sortable($columns)
+{
+    $columns['parents'] = 'parents';
+    return $columns;
+}
+add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
+function portfolio_website_sortable($query)
+{
+    if (!is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    if ('parents' === $query->get('orderby')) {
+        $query->set('order', 'ASC');
+        $query->set('orderby', 'meta_value');
+        $query->set('meta_key', 'parent');
+        if ('desc' == $_REQUEST['order']) {
+            $query->set('order', 'DSC');
+        }
+    }
+}
+add_action('pre_get_posts', 'portfolio_website_sortable');
+
+
+function portfolio_website_set_attachment($post_ID)
+{
+    $post = get_post_parent($post_ID);
+    update_post_meta($post_ID, "parent", $post->post_type);
+}
+add_action('add_attachment', 'portfolio_website_set_attachment');
+
+
+function portfolio_website_attach_action($action , $attachment_id, $parent_id)
+{
+
+    $post = get_post($parent_id);
+    if ($action == "attach") {
+    update_post_meta($attachment_id, "parent", $post->post_type);
+    } else if ($action == "detach"){
+    delete_post_meta($attachment_id, 'parent');
+    }
+}
+add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
 function portfolio_website_submit_form_1()
 {
@@ -203,24 +246,3 @@ function portfolio_website_on_theme_activation()
     require_once(get_template_directory() . '/inc/activation.php');
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
-
-function portfolio_website_de_attach_action( $action = 'detach', $attachment_id, $parent_id ) {
- 
-    delete_post_meta($attachment_id, 'parent');
-}
-add_action( 'wp_media_attach_action', 'portfolio_website_de_attach_action' ,10, 3 );
-
-function portfolio_website_set_attachment($post_ID)
-{
-    $post = get_post_parent($post_ID);
-    update_post_meta( $post_ID, "parent", $post->post_type);
-}
-add_action('add_attachment', 'portfolio_website_set_attachment');
-
-
-function portfolio_website_attach_action( $action = 'attach', $attachment_id, $parent_id ) {
- 
-    $post = get_post($parent_id);
-    update_post_meta($attachment_id, "parent", $post->post_type);
-}
-add_action( 'wp_media_attach_action', 'portfolio_website_attach_action' ,10, 3 );
