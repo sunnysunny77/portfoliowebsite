@@ -162,12 +162,15 @@ add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 
 
 function portfolio_website_add_column_sortable($columns)
 {
+
     $columns['parents'] = 'parents';
     return $columns;
 }
 add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
+
 function portfolio_website_sortable($query)
 {
+
     if (!is_admin() || !$query->is_main_query()) {
         return;
     }
@@ -185,33 +188,41 @@ add_action('pre_get_posts', 'portfolio_website_sortable');
 
 function portfolio_website_set_attachment($post_ID)
 {
+
     $post = get_post_parent($post_ID);
     update_post_meta($post_ID, "parent", $post->post_type);
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
 add_action('edit_attachment', 'portfolio_website_set_attachment');
 
-
-function portfolio_website_attach_action($action , $attachment_id, $parent_id)
+function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
 
     $post = get_post($parent_id);
     if ($action == "attach") {
-    update_post_meta($attachment_id, "parent", $post->post_type);
-    } else if ($action == "detach"){
-    delete_post_meta($attachment_id, 'parent');
+        update_post_meta($attachment_id, "parent", $post->post_type);
+    } else if ($action == "detach") {
+        delete_post_meta($attachment_id, 'parent');
     }
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
-
-// define the wp_insert_post_parent callback 
-function filter_wp_insert_post_parent( $post_parent, $post_id, $compact, $postarr ) { 
-    update_post_meta(900, "parent", "oo");
-    return $post_parent; 
-}; 
-         
-add_action( 'rest_insert_attachment', 'action_rest_insert_attachment', 10, 3 ); 
+function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key, $_meta_value)
+{
+    
+    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    if (in_array($meta_key, $post_types)) {
+        foreach ($post_types as  $post_type) {
+            if ($post_type == $meta_key) {
+                $attached = get_the_ID($meta_value);
+                if ($post_id == $attached) {
+                    delete_post_meta($_meta_value, 'parent');
+                }
+            }
+        }
+    }
+}
+add_action('deleted_post_meta', 'portfolio_website_deleted_post_meta', 10, 4);
 
 function portfolio_website_submit_form_1()
 {
