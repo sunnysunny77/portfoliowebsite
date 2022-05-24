@@ -134,7 +134,6 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         global $wpdb;
 
-
         $all = $wpdb->get_results(
             $wpdb->prepare(
                 "
