@@ -216,8 +216,8 @@ function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key,
     if (in_array($meta_key, $post_types)) {
         foreach ($post_types as  $post_type) {
             if ($post_type == $meta_key) {
-                $attached = get_post_parent($_meta_value);
-                if ($object_id == $attached->ID) {
+                $meta = get_post_meta( $_meta_value, 'parent', true );   
+                if ($meta == $meta_key) {
                     delete_post_meta($_meta_value, 'parent');
                 }
             }
