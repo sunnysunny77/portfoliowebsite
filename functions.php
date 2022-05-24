@@ -160,8 +160,8 @@ function portfolio_website_custom_column($column_name, $post_id)
             FROM $wpdb->postmeta
             WHERE meta_value = %sAND NOT post_id = %d
             ",
-                    $post_id,
-                    $attached->ID
+                $post_id,
+                $attached->ID
             )
         );
 
@@ -229,22 +229,15 @@ function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
-function portfolio_website_deleted_post_meta($meta_ids,  $object_id,  $meta_key, $_meta_value)
+function filter_post_data($data, $postarr)
 {
 
-    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-    if (in_array($meta_key, $post_types)) {
-        foreach ($post_types as  $post_type) {
-            if ($post_type == $meta_key) {
-                $meta = get_post_meta($_meta_value, 'parent', true);
-                if ($meta == $meta_key) {
-                    delete_post_meta($_meta_value, 'parent');
-                }
-            }
-        }
-    }
+    $meta_key =  get_post_meta($postarr['ID'], $postarr['post_type'], true);
+
+    delete_post_meta($meta_key, 'parent');
+    return $data;
 }
-add_action('deleted_post_meta', 'portfolio_website_deleted_post_meta', 10, 4);
+add_filter('wp_insert_post_data', 'filter_post_data', '99', 2);
 
 function portfolio_website_submit_form_1()
 {
