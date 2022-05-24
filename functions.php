@@ -148,7 +148,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         foreach ($all as $row) {
 
-            $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>";
+            $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>" ;
         }
 
         if ($text) {
@@ -160,16 +160,6 @@ function portfolio_website_custom_column($column_name, $post_id)
     return false;
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
-
-function portfolio_website_add_column_sortable($columns)
-{
-
-    $columns['parents'] = 'parents';
-    return $columns;
-}
-add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
-
-
 
 function portfolio_website_submit_form_1()
 {
