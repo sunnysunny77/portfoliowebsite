@@ -203,3 +203,24 @@ function portfolio_website_on_theme_activation()
     require_once(get_template_directory() . '/inc/activation.php');
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
+
+function portfolio_website_de_attach_action( $action = 'detach', $attachment_id, $parent_id ) {
+ 
+    delete_post_meta($attachment_id, 'parent');
+}
+add_action( 'wp_media_attach_action', 'portfolio_website_de_attach_action' ,10, 3 );
+
+function portfolio_website_set_attachment($post_ID)
+{
+    $post = get_post_parent($post_ID);
+    update_post_meta( $post_ID, "parent", $post->post_type);
+}
+add_action('add_attachment', 'portfolio_website_set_attachment');
+
+
+function portfolio_website_attach_action( $action = 'attach', $attachment_id, $parent_id ) {
+ 
+    $post = get_post($parent_id);
+    update_post_meta($attachment_id, "parent", $post->post_type);
+}
+add_action( 'wp_media_attach_action', 'portfolio_website_attach_action' ,10, 3 );
