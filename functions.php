@@ -111,7 +111,7 @@ function portfolio_website_enable_vcard_upload($mime_types)
     $mime_types['vcf'] = 'text/vcard';
     $mime_types['vcard'] = 'text/vcard';
     return $mime_types;
-    }
+}
 add_filter('upload_mimes', 'portfolio_website_enable_vcard_upload');
 
 add_filter('pre_option_upload_path', function ($upload_path) {
@@ -146,19 +146,22 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         $parent = get_post_parent($post_id);
 
-        $result = $wpdb->get_var($wpdb->prepare(
-            "
-            SELECT meta_value FROM $wpdb->postmeta 
-            WHERE meta_key = %s AND post_id = %d LIMIT 1
-            ",
-            $meta_key,
-            $parent->ID
-            )
-        );
+        if ($parent->post_type !== "page") {
+            $result = $wpdb->get_var(
+                $wpdb->prepare(
+                    "
+                SELECT meta_value FROM $wpdb->postmeta 
+                WHERE meta_key = %s AND post_id = %d LIMIT 1
+                ",
+                    $meta_key,
+                    $parent->ID
+                )
+            );
+        }
 
-        if ($meta_key) {
+        if ($meta_key && $meta_key !== 'page') {
             echo $meta_key;
-            if (!$result && $parent->post_type !== "page") {
+            if (!$result) {
                 echo '<br/> Uploaded to is NULL';
             }
         } else {
@@ -168,21 +171,23 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     if ('child' == $column_name) {
 
-        $attached = get_post_parent($post_id);
-
         $text = '';
 
-        $result = $wpdb->get_results(
-            $wpdb->prepare(
-            "
+        $attached = get_post_parent($post_id);
+
+        if ($attached->post_type !== "page") {
+            $result = $wpdb->get_results(
+                $wpdb->prepare(
+                    "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
-            WHERE meta_value = %sAND NOT post_id = %d
+            WHERE meta_value = %s AND NOT post_id = %d 
             ",
-            $post_id,
-            $attached->ID
-            )
-        );
+                    $post_id,
+                    $attached->ID
+                )
+            );
+        }
 
         foreach ($result as $row) {
 
@@ -253,7 +258,7 @@ function filter_post_data($data, $postarr)
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if ($postarr['post_status'] == "trash" && in_array($postarr['post_type'], $post_types)) {
         $meta_key =  get_post_meta($postarr['ID'], $postarr['post_type'], true);
-         delete_post_meta($meta_key, 'parent');
+        delete_post_meta($meta_key, 'parent');
     }
     return $data;
 }
