@@ -3,7 +3,7 @@
   <body>
     
   <?php
-
+      // Enquiry form
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $first_name = $_REQUEST["first-name"];

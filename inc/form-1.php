@@ -3,7 +3,7 @@
   <body>
     
   <?php
-
+      // Hire form
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $first_name = $_REQUEST["first-name"];

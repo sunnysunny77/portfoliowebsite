@@ -156,7 +156,7 @@ main i {
 footer {
   background-image: url(../../images/template/paper.png);
   background-blend-mode: screen;
-  padding-top: 15px;
+  padding: 15px 0 0 0;
   background-color: #d9bc49;
   color: #2b241d;
   position: relative;

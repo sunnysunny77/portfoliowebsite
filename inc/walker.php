@@ -1,4 +1,5 @@
 <?php
+// navigation walker
 class F6_TOPBAR_MENU_WALKER extends Walker
 {
 

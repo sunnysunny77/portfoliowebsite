@@ -1,9 +1,11 @@
 <?php
 
+// max upload width
 if (!isset($content_width)) {
     $content_width = 1920;
 }
 
+// features
 if (!function_exists('portfolio_website_setup')) {
 
     function portfolio_website_setup()
@@ -26,6 +28,7 @@ if (!function_exists('portfolio_website_setup')) {
 }
 add_action('after_setup_theme', 'portfolio_website_setup');
 
+// load scripts
 function portfolio_website_scripts()
 {
 
@@ -77,6 +80,7 @@ function portfolio_website_scripts()
 }
 add_action('wp_enqueue_scripts', 'portfolio_website_scripts');
 
+// set user ui
 function portfolio_website_remove_admin_menus()
 {
 
@@ -89,6 +93,7 @@ if (current_user_can('editor')) {
     add_action('admin_menu', 'portfolio_website_remove_admin_menus');
 }
 
+// add footer widget
 function portfolio_website_custom_sidebars()
 {
 
@@ -105,6 +110,7 @@ function portfolio_website_custom_sidebars()
 }
 add_action('widgets_init', 'portfolio_website_custom_sidebars');
 
+// allow contact card to be uploaded
 function portfolio_website_enable_vcard_upload($mime_types)
 {
 
@@ -114,18 +120,22 @@ function portfolio_website_enable_vcard_upload($mime_types)
 }
 add_filter('upload_mimes', 'portfolio_website_enable_vcard_upload');
 
+// use theme root for save image
 add_filter('pre_option_upload_path', function ($upload_path) {
 
     return  get_template_directory() . '/files';
 });
 
+// use theme root for save image
 add_filter('pre_option_upload_url_path', function ($upload_url_path) {
 
     return get_template_directory_uri() . '/files';
 });
 
+// clean media urls
 add_filter('option_uploads_use_yearmonth_folders', '__return_false');
 
+// add menu
 function portfolio_website_add_column_parent($posts_columns)
 {
 
@@ -135,6 +145,7 @@ function portfolio_website_add_column_parent($posts_columns)
 }
 add_filter('manage_media_columns', 'portfolio_website_add_column_parent');
 
+// populate menu
 function portfolio_website_custom_column($column_name, $post_id)
 {
 
@@ -204,6 +215,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 }
 add_action('manage_media_custom_column', 'portfolio_website_custom_column', 10, 2);
 
+// order menu
 function portfolio_website_add_column_sortable($columns)
 {
 
@@ -212,6 +224,7 @@ function portfolio_website_add_column_sortable($columns)
 }
 add_filter('manage_upload_sortable_columns', 'portfolio_website_add_column_sortable');
 
+// order menu
 function portfolio_website_sortable($query)
 {
 
@@ -229,6 +242,7 @@ function portfolio_website_sortable($query)
 }
 add_action('pre_get_posts', 'portfolio_website_sortable');
 
+// add parent
 function portfolio_website_set_attachment($post_ID)
 {
 
@@ -243,6 +257,7 @@ function portfolio_website_set_attachment($post_ID)
 add_action('add_attachment', 'portfolio_website_set_attachment');
 add_action('edit_attachment', 'portfolio_website_set_attachment');
 
+// toggle parent attach ui
 function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
 
@@ -259,6 +274,7 @@ function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
+// Delete parent on post delete
 function portfolio_website_delete_post_data($postid, $post)
 {
 
@@ -271,6 +287,7 @@ function portfolio_website_delete_post_data($postid, $post)
 }
 add_action('before_delete_post', 'portfolio_website_delete_post_data', 99, 2 );
 
+// Hire form
 function portfolio_website_submit_form_1()
 {
 
@@ -281,6 +298,7 @@ function portfolio_website_submit_form_1()
 add_action('wp_ajax_submit_form_1', "portfolio_website_submit_form_1");
 add_action('wp_ajax_nopriv_submit_form_1', 'portfolio_website_submit_form_1');
 
+// Purchase form
 function portfolio_website_submit_form_2()
 {
 
@@ -291,6 +309,7 @@ function portfolio_website_submit_form_2()
 add_action('wp_ajax_submit_form_2', "portfolio_website_submit_form_2");
 add_action('wp_ajax_nopriv_submit_form_2', 'portfolio_website_submit_form_2');
 
+// Enquiry form
 function portfolio_website_submit_form_3()
 {
 
@@ -301,6 +320,7 @@ function portfolio_website_submit_form_3()
 add_action('wp_ajax_submit_form_3', "portfolio_website_submit_form_3");
 add_action('wp_ajax_nopriv_submit_form_3', 'portfolio_website_submit_form_3');
 
+// custom post types
 function portfolio_website_register_cptui()
 {
 
@@ -308,6 +328,7 @@ function portfolio_website_register_cptui()
 }
 add_action('init', 'portfolio_website_register_cptui');
 
+//theme activation
 function portfolio_website_on_theme_activation()
 {
 

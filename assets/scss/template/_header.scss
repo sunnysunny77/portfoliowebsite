@@ -3,7 +3,7 @@
     background-color: $color3;
     background-blend-mode: screen;
     .top-bar-right {
-        @include x_large_and_up{
+        @include x_large_and_up {
             @include box(auto calc(50vw - 960px) auto auto, null);
         }
         ul {
@@ -20,7 +20,7 @@
         }
     }
     .top-bar-left {
-        @include x_large_and_up{
+        @include x_large_and_up {
             @include box(auto auto auto calc(50vw - 960px), null);
         }
         #my-svg {

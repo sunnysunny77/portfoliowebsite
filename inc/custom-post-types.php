@@ -1,5 +1,5 @@
 <?php
-
+// custom post types
 $labels = [
         "name" => __("storyboarding_films", "custom-post-type-ui"),
         "singular_name" => __("storyboarding_film", "custom-post-type-ui"),

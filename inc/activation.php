@@ -1,5 +1,5 @@
 <?php
-
+//theme activation
 function portfolio_website_remove_post($page_path, $output, $post_type)
 {
 
