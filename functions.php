@@ -259,7 +259,7 @@ function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
-function portfolio_website_filter_post_data($postid, $post)
+function portfolio_website_delete_post_data($postid, $post)
 {
 
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
@@ -269,7 +269,7 @@ function portfolio_website_filter_post_data($postid, $post)
     }
     return $data;
 }
-add_action('before_delete_post', 'portfolio_website_filter_post_data', 99, 2 );
+add_action('before_delete_post', 'portfolio_website_delete_post_data', 99, 2 );
 
 function portfolio_website_submit_form_1()
 {
