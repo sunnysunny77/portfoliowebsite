@@ -139,14 +139,14 @@ function portfolio_website_custom_column($column_name, $post_id)
 {
 
     global $wpdb;
+	
+    $meta_key =  get_post_meta($post_id, 'parent', true);
 
     if ('parents' == $column_name) {
 
-        $meta_key =  get_post_meta($post_id, 'parent', true);
-
         $parent = get_post_parent($post_id);
 
-        if ($parent->post_type !== "page") {
+        if ($meta_key) {
             $result = $wpdb->get_var(
                 $wpdb->prepare(
                     "
@@ -159,7 +159,7 @@ function portfolio_website_custom_column($column_name, $post_id)
             );
         }
 
-        if ($meta_key && $meta_key !== 'page') {
+        if ($meta_key) {
             echo $meta_key;
             if (!$result) {
                 echo '<br/> Uploaded to is NULL';
@@ -173,9 +173,9 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         $text = '';
 
-        $attached = get_post_parent($post_id);
+        $parent = get_post_parent($post_id);
 
-        if ($attached->post_type !== "page") {
+        if ($meta_key) {
             $result = $wpdb->get_results(
                 $wpdb->prepare(
                     "
@@ -184,7 +184,7 @@ function portfolio_website_custom_column($column_name, $post_id)
             WHERE meta_value = %s AND NOT post_id = %d 
             ",
                     $post_id,
-                    $attached->ID
+                    $parent->ID
                 )
             );
         }
@@ -233,9 +233,12 @@ function portfolio_website_set_attachment($post_ID)
 {
 
     $post = get_post_parent($post_ID);
-    if ($post) {
-        update_post_meta($post_ID, "parent", $post->post_type);
-    }
+	  $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    if (in_array($post->post_type, $post_types)) {
+		if ($post) {
+			update_post_meta($post_ID, "parent", $post->post_type);
+		}
+	}
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
 add_action('edit_attachment', 'portfolio_website_set_attachment');
@@ -243,12 +246,16 @@ add_action('edit_attachment', 'portfolio_website_set_attachment');
 function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
 
+	
     $post = get_post($parent_id);
+		  $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
+    if (in_array($post->post_type, $post_types)) {
     if ($action == "attach") {
         update_post_meta($attachment_id, "parent", $post->post_type);
     } else if ($action == "detach") {
         delete_post_meta($attachment_id, 'parent');
     }
+	}
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
