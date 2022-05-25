@@ -107,7 +107,7 @@ add_action('widgets_init', 'portfolio_website_custom_sidebars');
 
 function portfolio_website_enable_vcard_upload($mime_types)
 {
-    
+
     $mime_types['vcf'] = 'text/vcard';
     $mime_types['vcard'] = 'text/vcard';
     return $mime_types;
@@ -144,7 +144,14 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         $meta_key =  get_post_meta($post_id, 'parent', true);
 
-        $result = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s LIMIT 1", $meta_key));
+        $result = $wpdb->get_var($wpdb->prepare(
+            "
+            SELECT meta_value FROM $wpdb->postmeta 
+            WHERE meta_key = %s LIMIT 1
+            ",
+            $meta_key
+            )
+        );
 
         if ($meta_key) {
             echo $meta_key;
@@ -164,13 +171,13 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         $result = $wpdb->get_results(
             $wpdb->prepare(
-                "
+            "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
             WHERE meta_value = %sAND NOT post_id = %d
             ",
-                $post_id,
-                $attached->ID
+            $post_id,
+            $attached->ID
             )
         );
 
@@ -214,7 +221,6 @@ function portfolio_website_sortable($query)
 }
 add_action('pre_get_posts', 'portfolio_website_sortable');
 
-
 function portfolio_website_set_attachment($post_ID)
 {
 
@@ -244,8 +250,7 @@ function filter_post_data($data, $postarr)
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if ($postarr['post_status'] == "trash" && in_array($postarr['post_type'], $post_types)) {
         $meta_key =  get_post_meta($postarr['ID'], $postarr['post_type'], true);
-
-        delete_post_meta($meta_key, 'parent');
+         delete_post_meta($meta_key, 'parent');
     }
     return $data;
 }
