@@ -259,17 +259,17 @@ function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 
-function portfolio_website_filter_post_data($data, $postarr)
+function portfolio_website_filter_post_data($postid, $post)
 {
 
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-    if ($postarr['post_status'] == "trash" && in_array($postarr['post_type'], $post_types)) {
-        $meta_key =  get_post_meta($postarr['ID'], $postarr['post_type'], true);
+    if (in_array($post->post_type, $post_types)) {
+        $meta_key =  get_post_meta($postid, $post->post_type, true);
         delete_post_meta($meta_key, 'parent');
     }
     return $data;
 }
-add_filter('wp_insert_post_data', 'portfolio_website_filter_post_data', '99', 2);
+add_action('before_delete_post', 'portfolio_website_filter_post_data', 99, 2 );
 
 function portfolio_website_submit_form_1()
 {
