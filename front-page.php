@@ -142,7 +142,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="storyboard" class="cell text-right">Storyboarding</h4>
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+						<div>
                         <?php
                         $loop = new WP_Query(array('post_type' => 'storyboarding_films', 'posts_per_page' => -1));
 
@@ -159,7 +159,8 @@ $disclaimer = get_field('disclaimer');
 
                         <?php }
                         wp_reset_query(); ?>
-
+						</div>
+						
                     </section>
 
                     <section class="cell grid-x
@@ -170,7 +171,7 @@ $disclaimer = get_field('disclaimer');
 
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+						<div>
                         <?php
                         $loop = new WP_Query(array('post_type' => 'concepts_films', 'posts_per_page' => -1));
 
@@ -187,6 +188,7 @@ $disclaimer = get_field('disclaimer');
 
                         <?php }
                         wp_reset_query(); ?>
+						</div>
 
                     </section>
 
@@ -199,7 +201,7 @@ $disclaimer = get_field('disclaimer');
 
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+						<div>
                         <?php
                         $loop = new WP_Query(array('post_type' => 'independent_films', 'posts_per_page' => -1));
 
@@ -216,6 +218,7 @@ $disclaimer = get_field('disclaimer');
 
                         <?php }
                         wp_reset_query(); ?>
+						</div>
 
                     </section>
 
@@ -250,7 +253,7 @@ $disclaimer = get_field('disclaimer');
 
                     <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+					<div>
                     <?php
                     $loop = new WP_Query(array('post_type' => 'theatre', 'posts_per_page' => -1));
 
@@ -267,6 +270,7 @@ $disclaimer = get_field('disclaimer');
 
                     <?php }
                     wp_reset_query(); ?>
+					</div>
 
                 </section>
 
@@ -299,7 +303,7 @@ $disclaimer = get_field('disclaimer');
 
                     <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+					<div>
                     <?php
                     $loop = new WP_Query(array('post_type' => 'designs', 'posts_per_page' => -1));
 
@@ -316,6 +320,7 @@ $disclaimer = get_field('disclaimer');
 
                     <?php }
                     wp_reset_query(); ?>
+					</div>
 
                 </section>
 
@@ -356,7 +361,7 @@ $disclaimer = get_field('disclaimer');
                         <h4 id="poetry" class="cell text-right">Poems</h4>
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+						<div>
                         <?php
                         $loop = new WP_Query(array('post_type' => 'poems_poetry', 'posts_per_page' => -1));
 
@@ -373,6 +378,7 @@ $disclaimer = get_field('disclaimer');
 
                         <?php }
                         wp_reset_query(); ?>
+						</div>
 
                     </section>
 
@@ -385,7 +391,7 @@ $disclaimer = get_field('disclaimer');
 
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+						<div>
                         <?php
                         $loop = new WP_Query(array('post_type' => 'illustrated_poetry', 'posts_per_page' => -1));
 
@@ -402,6 +408,7 @@ $disclaimer = get_field('disclaimer');
 
                         <?php }
                         wp_reset_query(); ?>
+						</div>
 
                     </section>
 
@@ -436,7 +443,7 @@ $disclaimer = get_field('disclaimer');
 
                     <a aria-label="Return to menu" class="cell top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+					<div>
                     <?php
                     $loop = new WP_Query(array('post_type' => 'sculptures', 'posts_per_page' => -1));
 
@@ -453,6 +460,7 @@ $disclaimer = get_field('disclaimer');
 
                     <?php }
                     wp_reset_query(); ?>
+					</div>
 
                 </section>
 
@@ -485,7 +493,7 @@ $disclaimer = get_field('disclaimer');
                     <a aria-label="Return to menu" class="cell
                         top-link show-for-small-only
                         text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
-
+					<div>
                     <?php
                     $loop = new WP_Query(array('post_type' => 'illustrations', 'posts_per_page' => -1));
 
@@ -502,7 +510,8 @@ $disclaimer = get_field('disclaimer');
 
                     <?php }
                     wp_reset_query(); ?>
-
+					</div>
+					
                 </section>
 
             </div>
