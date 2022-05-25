@@ -158,7 +158,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         if ($meta_key) {
             echo $meta_key;
-            if (!$result) {
+            if (!$result && $parent->post_type !== "page") {
                 echo '<br/> Uploaded to is NULL';
             }
         } else {
