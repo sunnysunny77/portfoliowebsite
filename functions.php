@@ -144,12 +144,15 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         $meta_key =  get_post_meta($post_id, 'parent', true);
 
+        $parent = get_post_parent($post_id);
+
         $result = $wpdb->get_var($wpdb->prepare(
             "
             SELECT meta_value FROM $wpdb->postmeta 
-            WHERE meta_key = %s LIMIT 1
+            WHERE meta_key = %s AND post_id = %d LIMIT 1
             ",
-            $meta_key
+            $meta_key,
+            $parent->ID
             )
         );
 
