@@ -10,7 +10,7 @@
 
         <h3 class="cell medium-order-2 small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_1') ?></h4>
 
-        <p class="cell medium-order-1 medium-text-left small-12 medium-7"><?php echo the_field('section_paragraph_1') ?></p>
+            <p class="cell medium-order-1 medium-text-left small-12 medium-7"><?php echo the_field('section_paragraph_1') ?></p>
 
     </section>
 
@@ -18,14 +18,14 @@
 
         <h3 class="cell text-right small-12 medium-5 medium-text-center"><?php echo the_field('section_heading_2') ?></h4>
 
-        <p class="cell text-right small-12 medium-7"><?php echo the_field('section_paragraph_2') ?></p>
+            <p class="cell text-right small-12 medium-7"><?php echo the_field('section_paragraph_2') ?></p>
 
     </section>
 
     <section class="grid-x align-center stack-for-small
     media-object">
 
-    <div class="cell medium-6 align-self-middle
+        <div class="cell medium-6 align-self-middle
         media-object-section">
 
             <?php
@@ -53,7 +53,7 @@
 
         </div>
 
-     
+
 
     </section>
 
@@ -61,12 +61,12 @@
 
         <div class="cell rel text-center medium-order-2 small-12 medium-5 large-6">
 
-                <?php
-                $image = get_field('sticky_image_1');
-                if (!empty($image)) { ?>
-                    <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-      
+            <?php
+            $image = get_field('sticky_image_1');
+            if (!empty($image)) { ?>
+                <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+
         </div>
 
         <div id="stick-1" class="cell text-center medium-order-1 medium-text-left small-12 medium-7 large-6">
@@ -80,13 +80,13 @@
     <div class="grid-x">
 
         <div class="cell rel text-center small-12 medium-5 large-6">
-        
-                <?php
-                $image = get_field('sticky_image_2');
-                if (!empty($image)) { ?>
-                    <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                <?php } ?>
-    
+
+            <?php
+            $image = get_field('sticky_image_2');
+            if (!empty($image)) { ?>
+                <img class="thumbnail stick" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php } ?>
+
         </div>
 
         <div id="stick-2" class="cell text-center medium-text-right small-12 medium-7 large-6">
