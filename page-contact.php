@@ -16,7 +16,7 @@
 
     <ul class="tabs grid-x align-center text-center" data-tabs id="tabs">
         <li class="small-3 text-center align-self-middle"> <i class="fi-mail"><span class="hide">Email icon</span></i></li>
-        <li class="tabs-title is-active small-3"><a href="#panel1" aria-selected="true">
+        <li class="tabs-title is-active small-3"><a href="#panel1">
                 <h3>Hire</h3>
             </a></li>
         <li class="tabs-title small-3"><a data-tabs-target="panel2" href="#panel2">
