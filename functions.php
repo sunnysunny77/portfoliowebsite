@@ -151,11 +151,15 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     global $wpdb;
 
-    $meta_key =  get_post_meta($post_id, 'parent', true);
-
     if ('parents' == $column_name) {
 
         $parent = get_post_parent($post_id);
+
+        if (!$parent) {
+            delete_post_meta($post_id, 'parent');
+        }
+
+        $meta_key =  get_post_meta($post_id, 'parent', true);
 
         if ($meta_key) {
             $result = $wpdb->get_var(
@@ -271,22 +275,6 @@ function portfolio_website_attach_action($action, $attachment_id, $parent_id)
     }
 }
 add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
-
-// Delete parent on post delete
-function portfolio_website_delete_post_data($postid, $post)
-{
-
-    $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
-    if (in_array($post->post_type, $post_types)) {
-        $meta_key =  get_post_meta($postid, $post->post_type, true);
-        $post = get_post_parent($meta_key);
-        if ($post->ID == $postid) {
-            delete_post_meta($meta_key, 'parent');
-        }   
-    }
-    return $data;
-}
-add_action('before_delete_post', 'portfolio_website_delete_post_data', 99, 2 );
 
 // Hire form
 function portfolio_website_submit_form_1()
