@@ -281,7 +281,10 @@ function portfolio_website_delete_post_data($postid, $post)
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if (in_array($post->post_type, $post_types)) {
         $meta_key =  get_post_meta($postid, $post->post_type, true);
-        delete_post_meta($meta_key, 'parent');
+        $post = get_post_parent($meta_key);
+        if ($post->ID == $postid) {
+            delete_post_meta($meta_key, 'parent');
+        }   
     }
     return $data;
 }
