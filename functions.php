@@ -151,9 +151,9 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     global $wpdb;
 
-    if ('parents' == $column_name) {
+    $parent = get_post_parent($post_id);
 
-        $parent = get_post_parent($post_id);
+    if ('parents' == $column_name) {    
 
         if (!$parent) {
             delete_post_meta($post_id, 'parent');
@@ -187,8 +187,6 @@ function portfolio_website_custom_column($column_name, $post_id)
     if ('child' == $column_name) {
 
         $text = '';
-
-        $parent = get_post_parent($post_id);
 
         $result = $wpdb->get_results(
             $wpdb->prepare(
