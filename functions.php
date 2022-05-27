@@ -249,9 +249,7 @@ function portfolio_website_set_attachment($post_ID)
     $post = get_post_parent($post_ID);
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if (in_array($post->post_type, $post_types)) {
-        if ($post) {
-            update_post_meta($post_ID, "parent", $post->post_type);
-        }
+        update_post_meta($post_ID, "parent", $post->post_type);
     }
 }
 add_action('add_attachment', 'portfolio_website_set_attachment');
