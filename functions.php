@@ -155,6 +155,8 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     if ('parents' == $column_name) {    
 
+        $text = '';
+
         if (!$parent) {
             delete_post_meta($post_id, 'parent');
         }
@@ -174,14 +176,13 @@ function portfolio_website_custom_column($column_name, $post_id)
             );
         }
 
-        if ($meta_key) {
-            echo $meta_key;
-            if (!$result) {
-                echo '<br/> Uploaded to is NULL';
-            }
-        } else {
-            echo '-';
+        $meta_key? $text .= $meta_key: $text .=  '-';
+
+        if (!$result && $meta_key) {
+            $text .= '<br/> Uploaded to is NULL';
         }
+
+        echo  $text;
     }
 
     if ('child' == $column_name) {
@@ -207,11 +208,12 @@ function portfolio_website_custom_column($column_name, $post_id)
             }
         }
 
-        if ($text) {
-            echo $text;
-        } else {
-            echo '-';
+        if (!$text) {
+           $text = '-';
         }
+
+        echo $text;
+        
     }
     return false;
 }
