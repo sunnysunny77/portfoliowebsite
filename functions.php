@@ -153,13 +153,15 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     $parent = get_post_parent($post_id);
 
+    $meta_key =  get_post_meta($post_id, 'parent', true);
+
+    if (!$parent && $meta_key) {
+        delete_post_meta($post_id, 'parent');
+    }
+
     if ('parents' == $column_name) {    
 
         $text = '';
-
-        if (!$parent) {
-            delete_post_meta($post_id, 'parent');
-        }
 
         $meta_key =  get_post_meta($post_id, 'parent', true);
 
