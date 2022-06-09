@@ -20,8 +20,7 @@ comment_form(
   $args = array(
     'id_form'           => 'commentform',
     'id_submit'         => 'commentsubmit',
-    'title_reply'       => 'Leave a Comment',
-    'title_reply'       => 'Leave a Comment',
+    'title_reply'       => 'Leave a comment',
     'title_reply_before'   => '<h2 id="reply-title" class="comment-reply-title">',
     'title_reply_after'    => '</h2>',
     'cancel_reply_link' => 'Cancel Commnet',
