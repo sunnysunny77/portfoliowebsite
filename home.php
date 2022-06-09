@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="fixed" role="img" aria-label="flowers texture background"></div>
+<div class="show-for-medium" id="fixed" role="img" aria-label="flowers texture background"></div>
 
 <main id="main" class="grid-container grid-y">
 

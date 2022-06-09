@@ -232,18 +232,13 @@ footer::before {
 
 #fixed {
   background-attachment: fixed;
-  padding: 30px 0;
   background-size: 100%;
   background-image: url("../../images/blog/posts-texture.jpg");
   background-repeat: no-repeat;
   background-blend-mode: screen;
   opacity: 0.75;
   background-color: rgba(225, 202, 111, 0.35);
-}
-@media screen and (min-width: 40em) {
-  #fixed {
-    padding: 4.7%;
-  }
+  padding: 4.7%;
 }
 @media screen and (min-width: 1921px) {
   #fixed {
