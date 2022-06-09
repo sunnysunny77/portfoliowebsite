@@ -213,6 +213,7 @@ footer .widget label {
 footer .widget input,
 footer .widget button {
   cursor: pointer;
+  background-image: url(../../images/template/paper.png);
 }
 footer .widget button {
   background-color: rgba(75, 124, 106, 0.5);

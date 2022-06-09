@@ -20,10 +20,14 @@ main h1 {
   }
 }
 
+main input[type=search] {
+  background-image: url(../../images/template/paper.png);
+}
 main input[type=submit] {
   color: #2b241d;
   border: none;
   padding: 0.85em 1em;
+  background-image: url(../../images/template/paper.png);
   margin: 0 0 1rem 0;
   background-color: rgba(75, 124, 106, 0.5);
 }
@@ -226,6 +230,7 @@ footer .widget label {
 footer .widget input,
 footer .widget button {
   cursor: pointer;
+  background-image: url(../../images/template/paper.png);
 }
 footer .widget button {
   background-color: rgba(75, 124, 106, 0.5);
@@ -257,6 +262,10 @@ footer::before {
 
 main #commentsubmit {
   margin: auto;
+}
+main textarea {
+  background-image: url(../../images/template/paper.png);
+  resize: none;
 }
 
 /*# sourceMappingURL=single.css.map */

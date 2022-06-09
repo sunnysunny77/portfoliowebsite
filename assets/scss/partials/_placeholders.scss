@@ -36,10 +36,14 @@
 }
 
 %submit {
+    input[type="search"] {
+        background-image: url(../../images/template/paper.png);
+    }
     input[type="submit"] {
         color: $color1;
         border: none;
         padding: 0.85em 1em;
+        background-image: url(../../images/template/paper.png);
         @include setbox(null, null, null, 0 0 1rem 0);
         background-color: rgba($color4, 0.5);
         &:hover,
