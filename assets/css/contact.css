@@ -18,6 +18,23 @@ main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
   text-shadow: 0.25px 0 0 #2b241d;
 }
 
+#main form textarea {
+  resize: none;
+  appearance: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #e1ca6f rgba(97, 97, 97, 0.25);
+  scrollbar-width: thin;
+}
+#main form textarea::-webkit-scrollbar {
+  width: 7px;
+}
+#main form textarea::-webkit-scrollbar-thumb {
+  background: #e1ca6f;
+}
+#main form textarea::-webkit-scrollbar-track {
+  background: rgba(97, 97, 97, 0.25);
+}
 @font-face {
   font-family: Montserrat-Regular;
   src: url("./Fonts/Montserrat-Regular.ttf");
@@ -275,9 +292,6 @@ main .tabs .tabs-title > a[aria-selected=true] {
 .tabs-content .is-active {
   padding: 1rem 0;
 }
-.tabs-content textarea {
-  resize: none;
-}
 .tabs-content legend {
   color: #2b241d;
 }
@@ -291,22 +305,6 @@ main .tabs .tabs-title > a[aria-selected=true] {
 }
 #main form input[type=submit]:disabled {
   opacity: 1;
-}
-#main form textarea {
-  appearance: auto;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-color: #e1ca6f rgba(97, 97, 97, 0.25);
-  scrollbar-width: thin;
-}
-#main form textarea::-webkit-scrollbar {
-  width: 7px;
-}
-#main form textarea::-webkit-scrollbar-thumb, #main form textarea:hover::-webkit-scrollbar-thumb, #main form textarea:focus::-webkit-scrollbar-thumb {
-  background: #e1ca6f;
-}
-#main form textarea::-webkit-scrollbar-track {
-  background: rgba(97, 97, 97, 0.25);
 }
 blockquote,
 cite {
