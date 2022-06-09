@@ -5,6 +5,9 @@
 main {
     @extend %h1;
     @extend %submit;
+    input[type="search"] {
+        background-image: url(../../images/template/paper.png);
+    }
     a {
         @extend %link;
     }

@@ -21,9 +21,6 @@ main h1 {
   }
 }
 
-main input[type=search] {
-  background-image: url(../../images/template/paper.png);
-}
 main input[type=submit] {
   color: #2b241d;
   border: none;
@@ -259,6 +256,10 @@ footer::before {
   background-image: url(../../images/template/washi.png);
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+main input[type=search] {
+  background-image: url(../../images/template/paper.png);
 }
 
 /*# sourceMappingURL=notfound.css.map */

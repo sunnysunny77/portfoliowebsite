@@ -20,9 +20,6 @@ main h1 {
   }
 }
 
-main input[type=search] {
-  background-image: url(../../images/template/paper.png);
-}
 main input[type=submit] {
   color: #2b241d;
   border: none;
