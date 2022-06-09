@@ -29,7 +29,7 @@
         font-size: 1.25rem;
         font-family: Montserrat-Regular;
         @include medium_and_up() {
-            @include setbox(null, null, null, 40px auto 0 auto);
+            @include setbox(null, null, null,  50px auto);
             font-size: 2.5rem;
         }
     }
