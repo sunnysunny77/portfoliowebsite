@@ -9,8 +9,10 @@ main {
     #commentsubmit {
         @include box(auto, null);
     }
-    textarea {
-        background-image: url(../../images/template/paper.png);
-        resize: none;
+    textarea, input {
+		background-image: url(../../images/template/paper.png);
+	}
+	  textarea {
+		resize: none;
     }
 }

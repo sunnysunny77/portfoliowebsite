@@ -260,8 +260,10 @@ footer::before {
 main #commentsubmit {
   margin: auto;
 }
-main textarea {
+main textarea, main input {
   background-image: url(../../images/template/paper.png);
+}
+main textarea {
   resize: none;
 }
 
