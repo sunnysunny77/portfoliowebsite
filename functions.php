@@ -113,6 +113,18 @@ function portfolio_website_custom_sidebars()
 }
 add_action('widgets_init', 'portfolio_website_custom_sidebars');
 
+// set post number on home page
+function foundation_post_limits($query)
+{
+    if (!is_admin() && $query->is_main_query()) {
+
+        if (is_home()) {
+            $query->set('posts_per_page', '3');
+        }
+    }
+}
+add_action('pre_get_posts', 'foundation_post_limits');
+
 // allow contact card to be uploaded
 function portfolio_website_enable_vcard_upload($mime_types)
 {
