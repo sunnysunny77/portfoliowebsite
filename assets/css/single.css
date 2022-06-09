@@ -32,6 +32,23 @@ main input[type=submit]:hover, main input[type=submit]:focus {
   background-color: rgba(78, 127, 61, 0.5);
 }
 
+main textarea {
+  resize: none;
+  appearance: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #e1ca6f rgba(97, 97, 97, 0.25);
+  scrollbar-width: thin;
+}
+main textarea::-webkit-scrollbar {
+  width: 7px;
+}
+main textarea::-webkit-scrollbar-thumb, main textarea:hover::-webkit-scrollbar-thumb, main textarea:focus::-webkit-scrollbar-thumb {
+  background: #e1ca6f;
+}
+main textarea::-webkit-scrollbar-track {
+  background: rgba(97, 97, 97, 0.25);
+}
 @font-face {
   font-family: Montserrat-Regular;
   src: url("./Fonts/Montserrat-Regular.ttf");
@@ -262,9 +279,6 @@ main #commentsubmit {
 }
 main textarea, main input {
   background-image: url(../../images/template/paper.png);
-}
-main textarea {
-  resize: none;
 }
 
 /*# sourceMappingURL=single.css.map */

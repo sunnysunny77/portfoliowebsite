@@ -12,7 +12,7 @@ main {
     textarea, input {
 		background-image: url(../../images/template/paper.png);
 	}
-	  textarea {
-		resize: none;
+	textarea {
+        @extend %textarea;
     }
 }
