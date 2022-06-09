@@ -1,0 +1,12 @@
+@import "variables";
+
+main {
+    @extend %h1;
+    @extend %submit;
+    a {
+        @extend %link;
+    }
+    #commentsubmit {
+        @include box(auto, null);
+    }
+}

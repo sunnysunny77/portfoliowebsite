@@ -1,4 +1,3 @@
-/* not found */
 main a {
   color: #345428;
 }
@@ -256,4 +255,8 @@ footer::before {
   background-repeat: no-repeat;
 }
 
-/*# sourceMappingURL=notfound.css.map */
+main #commentsubmit {
+  margin: auto;
+}
+
+/*# sourceMappingURL=single.css.map */

@@ -1,0 +1,44 @@
+@import "variables";
+
+#fixed {
+    background-attachment: fixed;
+    padding: 30px 0;
+    background-size: 100%;
+    background-image: url("../../images/blog/posts-texture.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    opacity: 0.75;
+    background-color: rgba($color3, 0.35);
+    @include medium_and_up {
+        padding: 4.7%;
+    }
+    @include x_large_and_up {
+        @include setbox(1920px, null, null, auto);
+        box-shadow: 1px 0 rgba($color1, 0.2), -1px 0 rgba($color1, 0.2);
+    }
+}
+
+main {
+    h2 {
+        @include setbox(null, null, null, 1rem auto);
+        @include medium_and_up() {
+            @include setbox(null, null, null, 50px auto);
+        }
+        a {
+            color: darkShift($color1);
+            font-style: oblique;
+            text-shadow: 0 0 2.5px $color1;
+            font-size: 1.25rem;
+            @include medium_and_up() {
+                font-size: 2.5rem;
+            }
+            &:hover,
+            &:focus {
+                color: lightShift($color2);
+            }
+        }
+    }
+    a {
+        @extend %link;
+    }
+}

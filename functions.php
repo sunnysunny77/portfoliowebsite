@@ -76,16 +76,19 @@ function portfolio_website_scripts()
         wp_enqueue_style('search-css', get_template_directory_uri() . '/assets/css/search.css');
     } else if (is_404()) {
         wp_enqueue_style('notfound-css', get_template_directory_uri() . '/assets/css/notfound.css');
-    }
+    } else if (is_home()) {
+        wp_enqueue_style('blog-css', get_template_directory_uri() . '/assets/css/blog.css');
+    } else if (is_single()) {
+        wp_enqueue_style('single-css', get_template_directory_uri() . '/assets/css/single.css');
+    } else if (is_archive()) {
+        wp_enqueue_style('archive-css', get_template_directory_uri() . '/assets/css/archive.css');
+    } 
 }
 add_action('wp_enqueue_scripts', 'portfolio_website_scripts');
 
 // set user ui
 function portfolio_website_remove_admin_menus()
 {
-
-    remove_menu_page('edit.php');
-    remove_menu_page('edit-comments.php');
     remove_menu_page('index.php');
     remove_menu_page('tools.php');
 }

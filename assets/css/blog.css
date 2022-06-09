@@ -1,35 +1,8 @@
-/* not found */
 main a {
   color: #345428;
 }
 main a:hover, main a:focus {
   color: #405185;
-}
-
-main h1 {
-  margin: 1rem auto;
-  color: #463b2f;
-  font-style: oblique;
-  text-shadow: 0 0 2.5px #2b241d;
-  font-size: 1.25rem;
-  font-family: Montserrat-Regular;
-}
-@media screen and (min-width: 40em) {
-  main h1 {
-    margin: 40px auto 0 auto;
-    font-size: 2.5rem;
-  }
-}
-
-main input[type=submit] {
-  color: #2b241d;
-  border: none;
-  padding: 0.85em 1em;
-  margin: 0 0 1rem 0;
-  background-color: rgba(75, 124, 106, 0.5);
-}
-main input[type=submit]:hover, main input[type=submit]:focus {
-  background-color: rgba(78, 127, 61, 0.5);
 }
 
 @font-face {
@@ -256,4 +229,50 @@ footer::before {
   background-repeat: no-repeat;
 }
 
-/*# sourceMappingURL=notfound.css.map */
+#fixed {
+  background-attachment: fixed;
+  padding: 30px 0;
+  background-size: 100%;
+  background-image: url("../../images/blog/posts-texture.jpg");
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  opacity: 0.75;
+  background-color: rgba(225, 202, 111, 0.35);
+}
+@media screen and (min-width: 40em) {
+  #fixed {
+    padding: 4.7%;
+  }
+}
+@media screen and (min-width: 1921px) {
+  #fixed {
+    width: 1920px;
+    margin: auto;
+    box-shadow: 1px 0 rgba(43, 36, 29, 0.2), -1px 0 rgba(43, 36, 29, 0.2);
+  }
+}
+
+main h2 {
+  margin: 1rem auto;
+}
+@media screen and (min-width: 40em) {
+  main h2 {
+    margin: 50px auto;
+  }
+}
+main h2 a {
+  color: #463b2f;
+  font-style: oblique;
+  text-shadow: 0 0 2.5px #2b241d;
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 40em) {
+  main h2 a {
+    font-size: 2.5rem;
+  }
+}
+main h2 a:hover, main h2 a:focus {
+  color: #405185;
+}
+
+/*# sourceMappingURL=blog.css.map */

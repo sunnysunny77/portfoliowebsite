@@ -59,11 +59,12 @@ main {
     }
     @include medium_and_up() {
         > * {
-            margin-bottom: 50px;
+           margin-bottom: 50px;
         }
     }
     i {
         color: $color1;
+        @include box(0 0 1rem 0, null);
     }
 }
 

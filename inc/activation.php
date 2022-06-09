@@ -22,6 +22,17 @@ function portfolio_website_post_meta($id, $key, $val)
     add_post_meta($id, $key, $val, true);
 }
 
+if (!get_option('page_for_posts')) {
+    $page = array(
+        'post_title'     => 'Blog',
+        'post_type'      => 'page',
+        'post_name'      => 'Blog',
+        'post_status'    => 'publish',
+    );
+    $id = wp_insert_post($page);
+    update_option('page_for_posts', $id);
+}
+
 if (!get_option('page_on_front')) {
     $page = array(
         'import_id'      =>  254,
