@@ -56,7 +56,7 @@ function portfolio_website_scripts()
     //AJAX
     wp_enqueue_script('jquery-form', '', array('jquery'), '', true);
 
-    //theme 
+    //theme
     if (is_front_page()) {
         wp_enqueue_style('home-css', get_template_directory_uri() . '/assets/css/home.css');
         wp_enqueue_script('goto-js', get_template_directory_uri() . '/js/goto.js', array('jquery'), '', true);
@@ -82,7 +82,7 @@ function portfolio_website_scripts()
         wp_enqueue_style('single-css', get_template_directory_uri() . '/assets/css/single.css');
     } else if (is_archive()) {
         wp_enqueue_style('archive-css', get_template_directory_uri() . '/assets/css/archive.css');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'portfolio_website_scripts');
 
@@ -105,9 +105,9 @@ function portfolio_website_custom_sidebars()
             'name' => 'widget one',
             'id' => 'widget_one',
             'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<span class="widgettitle">',
-            'after_title'   => '</span>',
+            'after_widget' => '</li>',
+            'before_title' => '<span class="widgettitle">',
+            'after_title' => '</span>',
         )
     );
 }
@@ -138,7 +138,7 @@ add_filter('upload_mimes', 'portfolio_website_enable_vcard_upload');
 // use theme root for save image
 add_filter('pre_option_upload_path', function ($upload_path) {
 
-    return  get_template_directory() . '/files';
+    return get_template_directory() . '/files';
 });
 
 // use theme root for save image
@@ -168,7 +168,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
     $parent = get_post_parent($post_id);
 
-    if ('parents' == $column_name) {    
+    if ('parents' == $column_name) {
 
         $text = '';
 
@@ -176,13 +176,13 @@ function portfolio_website_custom_column($column_name, $post_id)
             delete_post_meta($post_id, 'parent');
         }
 
-        $meta_key =  get_post_meta($post_id, 'parent', true);
+        $meta_key = get_post_meta($post_id, 'parent', true);
 
         if ($meta_key) {
             $result = $wpdb->get_var(
                 $wpdb->prepare(
                     "
-                SELECT meta_value FROM $wpdb->postmeta 
+                SELECT meta_value FROM $wpdb->postmeta
                 WHERE meta_key = %s AND post_id = %d LIMIT 1
                 ",
                     $meta_key,
@@ -191,13 +191,15 @@ function portfolio_website_custom_column($column_name, $post_id)
             );
         }
 
-        $meta_key? $text .= $meta_key: $text .=  '-';
+        $meta_key ? $text .= $meta_key : $text .= '-';
 
         if (!$result && $meta_key) {
             $text .= '<br/> Uploaded to is NULL';
+        } elseif (get_post_status($parent->ID) !== 'publish') {
+            $text .= '<br/> Uploaded to is NULL';
         }
 
-        echo  $text;
+        echo $text;
     }
 
     if ('child' == $column_name) {
@@ -209,7 +211,7 @@ function portfolio_website_custom_column($column_name, $post_id)
                 "
             SELECT meta_key, post_id
             FROM $wpdb->postmeta
-            WHERE meta_value = %s AND NOT post_id = %d 
+            WHERE meta_value = %s AND NOT post_id = %d
             ",
                 $post_id,
                 $parent->ID
@@ -219,16 +221,16 @@ function portfolio_website_custom_column($column_name, $post_id)
         foreach ($result as $row) {
 
             if (!get_post_parent($row->post_id)) {
-                $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>";
+                $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key . "</a><br/>" . _draft_or_post_title($row->post_id) . "<br/><br/>";
             }
         }
 
         if (!$text) {
-           $text = '-';
+            $text = '-';
         }
 
         echo $text;
-        
+
     }
     return false;
 }
@@ -278,7 +280,6 @@ add_action('edit_attachment', 'portfolio_website_set_attachment');
 function portfolio_website_attach_action($action, $attachment_id, $parent_id)
 {
 
-
     $post = get_post($parent_id);
     $post_types = ["storyboarding_films", "concepts_films", "independent_films", "theatre", "designs", "poems_poetry", "illustrated_poetry", "sculptures", "illustrations"];
     if (in_array($post->post_type, $post_types)) {
@@ -295,7 +296,7 @@ add_action('wp_media_attach_action', 'portfolio_website_attach_action', 10, 3);
 function portfolio_website_submit_form_1()
 {
 
-    require_once(get_template_directory() . '/inc/form-1.php');
+    require_once get_template_directory() . '/inc/form-1.php';
 
     exit();
 }
@@ -306,7 +307,7 @@ add_action('wp_ajax_nopriv_submit_form_1', 'portfolio_website_submit_form_1');
 function portfolio_website_submit_form_2()
 {
 
-    require_once(get_template_directory() . '/inc/form-2.php');
+    require_once get_template_directory() . '/inc/form-2.php';
 
     exit();
 }
@@ -317,7 +318,7 @@ add_action('wp_ajax_nopriv_submit_form_2', 'portfolio_website_submit_form_2');
 function portfolio_website_submit_form_3()
 {
 
-    require_once(get_template_directory() . '/inc/form-3.php');
+    require_once get_template_directory() . '/inc/form-3.php';
 
     exit();
 }
@@ -328,7 +329,7 @@ add_action('wp_ajax_nopriv_submit_form_3', 'portfolio_website_submit_form_3');
 function portfolio_website_register_cptui()
 {
 
-    require_once(get_template_directory() . '/inc/custom-post-types.php');
+    require_once get_template_directory() . '/inc/custom-post-types.php';
 }
 add_action('init', 'portfolio_website_register_cptui');
 
@@ -336,6 +337,6 @@ add_action('init', 'portfolio_website_register_cptui');
 function portfolio_website_on_theme_activation()
 {
 
-    require_once(get_template_directory() . '/inc/activation.php');
+    require_once get_template_directory() . '/inc/activation.php';
 }
 add_action('after_switch_theme', 'portfolio_website_on_theme_activation');
