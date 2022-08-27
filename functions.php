@@ -195,7 +195,7 @@ function portfolio_website_custom_column($column_name, $post_id)
 
         if (!$result && $meta_key) {
             $text .= '<br/> Uploaded to is NULL';
-        } elseif (get_post_status($parent->ID) !== 'publish') {
+        } elseif (get_post_status($parent->ID) !== 'publish' && $meta_key) {
             $text .= '<br/> Uploaded to is NULL';
         }
 
