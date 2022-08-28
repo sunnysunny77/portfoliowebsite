@@ -221,8 +221,8 @@ function portfolio_website_custom_column($column_name, $post_id)
         foreach ($result as $row) {
 
             if (!get_post_parent($row->post_id)) {
-                
-                $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "<br/><br/>" .  _draft_or_post_title($row->post_id)  . "<br/><br/><br/></a>";
+
+                $text .= "<a href='" . get_edit_post_link($row->post_id) . "'>" . $row->meta_key  . "<br/>" .  _draft_or_post_title($row->post_id)  . "<br/><br/></a>";
              }
         }
 
