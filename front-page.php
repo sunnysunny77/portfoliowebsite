@@ -340,7 +340,7 @@ $disclaimer = get_field('disclaimer');
                         <ul class="nested vertical menu">
                             <li><i class="fi-list"><span class="hide">List icon</span></i><a href="#poetry">Poems</a></li>
                             <li><i class="fi-list"><span class="hide">List icon</span></i><a href="#illustrated-poetry">Illustrated
-                                    Poetry</a></li>
+                                    poetry</a></li>
                         </ul>
                     </li>
                     <li class="cell small-8 medium-10  last"><?php echo $disclaimer ?></li>
@@ -387,7 +387,7 @@ $disclaimer = get_field('disclaimer');
 
                         <h4 id="illustrated-poetry" class="cell
                             text-right">Illustrated
-                            Poetry</h4>
+                            poetry</h4>
 
                         <a aria-label="Return to menu" class="cell top-link show-for-small-only
                             text-right" href="#top"><i class="fi-eject"><span class="hide">Eject icon</span></i></a>
