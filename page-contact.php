@@ -15,14 +15,14 @@
     </p>
 
     <ul class="tabs grid-x align-center text-center" data-tabs id="tabs">
-        <li class="small-3 text-center align-self-middle"> <i class="fi-mail"><span class="hide">Email icon</span></i></li>
-        <li class="tabs-title is-active small-3"><a href="#panel1">
+        <li class="small-6 medium-3 text-center align-self-middle"> <i class="fi-mail"><span class="hide">Email icon</span></i></li>
+        <li class="tabs-title is-active small-6 medium-3"><a href="#panel1">
                 <h3>Hire</h3>
             </a></li>
-        <li class="tabs-title small-3"><a data-tabs-target="panel2" href="#panel2">
+        <li class="tabs-title small-6 medium-3"><a data-tabs-target="panel2" href="#panel2">
                 <h3>Purchase</h3>
             </a></li>
-        <li class="tabs-title small-3"><a data-tabs-target="panel3" href="#panel3">
+        <li class="tabs-title small-6 medium-3"><a data-tabs-target="panel3" href="#panel3">
                 <h3>Enquiry</h3>
             </a></li>
     </ul>
