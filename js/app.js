@@ -18,9 +18,3 @@ new Vivus(
 $(".title-bar-title").click(function () {
     $(".fi-list").toggleClass("color");
 });
-
-$(window).scroll(function() {
-    var scrolledY = $(window).scrollTop();
-    $('body').css('background-position', 'left ' + ((scrolledY)) + 'px');
-  });
-  

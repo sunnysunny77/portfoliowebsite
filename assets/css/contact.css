@@ -47,14 +47,26 @@ main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
 body {
   margin: auto;
   font-family: OpenSans-Regular;
+}
+body::before {
+  position: sticky;
+  display: block;
+  height: 100vh;
+  margin-top: -100vh;
+  content: "";
+  top: 0;
+  z-index: -999;
   background-blend-mode: screen;
+  opacity: 0.75;
   background-color: rgba(225, 202, 111, 0.075);
   background-image: url(../../images/template/body-mobile.jpg);
-  background-position: left top;
+  background-position: center;
+  background-size: contain;
 }
 @media screen and (min-width: 64em) {
-  body {
+  body::before {
     background-image: url(../../images/template/body.jpg);
+    background-size: cover;
   }
 }
 
