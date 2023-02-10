@@ -28,7 +28,7 @@
 
     </div>
 
-    <header data-animate="hinge-in-from-top slide-out-up" class="top-bar" id="responsive-menu">
+    <header data-animate="slide-in-down slide-out-up" class="top-bar" id="responsive-menu">
 
         <div class="top-bar-left show-for-medium">
 

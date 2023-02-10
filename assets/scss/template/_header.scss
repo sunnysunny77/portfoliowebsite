@@ -2,6 +2,8 @@
     background-image: url(../../images/template/paper.png);
     background-color: $color3;
     background-blend-mode: screen;
+    position: relative;
+	z-index: 998;
     .top-bar-right {
         @include x_large_and_up {
             @include box(auto calc(50vw - 960px) auto auto, null);
@@ -39,7 +41,7 @@
     background-blend-mode: screen;
     background-color: $color3;
     position: relative;
-    z-index: 1;
+	z-index: 999;
     .title-bar-title {
         @include setbox(null, 50px, null, null);
         color: $white;

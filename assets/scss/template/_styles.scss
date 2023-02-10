@@ -3,25 +3,14 @@
 body {
     @include setbox(null, null, null, auto);
     font-family: OpenSans-Regular;
-    &::before {
-        position: sticky;
-        display: block;
-        height: 100vh;
-        margin-top: -100vh;
-        content: "";
-        top: 0;
-        z-index: -999;
-        background-blend-mode: screen;
-        opacity: 0.75;
-        background-color: rgba($color3, 0.075);
-        background-image: url(../../images/template/body-mobile.jpg);
-        background-position: center;
-        background-size: contain;
-        @include large_and_up {
-            background-image: url(../../images/template/body.jpg);
-            background-size: cover;
-        }
-    }
+    background-blend-mode: screen;
+    background-color: rgba($color3, 0.075);
+    background-image: url(../../images/template/body-mobile.jpg);
+    background-position: left top;
+    @include large_and_up {
+        background-image: url(../../images/template/body.jpg);
+    
+    } 
 }
 
 h1 {
