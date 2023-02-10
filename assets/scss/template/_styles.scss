@@ -1,25 +1,15 @@
 /* template */
+
 body {
     @include setbox(null, null, null, auto);
-	position: relative;
     font-family: OpenSans-Regular;
-    &::before {
-        position: absolute;
-        content: "";
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: 0.9;
-        z-index: -999;
-        background-blend-mode: screen;
-        background-color: rgba($color3, 0.075);
-        background-image: url(../../images/template/body-mobile.jpg);
-        background-position: center top;
-        background-size: contain;
-        @include large_and_up {
-            background-image: url(../../images/template/body.jpg);      
-        }
+    background-blend-mode: screen;
+    background-color: rgba($color3, 0.075);
+    background-image: url(../../images/template/body-mobile.jpg);
+    background-position: center top;
+    background-size: contain;
+    @include large_and_up {
+        background-image: url(../../images/template/body.jpg);
     }
 }
 

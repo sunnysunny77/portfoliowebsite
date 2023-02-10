@@ -44,18 +44,7 @@ main input[type=submit]:hover, main input[type=submit]:focus {
 /* template */
 body {
   margin: auto;
-  position: relative;
   font-family: OpenSans-Regular;
-}
-body::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.9;
-  z-index: -999;
   background-blend-mode: screen;
   background-color: rgba(225, 202, 111, 0.075);
   background-image: url(../../images/template/body-mobile.jpg);
@@ -63,7 +52,7 @@ body::before {
   background-size: contain;
 }
 @media screen and (min-width: 64em) {
-  body::before {
+  body {
     background-image: url(../../images/template/body.jpg);
   }
 }
