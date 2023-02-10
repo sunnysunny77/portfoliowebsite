@@ -48,11 +48,7 @@ body {
   margin: auto;
   font-family: OpenSans-Regular;
 }
-body body {
-  margin: auto;
-  font-family: OpenSans-Regular;
-}
-body body::before {
+body::before {
   position: sticky;
   display: block;
   height: 100vh;
@@ -68,7 +64,7 @@ body body::before {
   background-size: contain;
 }
 @media screen and (min-width: 64em) {
-  body body::before {
+  body::before {
     background-image: url(../../images/template/body.jpg);
     background-size: cover;
   }
