@@ -3,6 +3,29 @@
 body {
     @include setbox(null, null, null, auto);
     font-family: OpenSans-Regular;
+    body {
+        @include setbox(null, null, null, auto);
+        font-family: OpenSans-Regular;
+        &::before {
+            position: sticky;
+            display: block;
+            height: 100vh;
+            margin-top: -100vh;
+            content: "";
+            top: 0;
+            z-index: -999;
+            background-blend-mode: screen;
+            opacity: 0.75;
+            background-color: rgba($color3, 0.075);
+            background-image: url(../../images/template/body-mobile.jpg);
+            background-position: center;
+            background-size: contain;
+            @include large_and_up {
+                background-image: url(../../images/template/body.jpg);
+                background-size: cover;
+            }
+        }
+    }
 }
 
 h1 {
@@ -31,26 +54,6 @@ h5 {
 
 main {
     min-height: 89vh;
-    position: relative;
-	&::before {
-		position: sticky;
-		display: block;
-		height: 100vh;
-		margin-top: -100vh;
-		content: "";
-		top: 0;
-		z-index: -999;
-		background-blend-mode: screen;
-		opacity: 0.75;
-		background-color: rgba($color3, 0.075);
-		background-image: url(../../images/template/body-mobile.jpg);
-		background-position: center top;
-		background-size: contain;
-		@include large_and_up {
-			background-image: url(../../images/template/body.jpg);
-			background-size: cover;
-		}
-	}
     @include x_large_and_up {
         @include setbox(1920px, null, null, auto);
         box-shadow: 1px 0 rgba($color1, 0.2), -1px 0 rgba($color1, 0.2);
