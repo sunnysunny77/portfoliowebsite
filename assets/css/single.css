@@ -60,28 +60,7 @@ main textarea::-webkit-scrollbar-track {
 /* template */
 body {
   margin: auto;
-  position: relative;
   font-family: OpenSans-Regular;
-}
-body::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -999;
-  background-blend-mode: screen;
-  opacity: 0.75;
-  background-color: rgba(225, 202, 111, 0.075);
-  background-image: url(../../images/template/body-mobile.jpg);
-  background-position: center top;
-  background-size: contain;
-}
-@media screen and (min-width: 64em) {
-  body::before {
-    background-image: url(../../images/template/body.jpg);
-  }
 }
 
 h1 {
@@ -113,6 +92,28 @@ h5 {
 
 main {
   min-height: 89vh;
+  position: relative;
+}
+main::before {
+  position: sticky;
+  display: block;
+  height: 100vh;
+  margin-top: -100vh;
+  content: "";
+  top: 0;
+  z-index: -999;
+  background-blend-mode: screen;
+  opacity: 0.75;
+  background-color: rgba(225, 202, 111, 0.075);
+  background-image: url(../../images/template/body-mobile.jpg);
+  background-position: center top;
+  background-size: contain;
+}
+@media screen and (min-width: 64em) {
+  main::before {
+    background-image: url(../../images/template/body.jpg);
+    background-size: cover;
+  }
 }
 @media screen and (min-width: 1921px) {
   main {
