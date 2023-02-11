@@ -29,7 +29,7 @@ $(document).ready(function () {
         null
     );
   
-    if (!is_touch_enabled()) {
+    if (CSS.supports('background-attachment', 'fixed')) {
         $("body").css('background-image', 'url(' + path.dir + '/images/template/body-desktop.jpg)');
         $("body").css('background-attachment', 'fixed');
         $("body").css('background-size', 'cover');
