@@ -44,18 +44,39 @@ main .tabs li a h3:hover, main a:hover, main .tabs li a h3:focus, main a:focus {
   src: url("./Fonts/OpenSans-Regular.ttf");
 }
 /* template */
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: none;
   margin: auto;
   font-family: OpenSans-Regular;
+}
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
   background-blend-mode: lighten;
-  background-color: rgba(248, 248, 255, 0.2);
-  background-image: url(../../images/template/body-mobile.jpg);
-  background-position: center top;
-  background-size: contain;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -999;
+  background: rgba(248, 248, 255, 0.2) url(../../images/template/body-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 @media screen and (min-width: 64em) {
-  body {
-    background-image: url(../../images/template/body.jpg);
+  body:before {
+    background: rgba(248, 248, 255, 0.2) url(../../images/template/body.jpg);
   }
 }
 

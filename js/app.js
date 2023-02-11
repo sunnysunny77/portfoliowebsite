@@ -22,10 +22,4 @@ $(document).ready(function () {
         },
         null
     );
-  
-    if (CSS.supports('background-attachment', 'fixed')) {
-        $("body").css('background-image', 'url(' + path.dir + '/images/template/body-desktop.jpg)');
-        $("body").css('background-attachment', 'fixed');
-        $("body").css('background-size', 'cover');
-    }
 });
