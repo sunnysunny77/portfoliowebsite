@@ -3,8 +3,8 @@
 body {
     @include setbox(null, null, null, auto);
     font-family: OpenSans-Regular;
-    background-blend-mode: screen;
-    background-color: rgba($color3, 0.075);
+    background-blend-mode: lighten;
+    background-color: rgba($white, 0.2);
     background-image: url(../../images/template/body-mobile.jpg);
     background-position: center top;
     background-size: contain;

@@ -17,8 +17,8 @@ main a:hover, main a:focus {
 body {
   margin: auto;
   font-family: OpenSans-Regular;
-  background-blend-mode: screen;
-  background-color: rgba(225, 202, 111, 0.075);
+  background-blend-mode: lighten;
+  background-color: rgba(248, 248, 255, 0.2);
   background-image: url(../../images/template/body-mobile.jpg);
   background-position: center top;
   background-size: contain;
