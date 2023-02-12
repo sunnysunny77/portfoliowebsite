@@ -11,7 +11,9 @@
     <?php wp_head(); ?>
 </head>
 
-<body id="top">
+<body>
+
+    <span id="top"></span>
 
     <a class="hide" href="#main" accesskey="S"> Skip navigation </a>
 
