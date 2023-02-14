@@ -41,9 +41,9 @@
                 @include setbox(null, null, 3%, null);
             }
             img {
-                @include setbox(100%, null, null, auto auto 1rem auto);
+                @include setbox(100%, null, null, auto);
                 @include medium_and_up() {
-                    @include setbox(calc(100% - 0.5rem), null, null, auto);
+                    @include setbox(calc(100% - 0.5rem), null, null, null);
                 }
                 @include large_and_up() {
                     @include setbox(100%, null, null, null);
