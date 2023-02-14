@@ -50,6 +50,9 @@
                 }
                 border-radius: 17px;
             }
+            p {
+                @include setbox(100%, null, null, 1rem auto 1rem auto);
+            }
         }
     }
 }

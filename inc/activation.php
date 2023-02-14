@@ -88,6 +88,8 @@ if (!get_page(256)) {
     portfolio_website_post_meta($id, '_media_heading_2', 'media_heading_2');
     portfolio_website_post_meta($id, 'media_paragraph_2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.');
     portfolio_website_post_meta($id, '_media_paragraph_2', 'media_paragraph_2');
+    portfolio_website_post_meta($id, 'media_paragraph_image', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.');
+    portfolio_website_post_meta($id, '_media_paragraph_image', 'media_paragraph_image');
     portfolio_website_post_meta($id, 'media', '');
     portfolio_website_post_meta($id, '_media', 'media');
     portfolio_website_post_meta($id, 'section_heading_1', 'Lorem ipsum dolor sit');

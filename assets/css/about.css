@@ -295,6 +295,10 @@ footer::before {
     width: 100%;
   }
 }
+.media-object .media-object-section:nth-child(1) p {
+  width: 100%;
+  margin: 1rem auto 1rem auto;
+}
 
 .rel {
   position: relative;

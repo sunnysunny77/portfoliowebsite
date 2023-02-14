@@ -236,6 +236,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_63eba7c653da4",
+            "label": "Media paragraph image",
+            "name": "media_paragraph_image",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_624ff9aa4bd26",
             "label": "Sticky image 1",
             "name": "sticky_image_1",

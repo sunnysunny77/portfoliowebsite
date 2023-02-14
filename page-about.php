@@ -34,6 +34,8 @@
                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php } ?>
 
+            <p class="text-center"> <?php echo the_field('media_paragraph_image') ?></p>
+
         </div>
 
         <div class="cell medium-6 grid-x align-justify
