@@ -25,7 +25,7 @@
     <section class="grid-x align-center stack-for-small
     media-object">
 
-        <div class="cell medium-6 align-self-middle
+        <div class="grid-x cell medium-6 align-self-middle
         media-object-section">
 
             <?php
@@ -34,7 +34,7 @@
                 <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php } ?>
 
-            <p class="text-center"> <?php echo the_field('media_paragraph_image') ?></p>
+            <p class="cell small-10 text-center"> <?php echo the_field('media_paragraph_image') ?></p>
 
         </div>
 
