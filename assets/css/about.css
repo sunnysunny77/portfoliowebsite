@@ -284,16 +284,6 @@ footer::before {
   margin: auto;
   border-radius: 17px;
 }
-@media screen and (min-width: 40em) {
-  .media-object .media-object-section:nth-child(1) img {
-    width: calc(100% - 0.5rem);
-  }
-}
-@media screen and (min-width: 64em) {
-  .media-object .media-object-section:nth-child(1) img {
-    width: 100%;
-  }
-}
 .media-object .media-object-section:nth-child(1) p {
   margin: 1rem auto;
 }

@@ -22,10 +22,10 @@
 
     </section>
 
-    <section class="grid-x align-center stack-for-small
+    <section class="grid-x align-spaced stack-for-small
     media-object">
 
-        <div class="grid-x cell medium-6 align-self-middle
+        <div class="grid-x cell medium-4 align-self-middle
         media-object-section">
 
             <?php
@@ -38,7 +38,7 @@
 
         </div>
 
-        <div class="cell medium-6 grid-x align-justify
+        <div class="cell medium-7 grid-x align-justify
         media-object-section">
 
             <h3 class="cell text-center medium-text-left small-12"><?php echo the_field('media_heading') ?></h3>
