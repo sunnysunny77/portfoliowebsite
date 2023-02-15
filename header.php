@@ -13,9 +13,11 @@
 
 <body>
 
-    <span id="top"></span>
+    <span id="top">
 
-    <a class="hide" href="#main" accesskey="S"> Skip navigation </a>
+        <a class="hide" href="#main" accesskey="S"> Skip navigation </a>
+
+    </span>
 
     <div class="title-bar grid-x" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 
