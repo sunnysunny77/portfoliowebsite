@@ -13,15 +13,19 @@
         $text = $_REQUEST["text"];
         $to_email = "shlooby07@gmail.com";
         $subject = "New Enquiry Form Message";
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
         $contactus = "
-        You have a message from the Enquiry Form on your website:
-        Name: ".$first_name." ".$last_name."
-        Email: ".$email."
-        Phone: ".$phone."
-        Enquiry: ".$text;
-        $contactus  = wordwrap($contactus ,70);
+        <html>
+        <p>You have a message from the Enquiry Form on your website:</p>
+        <b>Name: </b>".$first_name." ".$last_name."
+        <br><b>Email: </b>".$email."
+        <br><b>Phone: </b>".$phone."
+        <br><b>Enquiry: </b>".$text."
+        </html>";
+      
 
-        $mail = mail($to_email,$subject,$contactus);
+        $mail = mail($to_email,$subject,$contactus,$headers);
         if (!$mail) {
           $res = print_r(error_get_last()['message']);
         } else {
