@@ -1,5 +1,5 @@
 $(".goto").click(function() {
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $("#goto").offset().top
+    $('body').animate({
+        scrollTop: document.getElementById("goto").offsetTop
     }, 2000);
 });
